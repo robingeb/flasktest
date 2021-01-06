@@ -14,6 +14,8 @@ if __name__=='__main__':
     #virtualenv venv   erstellt eine neue venv
     # .\venv\Scripts\activate
     # deactivate
-    # bei aktivierte venv eingeben python myapp.py
+    # bei aktivierter venv eingeben python myapp.py
+    # bei aktivierter venv eingeben: pip install flask
+
 
     
