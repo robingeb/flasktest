@@ -18,4 +18,3 @@ if __name__=='__main__':
     # bei aktivierter venv eingeben: pip install flask
 
 
-    
