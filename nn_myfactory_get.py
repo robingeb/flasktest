@@ -7,6 +7,6 @@ headers = {
   'Authorization': 'Basic VGVzdDoxMjM0'
 }
 
-response = requests.request("GET", url, headers=headers) #, data=payload)
+response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)
