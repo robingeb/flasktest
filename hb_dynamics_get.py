@@ -6,8 +6,8 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/')
-def homepage(): 
+# @app.route('/')
+# def homepage(): 
     # url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     # #payload = {}
     # headers = {
