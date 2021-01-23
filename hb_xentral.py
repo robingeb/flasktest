@@ -3,6 +3,8 @@ import xmltodict
 import requests
 import json
 
+#TODO: API Zugriff auf Xentral funktioniert nicht (404 Not Fount Error)
+
 def start():
     url = "http://132.187.226.135/api/v1/artikel"
     auth = {
@@ -14,9 +16,10 @@ def start():
 
 
 class XentralAPI():
-    def __init__(self, url, auth):        
+    def __init__(self, url, auth, payload = None):        
         self.url = url
         self.auth = auth
+        self.payload = payload
 
    
 
@@ -33,7 +36,14 @@ class XentralAPI():
 
         
     def post_request(self):
-        pass
+        headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+             #'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43',
+            'Cookie': '_sid_=1'
+            }
+        response = requests.request("POST", self.url, auth=(self.auth['username'], self.auth['password']), data=self.payload)
+        print(response.text)
         
 
     def delete_request(self):
