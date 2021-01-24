@@ -1,6 +1,6 @@
 import requests
 
-url = "http://10.105.11.42:7048/BC140/api/v1.0/"
+url = "http://10.105.11.42:7048/BC140/api/v1.0/" #add 'items' für die Artikelabfrage
 
 payload={}
 headers = {
