@@ -1,6 +1,7 @@
 import requests
 
-url = "http://10.105.11.42:7048/BC140/api/v1.0/items"   #'items' für die Artikelabfrage
+url = "http://10.105.11.42:7048/BC140/api/v1.0/items"   #"items" für die Artikelabfrage
+                                                        #"?$filter=displayName eq 'Schutzblech vorn'" für bestimmten Artikel
 
 payload={}
 headers = {

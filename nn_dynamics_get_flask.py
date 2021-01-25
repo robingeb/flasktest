@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage(): 
-    url = "http://10.105.11.42:7048/BC140/api/v1.0/items"
+    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" #?$filter=displayName eq 'Schutzblech vorn'"
     #payload = {}
     headers = {
     'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
@@ -16,9 +16,9 @@ def homepage():
     response = requests.request("GET", url, headers=headers) #data = payload
     data = json.loads(response.text)
     #Filtert und sortiert Daten
-    for displayName in data:
-        return(displayName)
-     
+    #for displayName in data:
+     #   return(displayName)
+    return(response.text)
 
 
 if __name__ == '__main__':
