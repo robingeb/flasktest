@@ -6,7 +6,7 @@ import json
 #TODO: API Zugriff auf Xentral funktioniert nicht (404 Not Fount Error)
 
 def start():
-    url = "http://132.187.226.135/api/v1/artikel"
+    url = "http://132.187.226.135/www/api/v1/artikel"
     auth = {
     'username': 'HB',
     "password": "HB"
