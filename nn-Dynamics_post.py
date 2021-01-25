@@ -5,6 +5,7 @@ import requests
 
 url = "http://10.105.11.42:7048/BC140/api/v1.0/items"
 
+#NUMMER VERÄNDERN!!!
 payload= "{\r\n  \"number\": \"100nico\",\r\n  \"displayName\": \"ATHENS Desk\",\r\n  \"type\": \"Inventory\",\r\n  \"blocked\": false,\r\n  \"gtin\": \"\",\r\n  \"inventory\": 0,\r\n  \"unitPrice\": 1000.8,\r\n  \"priceIncludesTax\": false,\r\n  \"unitCost\": 780.7\r\n} "
 # {
 #   "number": "1896-S",
