@@ -7,19 +7,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage(): 
-    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" #?$filter=displayName eq 'Schutzblech vorn'"
     #payload = {}
     headers = {
-    'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
+    'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
     }
 
     response = requests.request("GET", url, headers=headers) #data = payload
     data = json.loads(response.text)
     #Filtert und sortiert Daten
-    article = [data["result"][x]["name"] for x in range(len(data["result"]))]
-    #ARG = data (ohne filter)
-    return jsonify(article)  
-    
-    
+    #for displayName in data:
+     #   return(displayName)
+    return(response.text)
+
+
 if __name__ == '__main__':
   app.run(debug=True)
