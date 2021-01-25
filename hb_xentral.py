@@ -42,7 +42,7 @@ class XentralAPI():
              #'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43',
             'Cookie': '_sid_=1'
             }
-        response = requests.request("POST", self.url, auth=(self.auth['username'], self.auth['password']), data=self.payload)
+        response = requests.request("POST", self.url, headers = headers, auth=(self.auth['username'], self.auth['password']), data=self.payload)
         print(response.text)
         
 
