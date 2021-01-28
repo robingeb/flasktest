@@ -1,0 +1,28 @@
+{
+    "classification": 
+        {"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+        "department_id": "34RxZCwUMYG9WXA526Qz" ,
+        "place_id": "YFVj90X1OPPPSCejK0Ra" },
+    "core": 
+        {"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+         "build_year": "2019" ,
+         "inventory_number": "123" ,
+         "price": "300" ,
+         "serial_number": "1234",
+         "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+         "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+    "historical_data":
+        {"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+         "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+         "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+         "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+    "identifiers":
+         {"barcode": "1234" ,
+          "device_d": "1234" ,
+          "qr": "1234" ,
+          "rfid": "1234" },
+    "media":
+        {"attachments": [""]},
+    "status":
+        {"archived": true}
+}
