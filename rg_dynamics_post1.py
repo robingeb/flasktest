@@ -11,7 +11,7 @@ payload= "{\r\n  \"number\": \"102robin\",\r\n  \"displayName\": \"ATHENS Desk\"
 # {
 #   "number": "1896-S",
 #   "displayName": "ATHENS Desk",
-#   "type": "Inventory",
+#   "type": "Inventory",adsf
 #   "blocked": false,
 #   "gtin": "",
 #   "inventory": 0,
