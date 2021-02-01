@@ -43,7 +43,7 @@ class WeClappAPI():
             'AuthenticationToken': self.auth["AuthenticationToken"],
             'Cookie': '_sid_=1'
         }
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("POST", self.url, headers=headers, data=payload)
         print(response.text)
         
 

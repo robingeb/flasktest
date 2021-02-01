@@ -1,0 +1,152 @@
+{"results": [
+	{
+		"id": "001",
+		"classification": 
+			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+			"department_id": "34RxZCwUMYG9WXA526Qz" ,
+			"place_id": "YFVj90X1OPPPSCejK0Ra", 
+			"device_id": "001" },
+		"core": 
+			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			 "build_year": "2019" ,
+			 "inventory_number": "123" ,
+			 "price": "300" ,
+			 "serial_number": "1234",
+			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"identifiers":
+			 {"barcode": "1001" ,
+			  "device_d": "1001" ,
+			  "qr": "1001" ,
+			  "rfid": "1001" },
+		"media":
+			{"attachments": [""]},
+		"status":
+			{"archived": true}
+	},
+	{
+		"id": "002",
+		"classification": 
+			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+			"department_id": "34RxZCwUMYG9WXA526Qz" ,
+			"place_id": "YFVj90X1OPPPSCejK0Ra", 
+			"device_id": "001" }, 
+		"core": 
+			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			 "build_year": "2019" ,
+			 "inventory_number": "123" ,
+			 "price": "300" ,
+			 "serial_number": "1234",
+			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"identifiers":
+			 {"barcode": "1002" ,
+			  "device_d": "1002" ,
+			  "qr": "1002" ,
+			  "rfid": "1002" },
+		"media":
+			{"attachments": [""]},
+		"status":
+			{"archived": true}
+	},
+	{
+		"id": "003",
+		"classification": 
+			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+			"department_id": "34RxZCwUMYG9WXA526Qz" ,
+			"place_id": "YFVj90X1OPPPSCejK0Ra", 
+			"device_id": "002" }, 
+		"core": 
+			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			 "build_year": "2019" ,
+			 "inventory_number": "123" ,
+			 "price": "300" ,
+			 "serial_number": "1234",
+			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"identifiers":
+			 {"barcode": "1003" ,
+			  "device_d": "1003" ,
+			  "qr": "1003" ,
+			  "rfid": "1003" },
+		"media":
+			{"attachments": [""]},
+		"status":
+			{"archived": true}
+	},
+	{
+		"id": "004",
+		"classification": 
+			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+			"department_id": "34RxZCwUMYG9WXA526Qz" ,
+			"place_id": "YFVj90X1OPPPSCejK0Ra", 
+			"device_id": "003" }, 
+		"core": 
+			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			 "build_year": "2019" ,
+			 "inventory_number": "123" ,
+			 "price": "300" ,
+			 "serial_number": "1234",
+			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"identifiers":
+			 {"barcode": "1004" ,
+			  "device_d": "1004" ,
+			  "qr": "1004" ,
+			  "rfid": "1004" },
+		"media":
+			{"attachments": [""]},
+		"status":
+			{"archived": true}
+	},
+	{
+		"id": "005",
+		"classification": 
+			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
+			"department_id": "34RxZCwUMYG9WXA526Qz" ,
+			"place_id": "YFVj90X1OPPPSCejK0Ra", 
+			"device_id": "003" }, 
+		"core": 
+			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			 "build_year": "2019" ,
+			 "inventory_number": "123" ,
+			 "price": "300" ,
+			 "serial_number": "1234",
+			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"identifiers":
+			 {"barcode": "1005" ,
+			  "device_d": "1005" ,
+			  "qr": "1005" ,
+			  "rfid": "1005" },
+		"media":
+			{"attachments": [""]},
+		"status":
+			{"archived": true}
+	}
+]}

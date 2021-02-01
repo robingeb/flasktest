@@ -1,0 +1,74 @@
+{"results": [ 
+	{	
+		"id": "001",
+		"access":
+		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
+		"classification": 
+			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
+		"core": 
+			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			 "description_long": "Standard" ,
+			 "description_short": "Standard" ,
+			 "device_name": "Standard-Schlinge 1A" ,
+			 "keywords":  [
+			   { "0": "Schlinge"}  ],
+			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"media":
+			{"attachments":  [
+				{ "device_image": "https://firebasestorage.googleapis.com/v0/b/tagideasy.appspot.com/o/devices%2F05Uh1VJktu4RaquIgPnh%2Fmedia%2Fdevice_image?alt=media&token=032fd1db-a1b3-484f-8091-9af4a4e82f32"}  
+				]}
+	},
+	{
+		"id": "002",
+		"access":
+		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
+		"classification": 
+			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
+		"core": 
+			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			 "description_long": "Standard" ,
+			 "description_short": "Standard" ,
+			 "device_name": "Standard-Schlinge 1B" ,
+			 "keywords":  [
+			   { "0": "Schlinge"}  ],
+			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"media":
+			{"attachments":  [
+				{ "device_image": "https://firebasestorage.googleapis.com/v0/b/tagideasy.appspot.com/o/devices%2F05Uh1VJktu4RaquIgPnh%2Fmedia%2Fdevice_image?alt=media&token=032fd1db-a1b3-484f-8091-9af4a4e82f32"}  
+				]}
+	},
+	{
+		"id": "003",
+		"access":
+		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
+		"classification": 
+			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
+		"core": 
+			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			 "description_long": "Standard" ,
+			 "description_short": "Standard" ,
+			 "device_name": "Standard-Schlinge 1C" ,
+			 "keywords":  [
+			   { "0": "Schlinge"}  ],
+			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
+		"historical_data":
+			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "created_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" ,
+			 "updated_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
+			 "updated_by": "HKyUyCuVj0g12htOsAPmGCcffBq2" },
+		"media":
+			{"attachments":  [
+				{ "device_image": "https://firebasestorage.googleapis.com/v0/b/tagideasy.appspot.com/o/devices%2F05Uh1VJktu4RaquIgPnh%2Fmedia%2Fdevice_image?alt=media&token=032fd1db-a1b3-484f-8091-9af4a4e82f32"}  
+				]}
+	}
+]}
