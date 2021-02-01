@@ -18,8 +18,8 @@ def homepage():
     #Filtert und sortiert Daten
     #for displayName in data:
      #   return(displayName)
-    return(response.text)
-
+    #return(response.text)
+    return jsonify({"Result":data})
 
 if __name__ == '__main__':
   app.run(debug=True)
