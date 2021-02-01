@@ -4,24 +4,17 @@ import json
 from requests.auth import HTTPDigestAuth
 
 
-
 app = Flask(__name__)
 
 @app.route('/')
 def homepage(): 
-    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
-    headers = {
-    'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
-    }
+    url = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel"
 
-    response = requests.request("GET", url, headers=headers) #data = payload
+    
+    response = requests.request("GET", url, auth="Alperen.Yildirim@stud-mail.uni-wuerzburg.de") 
     data = json.loads(response.text)
     return jsonify(data)  
 
 
 if __name__ == '__main__':
   app.run(debug=True)
-
-
-
-
