@@ -1,0 +1,16 @@
+TagIDeasy -> WeClapp
+
+
+POST:
+WeClapp: 
+- json-File
+- Required Tags im json-File:
+	- "articleNumber": "011",
+    - "name": "hb_Fahrradsitz2",    
+    - "unitId": "2895"
+	
+TagIDeasy:
+Informationen enthalten in:
+"name" -> tagIdeasy_geräte.json "device_name"
+"articelNumber" -> tagIdeasy_inventar.json "device_d" 	# Unsicher was device_d bedeutet. Im Idealfall kann dieser als Fremdschlüssel für das ERP-System verwendet werden 
+"unitID" -> 2895 	# Unsicher für was diese verwendet wird
