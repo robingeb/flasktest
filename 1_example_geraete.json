@@ -1,12 +1,12 @@
 {"results": [ 
 	{	
-		"id": "001",
+		
 		"access":
 		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
 		"classification": 
 			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
 		"core": 
-			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			{"articel_id_manufacturer": "10001" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
 			 "device_name": "Standard-Schlinge 1A" ,
@@ -24,13 +24,13 @@
 				]}
 	},
 	{
-		"id": "002",
+		
 		"access":
 		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
 		"classification": 
 			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
 		"core": 
-			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			{"articel_id_manufacturer": "10002" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
 			 "device_name": "Standard-Schlinge 1B" ,
@@ -48,13 +48,12 @@
 				]}
 	},
 	{
-		"id": "003",
 		"access":
 		{   "release_to": "BDx2AOwdcfwBI9Grb52w"},
 		"classification": 
 			{ "device_categorie_id": "AOoCdnoe1MXQ8Pa4AY7U" },
 		"core": 
-			{"articel_id_manufacturer": "Laurell Popp GmbH" ,
+			{"articel_id_manufacturer": "10003" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
 			 "device_name": "Standard-Schlinge 1C" ,

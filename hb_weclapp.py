@@ -17,10 +17,10 @@ def start():
 
 
 class WeClappAPI():
-    def __init__(self, url, auth, payload = None):        
+    def __init__(self, url, auth):        
         self.url = url
         self.auth = auth
-        self.payload = payload
+        #self.payload = payload
 
    
 
@@ -44,11 +44,11 @@ class WeClappAPI():
             'Cookie': '_sid_=1'
         }
         response = requests.request("POST", self.url, headers=headers, data=payload)
-        print(response.text)
+        return response.text
         
 
     def delete_request(self):
         pass
 
-if __name__ == "__main__":
-    start()
+# if __name__ == "__main__":
+#     start()

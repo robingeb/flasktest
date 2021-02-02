@@ -1,17 +1,17 @@
 {"results": [
 	{
-		"id": "001",
+		
 		"classification": 
 			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
 			"department_id": "34RxZCwUMYG9WXA526Qz" ,
-			"place_id": "YFVj90X1OPPPSCejK0Ra", 
-			"device_id": "001" },
+			"place_id": "YFVj90X1OPPPSCejK0Ra" 
+			 },
 		"core": 
-			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			{"articel_id_buyer": "10001" ,
 			 "build_year": "2019" ,
 			 "inventory_number": "123" ,
 			 "price": "300" ,
-			 "serial_number": "1234",
+			 "serial_number": "11111",
 			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
 			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
 		"historical_data":
@@ -30,18 +30,18 @@
 			{"archived": true}
 	},
 	{
-		"id": "002",
+		
 		"classification": 
 			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
 			"department_id": "34RxZCwUMYG9WXA526Qz" ,
-			"place_id": "YFVj90X1OPPPSCejK0Ra", 
-			"device_id": "001" }, 
+			"place_id": "YFVj90X1OPPPSCejK0Ra" 
+			}, 
 		"core": 
-			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			{"articel_id_buyer": "10001" ,
 			 "build_year": "2019" ,
 			 "inventory_number": "123" ,
 			 "price": "300" ,
-			 "serial_number": "1234",
+			 "serial_number": "11112",
 			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
 			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
 		"historical_data":
@@ -60,18 +60,18 @@
 			{"archived": true}
 	},
 	{
-		"id": "003",
+		
 		"classification": 
 			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
 			"department_id": "34RxZCwUMYG9WXA526Qz" ,
-			"place_id": "YFVj90X1OPPPSCejK0Ra", 
-			"device_id": "002" }, 
+			"place_id": "YFVj90X1OPPPSCejK0Ra"
+			 }, 
 		"core": 
-			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			{"articel_id_buyer": "10002" ,
 			 "build_year": "2019" ,
 			 "inventory_number": "123" ,
 			 "price": "300" ,
-			 "serial_number": "1234",
+			 "serial_number": "11113",
 			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
 			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
 		"historical_data":
@@ -90,18 +90,18 @@
 			{"archived": true}
 	},
 	{
-		"id": "004",
+		
 		"classification": 
 			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
 			"department_id": "34RxZCwUMYG9WXA526Qz" ,
-			"place_id": "YFVj90X1OPPPSCejK0Ra", 
-			"device_id": "003" }, 
+			"place_id": "YFVj90X1OPPPSCejK0Ra"
+			 }, 
 		"core": 
-			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			{"articel_id_buyer": "10003" ,
 			 "build_year": "2019" ,
 			 "inventory_number": "123" ,
 			 "price": "300" ,
-			 "serial_number": "1234",
+			 "serial_number": "11114",
 			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
 			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
 		"historical_data":
@@ -120,18 +120,18 @@
 			{"archived": true}
 	},
 	{
-		"id": "005",
+		
 		"classification": 
 			{"company_id": "BDx2AOwdcfwBI9Grb52w" ,
 			"department_id": "34RxZCwUMYG9WXA526Qz" ,
-			"place_id": "YFVj90X1OPPPSCejK0Ra", 
-			"device_id": "003" }, 
+			"place_id": "YFVj90X1OPPPSCejK0Ra"
+			 }, 
 		"core": 
-			{"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" ,
+			{"articel_id_buyer": "10001" ,
 			 "build_year": "2019" ,
 			 "inventory_number": "123" ,
 			 "price": "300" ,
-			 "serial_number": "1234",
+			 "serial_number": "11115",
 			 "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
 			 "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
 		"historical_data":
