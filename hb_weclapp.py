@@ -5,6 +5,7 @@ import json
 from requests.auth import HTTPDigestAuth
 
 
+
 def start():
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {
@@ -47,8 +48,9 @@ class WeClappAPI():
         return response.text
         
 
-    def delete_request(self):
-        pass
+    def delete_request(self, id):
+        response = requests.request("DELETE", self.url + "/" + id, headers=header)
+        return(response)
 
 # if __name__ == "__main__":
 #     start()

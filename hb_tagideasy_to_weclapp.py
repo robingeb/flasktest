@@ -3,6 +3,8 @@ import numpy as np
 import json
 from hb_weclapp import *
 
+#   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert 
+
 def main():
     
 
@@ -20,6 +22,8 @@ def main():
     
     # initialice WeClappAPI
     weClappAPI = WeClappAPI(url, auth)
+
+    #TODO: Existiert möglichkeit mehrere Artikel auf einmal zu pushen?
     
     # Iterate throug articles and push them to weclapp
     for index, row in devices_mapped.iterrows():
