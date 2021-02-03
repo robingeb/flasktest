@@ -33,3 +33,6 @@
       
     </p>
 </form>
+{% if form.errors %}
+    {{ form.errors }}
+{% endif %}
