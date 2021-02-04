@@ -32,9 +32,14 @@ def signup():
     name = None
     form = NameForm()
     if form.validate_on_submit():
+        
+        #ID des Prüfers (INT)
+        #WIRD NOCH NICHT ÜBERTRAGEN
+        ID = form.ID.data
+        ID = str(ID)
+        
         #nächstes Prüfdatum übertragen:
-        #date2 aus Formular holen: date zu datetime konvertieren -> datetime zu unixtime (float) konvertieren -> float in int konvertieren (um Nachkommastellen zu entfernen) -> int in String konvertireren und 3 nullen dranhängen
-            
+        #date2 aus Formular holen: date zu datetime konvertieren -> datetime zu unixtime (float) konvertieren -> float in int konvertieren (um Nachkommastellen zu entfernen) -> int in String konvertireren und 3 nullen dranhängen    
         date2 = form.date2.data
         dt = datetime.combine(date2, datetime.min.time())
         #Var timestamp wird in payload benutzt
@@ -42,23 +47,23 @@ def signup():
         timestamp = int(timestamp)
         timestamp = str(timestamp) + "000"
 
+        #Name des Prüfers (String)
         name = form.name.data
-        print(name)
-        print(type(name))
-        
+       
+        #Mängel (Textfield)
         mängel = form.mängel.data
 
+        #Gerät bestanden (bool)
         accept = form.accept.data
         accept = str(accept)
-        print(accept)
         
 
         payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n    \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": "+timestamp+"\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \""+name+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3659\",\r\n            \"stringValue\": \""+mängel+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3671\",\r\n            \"booleanValue\": "+accept+"\r\n        }\r\n    ],\r\n     \"name\": \""+Artikelname+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n  \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
         
-        #print(timestamp)
+        
         print("erfolgreich")
         requests.request("PUT", url, headers=headers, data=payload)
-    else: print('false')
+    else: print('nicht erfolgreich')
 
     return render_template('signup.html', form=form, name=name)
 

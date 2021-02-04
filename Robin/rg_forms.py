@@ -14,5 +14,5 @@ class NameForm(FlaskForm):
     mängel = TextAreaField('Mängel')
     accept = BooleanField('Gerät bestanden')
     date1 = DateTimeField('Datum')
-    date2 = DateField('Datum')
+    date2 = DateField('nächstes Prüfdatum')
     submit = SubmitField('Submit')
