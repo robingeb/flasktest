@@ -1,10 +1,10 @@
 import requests
 
-url = "https://gebhardt.weclapp.com/webapp/api/v1/contact?page=1&pageSize=100&sort="
+url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
 
 payload={}
 headers = {
-  'AuthenticationToken': '8c0fb5fb-ece8-4878-a9a8-f54b0d623fa7',
+  'AuthenticationToken': '22cca5be-4270-4f2d-9412-e7b582b4a85d',
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)
