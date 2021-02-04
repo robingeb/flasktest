@@ -27,35 +27,17 @@ Datenstruktur = {
             ]}
 }
 
-
-app = Flask(__name__)
-
-@app.route('/')
-def homepage(): 
-    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
-    headers = {
-    'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
-    }
-    response = requests.request("GET", url, headers=headers) #data = payload
-    data = json.loads(response.text)
-    return jsonify({"result":data})  
-
-
-
-if __name__ == '__main__':
-  app.run(debug=True)
-
-# avoid keyerror'Toronto' in MLB_team and MLB_team['Toronto']
-#False
-
-#>>> print(d.get('b'))
-#20
-#>>> print(d.get('z'))
-#None
-
-#>>> print(d.get('z', -1)) --> default value falls kein value vorhanden
-#-1
-
-
+url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+headers = {
+'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
+}
+output = []
+response = requests.request("GET", url, headers=headers) #data = payload
+data = json.loads(response.text)
+data["AXI"] = data["result"]
+del data["result"]
+#print(data)
+for key in data:
+    print(data[key])
 
 
