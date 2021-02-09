@@ -26,18 +26,25 @@ Datenstruktur = {
             { "device_image": "https://firebasestorage.googleapis.com/v0/b/tagideasy.appspot.com/o/devices%2F05Uh1VJktu4RaquIgPnh%2Fmedia%2Fdevice_image?alt=media&token=032fd1db-a1b3-484f-8091-9af4a4e82f32"}  
             ]}
 }
+app = Flask(__name__)
 
-url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
-headers = {
-'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
-}
-output = []
-response = requests.request("GET", url, headers=headers) #data = payload
-data = json.loads(response.text)
-data["AXI"] = data["result"]
-del data["result"]
-#print(data)
-for key in data:
-    print(data[key])
+@app.route("/", methods=["GET", "POST"])
+def get_weclapp():
+
+    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+    headers = {
+    'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
+    }
+    output = []
+    response = requests.request("GET", url, headers=headers) #data = payload
+    data = json.loads(response.text)
+    #data["device_name"] = data["result"][0] #prints 1,2,3...Device Data
+    data["device_name"] = data["result"][0]
+    del data["result"]
+    #print(data)
+    for key in data:
+        return(jsonify({"Ergebnis": data}))
 
 
+if __name__ == "__main__":
+    app.run(port=1337, debug=True)
