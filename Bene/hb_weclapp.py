@@ -48,9 +48,9 @@ class WeClappAPI():
         return response.text
         
 
-    def delete_request(self, id):
-        response = requests.request("DELETE", self.url + "/" + id, headers=header)
-        return(response)
+    # def delete_request(self, id):
+    #     response = requests.request("DELETE", self.url + "/" + id, headers=headers)
+    #     return(response)
 
 # if __name__ == "__main__":
 #     start()
