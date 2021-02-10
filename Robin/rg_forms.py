@@ -18,5 +18,5 @@ class NameForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class articleForm(FlaskForm):
-    Artikelnummer = IntegerField('Artikelnummer', validators=[Required()])
+    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
     submit = SubmitField('Submit')
