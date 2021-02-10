@@ -1,14 +1,16 @@
-from flask import Flask, render_template, url_for, render_template, request
-from rg_forms import NameForm
+from flask import Flask, render_template, url_for, render_template, request, redirect
+from rg_forms import NameForm, articleForm
 import requests
 from datetime import datetime, date, timezone
+import json
+from flask import jsonify
 
 #interner Systemname Test: icnad98qpdoq31
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
-url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article/id/3340"
+urlget = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
 Artikelname="Fahrrasdfad"
 payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n        \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": 1613602800000\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \"pizzaa\"\r\n    }\r\n],\r\n    \"name\": \""+Artikelname+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
 headers = {
@@ -21,16 +23,51 @@ headers = {
 def home():
     return 'Home'
 
-@app.route('/formular')
+@app.route('/article', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    name = None
+    form = articleForm()
+
+    response = requests.request("GET", urlget, headers=headers) #data = payload
+    data = json.loads(response.text)
+    #Filtert und sortiert Daten
+    articleid = [data["result"][x]["id"] for x in range(len(data["result"]))]
+    print(type(articleid))
+    articlenumber = [data["result"][x]["articleNumber"] for x in range(len(data["result"]))]
+    print(type(articlenumber))
+    
+    if form.validate_on_submit():
+        counter = 0
+        Artikelnr = form.Artikelnummer.data
+        #Artikelnr = int(Artikelnr)
+        print(Artikelnr)
+        print(type(Artikelnr))
+        matchnumber = 0
+        for x in articlenumber:
+            if x == Artikelnr:
+                matchnumber = counter
+            counter = counter + 1
+        #print("Counter"+counter)
+        #IDS = articleid[5]
+        IDS = "2"
+        return redirect(url_for('signup', IDS = IDS))
+    
+    
+   
+    #return jsonify(data)  
+    return render_template('index.html', form=form, name=name)
 
 
 
-@app.route('/eintragen', methods=['GET', 'POST'])
-def signup():
+
+
+
+@app.route('/formular/<string:IDS>', methods=['GET', 'POST'])
+def signup(IDS):
+    print(IDS)
     name = None
     form = NameForm()
+    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article/id/"+IDS
     if form.validate_on_submit():
         
         #ID des Prüfers (INT)
@@ -63,6 +100,7 @@ def signup():
         
         print("erfolgreich")
         requests.request("PUT", url, headers=headers, data=payload)
+        return redirect(url_for('index'))
     else: print('nicht erfolgreich')
 
     return render_template('signup.html', form=form, name=name)
