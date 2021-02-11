@@ -1,16 +1,17 @@
-from flask import Flask, render_template, url_for, render_template, request
-from rg_forms import NameForm
+from flask import Flask, render_template, url_for, render_template, request, redirect
+from rg_forms import NameForm, articleForm
 import requests
 from datetime import datetime, date, timezone
+import json
+from flask import jsonify
 
 #interner Systemname Test: icnad98qpdoq31
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
-url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article/id/3340"
-Artikelname="Fahrrasdfad"
-payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n        \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": 1613602800000\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \"pizzaa\"\r\n    }\r\n],\r\n    \"name\": \""+Artikelname+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
+urlget = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+#payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n        \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": 1613602800000\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \"pizzaa\"\r\n    }\r\n],\r\n    \"name\": \""+ANA+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
@@ -21,16 +22,59 @@ headers = {
 def home():
     return 'Home'
 
-@app.route('/formular')
+@app.route('/article', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    name = None
+    form = articleForm()
+
+    response = requests.request("GET", urlget, headers=headers) #data = payload
+    data = json.loads(response.text)
+    #Filtert und sortiert Daten
+    articleid = [data["result"][x]["id"] for x in range(len(data["result"]))]
+    #print(type(articleid))
+    articlenumber = [data["result"][x]["articleNumber"] for x in range(len(data["result"]))]
+    articlename = [data["result"][x]["name"] for x in range(len(data["result"]))]
+    #print(type(articlenumber))
+    
+    if form.validate_on_submit():
+        counter = 0
+        Artikelnr = form.Artikelnummer.data
+        print(Artikelnr)
+        print(type(Artikelnr))
+        matchnumber = 0
+        for x in articlenumber:
+            if x == Artikelnr:
+                matchnumber = counter
+            counter = counter + 1
+        
+        AID = articleid[matchnumber]
+        ANA = articlename[matchnumber]
+        ANU = articlenumber[matchnumber]
+        liste = str(AID) + "," + str(ANA) + "," + str(ANU)
+
+        
+        return redirect(url_for('signup', liste=liste))
+    
+    
+   
+    #return jsonify(data)  
+    return render_template('index.html', form=form, name=name)
 
 
 
-@app.route('/eintragen', methods=['GET', 'POST'])
-def signup():
+
+
+
+@app.route('/formular/<string:liste>', methods=['GET', 'POST'])
+def signup(liste):
+    liste = liste.split(",")
+    AID = liste[0]
+    ANA = liste[1]
+    ANU = liste[2]
     name = None
     form = NameForm()
+    url = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article/id/"+str(AID)
+    print(url)
     if form.validate_on_submit():
         
         #ID des Prüfers (INT)
@@ -58,11 +102,14 @@ def signup():
         accept = str(accept)
         
 
-        payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n    \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": "+timestamp+"\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \""+name+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3659\",\r\n            \"stringValue\": \""+mängel+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3671\",\r\n            \"booleanValue\": "+accept+"\r\n        }\r\n    ],\r\n     \"name\": \""+Artikelname+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n  \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
-        
-        
+        print(AID)
+        print(ANU)
+        print(ANA)
+        #payload="{\r\n    \"id\": \"3340\",\r\n    \"version\": \"30\",\r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleAlternativeQuantities\": [],\r\n    \"articleImages\": [],\r\n    \"articleNumber\": \"002\",\r\n    \"articlePrices\": [],\r\n    \"articleType\": \"BASIC\",\r\n    \"availableForSalesChannels\": [],\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"createdDate\": 1610284558822,\r\n    \"customAttributes\": [\r\n        {\r\n            \"attributeDefinitionId\": \"3546\",\r\n            \"dateValue\": 1602280800000\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3590\",\r\n            \"stringValue\": \"test\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3659\",\r\n            \"stringValue\": \"test\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3671\",\r\n            \"booleanValue\": true\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3733\",\r\n            \"numberValue\": \"456\"\r\n        }\r\n    ],\r\n    \"defaultWarehouseLevels\": [],\r\n    \"lastModifiedDate\": 1612977937045,\r\n    \"name\": \"Fahrrasdfad\",\r\n    \"productionArticle\": false,\r\n    \"productionBillOfMaterialItems\": [],\r\n    \"salesBillOfMaterialItems\": [],\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"supplySources\": [],\r\n    \"tags\": [],\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useAvailableForSalesChannels\": false,\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}"
+        payload="{\r\n    \"id\": \""+str(AID)+"\",\r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleAlternativeQuantities\": [],\r\n    \"articleImages\": [],\r\n    \"articleNumber\": \""+str(ANU)+"\",\r\n    \"articlePrices\": [],\r\n    \"articleType\": \"BASIC\",\r\n    \"availableForSalesChannels\": [],\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"createdDate\": 1610284558822,\r\n    \"customAttributes\": [\r\n        {\r\n            \"attributeDefinitionId\": \"3546\",\r\n            \"dateValue\": "+timestamp+"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3590\",\r\n            \"stringValue\": \""+mängel+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3659\",\r\n            \"stringValue\": \""+name+"\"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3671\",\r\n            \"booleanValue\": "+accept+"\r\n        },\r\n        {\r\n            \"attributeDefinitionId\": \"3733\",\r\n            \"numberValue\": \"456\"\r\n        }\r\n    ],\r\n    \"defaultWarehouseLevels\": [],\r\n    \"lastModifiedDate\": 1612977937045,\r\n    \"name\": \""+str(ANA)+"\",\r\n    \"productionArticle\": false,\r\n    \"productionBillOfMaterialItems\": [],\r\n    \"salesBillOfMaterialItems\": [],\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"supplySources\": [],\r\n    \"tags\": [],\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useAvailableForSalesChannels\": false,\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}"        
         print("erfolgreich")
-        requests.request("PUT", url, headers=headers, data=payload)
+        print(requests.request("PUT", url, headers=headers, data=payload))
+        
     else: print('nicht erfolgreich')
 
     return render_template('signup.html', form=form, name=name)

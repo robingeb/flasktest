@@ -16,7 +16,7 @@ def homepage():
     response = requests.request("GET", url, headers=headers) #data = payload
     data = json.loads(response.text)
     #Filtert und sortiert Daten
-    article = [data["result"][x]["name"] for x in range(len(data["result"]))]
+    article = [data["result"][x]["id"] for x in range(len(data["result"]))]
     #ARG = data (ohne filter)
     return jsonify(article)  
 

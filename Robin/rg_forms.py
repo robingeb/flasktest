@@ -16,3 +16,7 @@ class NameForm(FlaskForm):
     date1 = DateTimeField('Datum')
     date2 = DateField('nächstes Prüfdatum')
     submit = SubmitField('Submit')
+
+class articleForm(FlaskForm):
+    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
+    submit = SubmitField('Submit')
