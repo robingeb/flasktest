@@ -28,6 +28,8 @@ Datenstruktur = {
 }
 app = Flask(__name__)
 
+
+
 @app.route("/", methods=["GET", "POST"])
 def get_weclapp():
 
@@ -35,15 +37,80 @@ def get_weclapp():
     headers = {
     'AuthenticationToken': '8e98b02b-eb0e-4ea8-a443-9d8dcada588f'
     }
-    output = []
+    
     response = requests.request("GET", url, headers=headers) #data = payload
     data = json.loads(response.text)
-    #data["device_name"] = data["result"][0] #prints 1,2,3...Device Data
-    data["device_name"] = data["result"][0]
-    del data["result"]
-    #print(data)
-    for key in data:
-        return(jsonify({"Ergebnis": data}))
+    #res = {} 
+    #for key, value in data.items(): 
+        #res[int(key)] = [int(item) for item in value]
+    #data["device_name"] = data["name"] #prints 1,2,3...Device Data
+    #del data["name"]
+
+    # for i in list(data): 
+    #     if i == data["result"][0]["name"]:
+    #         data["device_name"] = data["result"][0]["name"]
+    #         del data["result"][0]["name"]
+            #data["device_name1"] = data["result"][1]["name"]
+            #data["device_name2"] = data["result"][2]["name"]
+    #del data["result"][0]["name"]
+    #del data["result"][1]["name"]
+
+    # class person(object):
+    #     def __init__(self,name):
+    #         self.name = name
+    # alternate = {person("device_name"): data["result"][0]["name"]}
+
+    # alternate[data["device_name"]] = data["result"][0]["name"] 
+
+    # del data["result"][0]["name"]
+    # data["device_name"] = data["result"][1]["name"]
+    # del data["result"][1]["name"]
+
+    #return(jsonify({"Ergebnis": data}))
+
+    data["result"][0]["device_name"] = data["result"][0]["name"]
+    # del data["result"][0]["name"]
+    # data["result"][1]["device_name"] = data["result"][1]["name"]
+    # del data["result"][1]["name"]
+    # data["result"][2]["device_name"] = data["result"][2]["name"]
+    # del data["result"][2]["name"]
+    # data["result"][3]["device_name"] = data["result"][3]["name"]
+    # del data["result"][3]["name"]
+    # data["result"][4]["device_name"] = data["result"][4]["name"]
+    # del data["result"][4]["name"]
+    # data["result"][5]["device_name"] = data["result"][5]["name"]
+    # del data["result"][5]["name"]
+    # data["result"][6]["device_name"] = data["result"][6]["name"]
+    # del data["result"][6]["name"]
+    # data["result"][7]["device_name"] = data["result"][7]["name"]
+    # del data["result"][7]["name"]
+    # data["result"][8]["device_name"] = data["result"][8]["name"]
+    # del data["result"][8]["name"]
+    # data["result"][9]["device_name"] = data["result"][9]["name"]
+    # del data["result"][9]["name"]
+    # data["result"][10]["device_name"] = data["result"][10]["name"]
+    # del data["result"][10]["name"]
+    # data["result"][11]["device_name"] = data["result"][11]["name"]
+    # del data["result"][11]["name"]
+    # data["result"][12]["device_name"] = data["result"][12]["name"]
+    # del data["result"][12]["name"]
+    # data["result"][13]["device_name"] = data["result"][13]["name"]
+    # del data["result"][13]["name"]
+    # data["result"][14]["device_name"] = data["result"][14]["name"]
+    # del data["result"][14]["name"]
+    #i = list(range(1,15))
+    for d in data.items():
+        for i in list(range(1,15)):
+            if d == data["result"][i]["name"]:
+                data["result"][i]["device_name"] = data["result"][i]["name"]
+    return (jsonify({"Ergebnis": data}))
+
+    
+    
+    
+    
+    #return(jsonify({"Ergebnis": data}))
+
 
 
 if __name__ == "__main__":
