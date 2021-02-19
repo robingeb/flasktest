@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm, Form
-from wtforms import StringField, PasswordField, SubmitField, IntegerField, TextAreaField, BooleanField, DateField, DateTimeField
+from wtforms import StringField, PasswordField, SubmitField, IntegerField, TextAreaField, BooleanField, DateField, DateTimeField, SelectField
 from wtforms.validators import Required
+import time
+from datetime import datetime, date, time, timedelta
 
 # class SignUpForm(FlaskForm):
 #     username = StringField('Username')
@@ -13,10 +15,28 @@ class NameForm(FlaskForm):
     name = StringField('What is your name?')
     mängel = TextAreaField('Mängel')
     accept = BooleanField('Gerät bestanden')
-    date1 = DateTimeField('Datum')
-    date2 = DateField('nächstes Prüfdatum')
+    date1 = DateTimeField(
+        'Datum', format="%Y-%m-%d %H:%M:%S",
+        default=datetime.today,
+        validators=[Required()])
+    date2 = DateField('nächstes Prüfdatum', format="%Y-%m-%d %H:%M:%S",
+        default=datetime.now() + timedelta(days=365),
+        validators=[Required()])
     submit = SubmitField('Submit')
+    
 
 class articleForm(FlaskForm):
+    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
+    submit = SubmitField('Submit')
+
+class choiceform(FlaskForm):
+
+    System = SelectField(u'ERP System', choices=[('weclapp', 'weclapp'), ('dynamics', 'Dynamics'), ('xentral', 'Xentral'), ('myfactory', 'Myfactory')])
+
+
+    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
+    submit = SubmitField('Submit')
+
+class erpform(FlaskForm):
     Artikelnummer = StringField('Artikelnummer', validators=[Required()])
     submit = SubmitField('Submit')

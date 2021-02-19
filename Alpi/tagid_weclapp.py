@@ -21,14 +21,10 @@ data = json.loads(response.text)
 #new_d = {str(key): str(value) for key, value in keys_values}
 #new_d["device_name"] = new_d["name"]
 #del new_d["name"]
-data["result"][0]["device_name"] = data["result"][0]["name"]
-
-#del data["result"][0]["name"]
-for key, value in data.items() :
-    print(key, value)
-    
-i = list(range(1,15))
-print(i)
+for key, value in data.items():
+    if key[0] == data["result"][0]["name"]:
+        data["result"][0]["device_name"] = data["result"][0]["name"]
+        print(key, value)
     
 #data["result"][2]["name"] !!!
 #print(({"Ergebnis": new_dict}))

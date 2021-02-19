@@ -69,47 +69,84 @@ def get_weclapp():
     #return(jsonify({"Ergebnis": data}))
 
     data["result"][0]["device_name"] = data["result"][0]["name"]
-    # del data["result"][0]["name"]
-    # data["result"][1]["device_name"] = data["result"][1]["name"]
-    # del data["result"][1]["name"]
-    # data["result"][2]["device_name"] = data["result"][2]["name"]
-    # del data["result"][2]["name"]
-    # data["result"][3]["device_name"] = data["result"][3]["name"]
-    # del data["result"][3]["name"]
-    # data["result"][4]["device_name"] = data["result"][4]["name"]
-    # del data["result"][4]["name"]
-    # data["result"][5]["device_name"] = data["result"][5]["name"]
-    # del data["result"][5]["name"]
-    # data["result"][6]["device_name"] = data["result"][6]["name"]
-    # del data["result"][6]["name"]
-    # data["result"][7]["device_name"] = data["result"][7]["name"]
-    # del data["result"][7]["name"]
-    # data["result"][8]["device_name"] = data["result"][8]["name"]
-    # del data["result"][8]["name"]
-    # data["result"][9]["device_name"] = data["result"][9]["name"]
-    # del data["result"][9]["name"]
-    # data["result"][10]["device_name"] = data["result"][10]["name"]
-    # del data["result"][10]["name"]
-    # data["result"][11]["device_name"] = data["result"][11]["name"]
-    # del data["result"][11]["name"]
-    # data["result"][12]["device_name"] = data["result"][12]["name"]
-    # del data["result"][12]["name"]
-    # data["result"][13]["device_name"] = data["result"][13]["name"]
-    # del data["result"][13]["name"]
-    # data["result"][14]["device_name"] = data["result"][14]["name"]
-    # del data["result"][14]["name"]
-    #i = list(range(1,15))
-    for d in data.items():
-        for i in list(range(1,15)):
-            if d == data["result"][i]["name"]:
-                data["result"][i]["device_name"] = data["result"][i]["name"]
-    return (jsonify({"Ergebnis": data}))
+    del data["result"][0]["name"]
+    data["result"][1]["device_name"] = data["result"][1]["name"]
+    del data["result"][1]["name"]
+    data["result"][2]["device_name"] = data["result"][2]["name"]
+    del data["result"][2]["name"]
+    data["result"][3]["device_name"] = data["result"][3]["name"]
+    del data["result"][3]["name"]
+    data["result"][4]["device_name"] = data["result"][4]["name"]
+    del data["result"][4]["name"]
+    data["result"][5]["device_name"] = data["result"][5]["name"]
+    del data["result"][5]["name"]
+    data["result"][6]["device_name"] = data["result"][6]["name"]
+    del data["result"][6]["name"]
+    data["result"][7]["device_name"] = data["result"][7]["name"]
+    del data["result"][7]["name"]
+    data["result"][8]["device_name"] = data["result"][8]["name"]
+    del data["result"][8]["name"]
+    data["result"][9]["device_name"] = data["result"][9]["name"]
+    del data["result"][9]["name"]
+    data["result"][10]["device_name"] = data["result"][10]["name"]
+    del data["result"][10]["name"]
+    data["result"][11]["device_name"] = data["result"][11]["name"]
+    del data["result"][11]["name"]
+    data["result"][12]["device_name"] = data["result"][12]["name"]
+    del data["result"][12]["name"]
+    data["result"][13]["device_name"] = data["result"][13]["name"]
+    del data["result"][13]["name"]
+    data["result"][14]["device_name"] = data["result"][14]["name"]
+    del data["result"][14]["name"]
+
+    data["result"][0]["serial number"] = data["result"][0]["articleNumber"]
+    del data["result"][0]["articleNumber"]
+    data["result"][1]["serial number"] = data["result"][1]["articleNumber"]
+    del data["result"][1]["articleNumber"]
+    data["result"][2]["serial number"] = data["result"][2]["articleNumber"]
+    del data["result"][2]["articleNumber"]
+    data["result"][3]["serial number"] = data["result"][3]["articleNumber"]
+    del data["result"][3]["articleNumber"]
+    data["result"][4]["serial number"] = data["result"][4]["articleNumber"]
+    del data["result"][4]["articleNumber"]
+    data["result"][5]["serial number"] = data["result"][5]["articleNumber"]
+    del data["result"][5]["articleNumber"]
+    data["result"][6]["serial number"] = data["result"][6]["articleNumber"]
+    del data["result"][6]["articleNumber"]
+    data["result"][7]["serial number"] = data["result"][7]["articleNumber"]
+    del data["result"][7]["articleNumber"]
+    data["result"][8]["serial number"] = data["result"][8]["articleNumber"]
+    del data["result"][8]["articleNumber"]
+    data["result"][9]["serial number"] = data["result"][9]["articleNumber"]
+    del data["result"][9]["articleNumber"]
+    data["result"][10]["serial number"] = data["result"][10]["articleNumber"]
+    del data["result"][10]["articleNumber"]
+    data["result"][11]["serial number"] = data["result"][11]["articleNumber"]
+    del data["result"][11]["articleNumber"]
+    data["result"][12]["serial number"] = data["result"][12]["articleNumber"]
+    del data["result"][12]["articleNumber"]
+    data["result"][13]["serial number"] = data["result"][13]["articleNumber"]
+    del data["result"][13]["articleNumber"]
+    data["result"][14]["serial number"] = data["result"][14]["articleNumber"]
+    del data["result"][14]["articleNumber"]
+    
+
+    #data["result"][0]int(["unitID"]) = data["result"][0]["unitID"]
+
+
+
+    # #i = list(range(1,15))
+    # for d in data.items():
+    #     for i in list(range(1,15)):
+    #         if d == data["result"][i]["name"]:
+    #             data["result"][i]["device_name"] = data["result"][i]["name"]
+    # return (jsonify({"Ergebnis": data}))
 
     
     
     
     
-    #return(jsonify({"Ergebnis": data}))
+    return(jsonify({"Ergebnis": data}))
 
 
 
