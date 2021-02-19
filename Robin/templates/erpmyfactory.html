@@ -1,0 +1,22 @@
+<h2>Sign Up</h2>
+<form method="POST">
+    {{ form.csrf_token }}
+    
+    <p>
+        {{form.URL.label}} <br>
+        {{form.URL(size=30)}}
+    </p>
+    <p>
+        {{form.Password.label}} <br>
+        {{form.Password(size=30)}}
+    </p>
+
+   
+    <p>
+        {{form.submit}} <br>
+      
+    </p>
+</form>
+{% if form.errors %}
+    {{ form.errors }}
+{% endif %}

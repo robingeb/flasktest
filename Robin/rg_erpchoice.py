@@ -1,31 +1,112 @@
 from flask import Flask, render_template, url_for, render_template, request, redirect
-from rg_forms import choiceform, erpform
+from rg_forms import NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics, erpformmyfactory, erpformxentral
 import requests
 from datetime import datetime, date, timezone
 import json
 from flask import jsonify
+import pymongo
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
-urlget = "https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
-#payload="{            \r\n    \"active\": true,\r\n    \"applyCashDiscount\": true,\r\n    \"articleNumber\": \"002\",\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"customAttributes\": [\r\n    {\r\n        \"attributeDefinitionId\": \"3546\",\r\n        \"dateValue\": 1613602800000\r\n    },\r\n    {\r\n        \"attributeDefinitionId\": \"3590\",\r\n        \"stringValue\": \"pizzaa\"\r\n    }\r\n],\r\n    \"name\": \""+ANA+"\",\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false\r\n}       "
-headers = {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json',
-  'AuthenticationToken': '22cca5be-4270-4f2d-9412-e7b582b4a85d',
-  'Cookie': '_sid_=1'
-}
-@app.route('/')
-def home():
-    return 'Home'
+
+app.config["MONGO_URI"] = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
+mongo = PyMongo(app)
+client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
+
+
+
+
+
 
 @app.route('/choice', methods=['GET', 'POST'])
-def index():
+def choice():
     name = None
     form = choiceform()
-    return render_template('choice.html', form = form, name = name)
+  
+    if form.validate_on_submit():
+        System = str(form.System.data)
+        
+        return redirect(url_for('erp', System = System))
+   
     
+    return render_template('choice.html', form=form, name=name)
+
+
+@app.route('/erp/<string:System>', methods=['GET', 'POST'])
+def erp(System):
+    name = None
+    db = client['Keys']
+    
+
+
+
+    if System == 'weclapp':
+        form = erpformweclapp()
+        col = db['Key_Weclapp']
+       
+
+        if form.validate_on_submit():
+            URL = form.URL.data
+            Password = form.Password.data
+            
+            datasets = col.insert_one({"URL": str(URL), "Password": str(Password)})
+
+        
+            return 'geht'
+
+        return render_template('erpweclapp.html', form=form, name=name)
+
+
+    if System == 'dynamics':
+        form = erpformdynamics()
+
+        if form.validate_on_submit():
+            Username = form.Username.data
+            Password = form.Password.data
+            zugangsdaten = str(Username) + "," + str(Password)
+
+        
+            return redirect(url_for('index', zugangsdaten = zugangsdaten))
+
+        return render_template('erpdynamics.html', form=form, name=name)
+    
+
+
+    if System == 'xentral':
+        form = erpformxentral()
+
+        if form.validate_on_submit():
+            URL = form.URL.data
+            Password = form.Password.data
+            zugangsdaten = str(URL) + "," + str(Password)
+
+        
+            return redirect(url_for('index', zugangsdaten = zugangsdaten))
+
+        return render_template('erpxentral.html', form=form, name=name)
+
+
+    if System == 'myfactory':
+        form = erpformmyfactory()
+
+        if form.validate_on_submit():
+            URL = form.URL.data
+            Password = form.Password.data
+            
+
+            
+           
+            
+
+        
+            return 'geht'
+
+        return render_template('erpmyfactory.html', form=form, name=name)
+    
+    return 'geht nicht'
 
 
 

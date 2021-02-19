@@ -1,11 +1,10 @@
 from flask import Flask, render_template, url_for, render_template, request, redirect
-from rg_forms import NameForm, articleForm
+from rg_forms import NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics
 import requests
 from datetime import datetime, date, timezone
 import json
 from flask import jsonify
 
-#interner Systemname Test: icnad98qpdoq31
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -22,8 +21,14 @@ headers = {
 def home():
     return 'Home'
 
-@app.route('/article', methods=['GET', 'POST'])
-def index():
+    
+
+@app.route('/article/<string:zugangsdaten>', methods=['GET', 'POST'])
+def index(zugangsdaten):
+    zugangsdaten = zugangsdaten.split(",")
+    Password = zugangsdaten[1]
+    Username = zugangsdaten[0]
+
     name = None
     form = articleForm()
 

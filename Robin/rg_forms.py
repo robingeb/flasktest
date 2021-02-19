@@ -32,11 +32,24 @@ class articleForm(FlaskForm):
 class choiceform(FlaskForm):
 
     System = SelectField(u'ERP System', choices=[('weclapp', 'weclapp'), ('dynamics', 'Dynamics'), ('xentral', 'Xentral'), ('myfactory', 'Myfactory')])
-
-
-    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
     submit = SubmitField('Submit')
 
-class erpform(FlaskForm):
-    Artikelnummer = StringField('Artikelnummer', validators=[Required()])
+class erpformweclapp(FlaskForm):
+    URL = StringField('url', validators=[Required()])
+    Password = StringField('password', validators=[Required()])
     submit = SubmitField('Submit')
+
+class erpformdynamics(FlaskForm):
+    Username = StringField('username', validators=[Required()])
+    Password = StringField('password', validators=[Required()])
+    submit = SubmitField('Submit')
+
+class erpformxentral(FlaskForm):
+    URL = StringField('url', validators=[Required()])
+    Password = StringField('password', validators=[Required()])
+    submit = SubmitField('Submit')
+
+class erpformmyfactory(FlaskForm):
+    URL = StringField('url', validators=[Required()])
+    Password = StringField('password', validators=[Required()])
+    submit = SubmitField('Submit')   
