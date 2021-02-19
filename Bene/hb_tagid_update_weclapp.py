@@ -25,7 +25,7 @@ def main():
     # Relevante Artikel (Geräte) aus WeClapp laden (get-Request)
     weclapp_ids, weclapp_instances = get_articel(url,auth, tagIdeasy_ids, device, weClappAPI)
 
-    # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisieren
+    # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben
     df_mapped = map_attributes(weclapp_ids, weclapp_instances, device, inventar)
 
     # aktualisierte Artikel in Weclapp updaten (put-Request)
@@ -81,9 +81,8 @@ def map_attributes(article_ids, instance_weclapp, device, inventar):
     # mappen der Werte aus device und inventar (TagIdeasy) zu den Pflichtfeldern für Weclapp    
     df_mapping = pd.DataFrame.from_dict(instance_weclapp)
     df_mapping.set_index("id", inplace=True)
-    # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp
-    df_mapping.drop('version', axis=1, inplace=True)    
-    #df_mapping.describe()
+    # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp (Fehlermeldung)
+    df_mapping.drop('version', axis=1, inplace=True)   
     print(df_mapping[["name", "articleNumber"]])
     for ids in article_ids: 
         # Beispielhaftes ändern des Namens und der Id
@@ -94,7 +93,7 @@ def map_attributes(article_ids, instance_weclapp, device, inventar):
     print(df_mapping[["name", "articleNumber"]])
     return df_mapping
 
-#4) Put-Request der zu ändernden Artikel
+#4) Put-Request der zu ändernden Artikel nach WeClapp
 def update_articel(df_mapped, weClappAPI):
     result = []
     columns = df_mapped.columns
