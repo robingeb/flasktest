@@ -1,0 +1,18 @@
+<h2>Sign Up</h2>
+<form method="POST">
+    {{ form.csrf_token }}
+    
+    <p>
+        {{form.System.label}} <br>
+        {{form.System(size=30)}}
+    </p>
+
+   
+    <p>
+        {{form.submit}} <br>
+      
+    </p>
+</form>
+{% if form.errors %}
+    {{ form.errors }}
+{% endif %}
