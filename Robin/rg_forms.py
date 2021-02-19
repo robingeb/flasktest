@@ -40,16 +40,18 @@ class erpformweclapp(FlaskForm):
     submit = SubmitField('Submit')
 
 class erpformdynamics(FlaskForm):
-    Username = StringField('username', validators=[Required()])
-    Password = StringField('password', validators=[Required()])
+    URL = StringField('URL', validators=[Required()])
+    BasicAuth = StringField('BasicAuth', validators=[Required()])
     submit = SubmitField('Submit')
 
 class erpformxentral(FlaskForm):
     URL = StringField('url', validators=[Required()])
     Password = StringField('password', validators=[Required()])
+    Username = StringField('Username', validators=[Required()])
     submit = SubmitField('Submit')
 
 class erpformmyfactory(FlaskForm):
     URL = StringField('url', validators=[Required()])
     Password = StringField('password', validators=[Required()])
+    Username = StringField('Username', validators=[Required()])
     submit = SubmitField('Submit')   

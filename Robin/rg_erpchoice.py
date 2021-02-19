@@ -62,14 +62,21 @@ def erp(System):
 
     if System == 'dynamics':
         form = erpformdynamics()
+        col = db['Key_Dynamics']
 
         if form.validate_on_submit():
-            Username = form.Username.data
-            Password = form.Password.data
-            zugangsdaten = str(Username) + "," + str(Password)
+            
+            
+            BasicAuth = form.BasicAuth.data
+            URL = form.URL.data
+
+            datasets = col.insert_one({"URL": str(URL), "BasicAuth": str(BasicAuth)})
+            
+        
+            
 
         
-            return redirect(url_for('index', zugangsdaten = zugangsdaten))
+            return 'geht'
 
         return render_template('erpdynamics.html', form=form, name=name)
     
@@ -77,28 +84,30 @@ def erp(System):
 
     if System == 'xentral':
         form = erpformxentral()
+        col = db['Key_Xentral']
 
         if form.validate_on_submit():
-            URL = form.URL.data
+            Username = form.Username.data
             Password = form.Password.data
-            zugangsdaten = str(URL) + "," + str(Password)
+            URL = form.URL.data
 
+            datasets = col.insert_one({"URL": str(URL), "Username": str(Username), "Password": str(Password)})
         
-            return redirect(url_for('index', zugangsdaten = zugangsdaten))
+            return 'geht'
 
         return render_template('erpxentral.html', form=form, name=name)
 
 
     if System == 'myfactory':
         form = erpformmyfactory()
+        col = db['Key_MyFactory']
 
         if form.validate_on_submit():
-            URL = form.URL.data
+            Username = form.Username.data
             Password = form.Password.data
-            
+            URL = form.URL.data
 
-            
-           
+            datasets = col.insert_one({"URL": str(URL), "Username": str(Username), "Password": str(Password)})
             
 
         
