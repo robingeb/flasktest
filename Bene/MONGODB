@@ -1,0 +1,22 @@
+import pymongo
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
+
+
+
+
+GANZ OBEN
+
+app.config["MONGO_URI"] = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
+mongo = PyMongo(app)
+client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
+
+
+IN ROUTE
+
+db = client['Prüfberichte']
+col = db['Prüfberichte']
+
+IN METHODE
+
+daten = col.find_one({"Artikelnummer": "002"})
