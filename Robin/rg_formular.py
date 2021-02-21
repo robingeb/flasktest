@@ -74,10 +74,12 @@ def signup(Artikelnr):
         timestamp = dt2.replace(tzinfo=timezone.utc).timestamp()
         timestamp = int(timestamp)
         timestamp = str(timestamp) + "000"
+        timestamp = int(timestamp)
         
         timestamp2 = dt.replace(tzinfo=timezone.utc).timestamp()
         timestamp2 = int(timestamp2)
         timestamp2 = str(timestamp2) + "000"
+        timestamp2 = int(timestamp2)
         print(timestamp2)
 
          
