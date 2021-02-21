@@ -30,7 +30,8 @@ def main():
 
     # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
     #tagIdeasy_ids = [[instance["core"]["serial_number"], instance["core"]["articel_id_buyer"], inventar["results"].index(instance) ] for instance in inventar["results"]]
-    tagIdeasy_ids = []
+    tagIdeasy_ids = [[instance["Artikelnummer"], inventar.index(instance)] for instance in inventar]
+    print(tagIdeasy_ids)
 
     # Relevante Artikel (Geräte) aus WeClapp laden (get-Request)
     #weclapp_ids, weclapp_instances = get_articel(url,auth, tagIdeasy_ids, device, weClappAPI)
@@ -59,11 +60,11 @@ def get_tagideasy(client_mongo):
 
     # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
     # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
-    daten = []
+    data = []
     last_update = 0
     for doc in col.find({"Datum":{"$gt":last_update}}):
-        daten.append(doc)    
-    print(daten)
+        data.append(doc)    
+    return data
     #return daten
     
 
