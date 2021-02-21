@@ -8,11 +8,11 @@ json File:
         "department_id": "34RxZCwUMYG9WXA526Qz" ,
         "place_id": "YFVj90X1OPPPSCejK0Ra" },
     "core": 
-        {"articel_id_buyer": "8iOq2LbxhkbbncWM3y8o0vKp3Mw1" , 
+        {"articel_id_buyer": +Artikelnr+ , 
          "build_year": "2019" ,
          "inventory_number": "123" ,
          "price": "300" ,
-         "serial_number": +str(ANU)+,
+         "serial_number": +Artikelnr+,
          "Startup_date": "16. Dezember 2020 um 10:41:33 UTC+1" ,
          "supplier_id": "boHE2bqk1VzJ4tBANsH8" },
     "historical_data":
@@ -27,11 +27,15 @@ json File:
           "rfid": "1234" },
     "media":
         {"attachments": [
-			{												
+			{	
+                "number": +lfdnr+,										
 				"name": +name+,
 				"timestamp": +timestamp+,
 				"mängel": +mängel+,
-				"accept" : +accept+,
+				"accept": +accept+,
+                "Datum": +timestamp2+,
+                "nächstes Prüfdatum": +timestamp+
+
 			}		
 		]},
     "status":

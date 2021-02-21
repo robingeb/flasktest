@@ -17,7 +17,9 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
 
-
+@app.route('/')
+def home():
+    return 'Home'
 
 
 
