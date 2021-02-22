@@ -34,13 +34,13 @@ def main():
     print(tagIdeasy_ids)
 
     # Relevante Artikel (Geräte) aus WeClapp laden (get-Request)
-    #weclapp_ids, weclapp_instances = get_articel(url,auth, tagIdeasy_ids, device, weClappAPI)
+    weclapp_ids, weclapp_instances = get_articel(url,auth, tagIdeasy_ids, weClappAPI)
 
     # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben
-    #df_mapped = map_attributes(weclapp_ids, weclapp_instances, device, inventar)
+    df_mapped = map_attributes(weclapp_ids, weclapp_instances, inventar)
 
     # aktualisierte Artikel in Weclapp updaten (put-Request)
-    #update_articel(df_mapped, weClappAPI)
+    update_articel(df_mapped, weClappAPI)
     #print(weclapp_ids)
 
 
@@ -69,7 +69,7 @@ def get_tagideasy(client_mongo):
     
 
 #2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
-def get_articel(url, auth, ids, device, weClappAPI ):    
+def get_articel(url, auth, ids, weClappAPI ):    
     # Abrufen aller Artikel    
     article_all = weClappAPI.get_request()
     #print(article_all)
@@ -77,20 +77,25 @@ def get_articel(url, auth, ids, device, weClappAPI ):
     article_update= []
     article_instances = []
     for instance in article_all["result"]:
+        # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
         for i, value in enumerate(ids):
             #print(value)
             if value[0] == instance["articleNumber"]:             
                 id = ids[i]                            
-                print(value[1])
-                device_index = get_device_index(value[1], device)
-                # id: [Seriennummer, Artikelnummer, index in Inventar-Liste, Index in Devicel-Liste , Weclapp-Id] 
-                id = id + [device_index, instance["id"]]
+                # print(value[1])
+                # device_index = get_device_index(value[1], device)
+                # id: [Seriennummer, Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id] 
+                # id = id + [device_index, instance["id"]]
+                id.append(instance["id"])
                 article_update.append(id)
                 article_instances.append(instance)
 
             #index_inventar =  
-    print(article_update)
-    #TODO: Testen, ob alle Devices von TagIdesay in Weclapp bereits angelegt sind, wenn nicht fehlende Werde ausgeben    
+    if len(article_update) == 0:
+        #TODO. Anderen weg finden die ausführung zu stoppen(quit)
+        raise Exception("Es gibt keine zu aktualisierenden Artikel") 
+
+        
     return article_update, article_instances
 
 def get_device_index(article_id, device):
@@ -102,23 +107,58 @@ def get_device_index(article_id, device):
             return i
 
 #3) mappen der zu ändernden Attribute
-def map_attributes(article_ids, instance_weclapp, device, inventar):   
+def map_attributes(article_ids, instance_weclapp, inventar): 
+    #print(inventar[ids[1]])  
 
     # mappen der Werte aus device und inventar (TagIdeasy) zu den Pflichtfeldern für Weclapp    
     df_mapping = pd.DataFrame.from_dict(instance_weclapp)
     df_mapping.set_index("id", inplace=True)
     # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp (Fehlermeldung)
     df_mapping.drop('version', axis=1, inplace=True)   
-    print(df_mapping[["name", "articleNumber"]])
+    #print(df_mapping[["name", "articleNumber"]])
+    # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
     for ids in article_ids: 
+        
         # Beispielhaftes ändern des Namens und der Id
-        df_mapping._set_value(ids[4], "name",  device["results"][ids[3]]["core"]["device_name"]) 
-        df_mapping._set_value(ids[4], "articleNumber", ids[0] )
-       
+        # df_mapping._set_value(ids[4], "name",  device["results"][ids[3]]["core"]["device_name"]) 
+        # df_mapping._set_value(ids[2], "articleNumber", ids[0] )
+        custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]
+        #print(custom_attributes[0])
+        #df_custom = pd.DataFrame.from_dict(custom_attributes)
+        #df_custom._set_value(0, )
+        print ("custom_attributes:")
+        print(custom_attributes)
+        
+        try:
+            update_custom_fields(inventar[ids[1]], custom_attributes[1])
+        except:
+            #print("Prüffelder müssen erstellt werden")
+            add_custom_fields(inventar[ids[1]], custom_attributes)
+
+        #print(custom_attributes[0]["dateValue"])
+        #df_mapping._set_value(ids[2], "customAttributes")      
         
     # print(df_mapping)
-    print(df_mapping[["name", "articleNumber"]])
+    # print(df_mapping[["name", "articleNumber"]])
     return df_mapping
+
+def update_custom_fields(inventar, custom_attributes):
+    custom_attributes[0]["dateValue"] = inventar["Datum"]
+    custom_attributes[1]["stringValue"] = inventar["name"]
+    custom_attributes[2]["stringValue"] = inventar["Mängel"]
+    custom_attributes[3]["stringValue"] = inventar["accept"]
+    # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
+    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+
+# Prüffelder erstellen, falls noch keine vorhanden sind
+# TODO: Booleand Wert anders abspeichern in MongoDB (true, false)
+def add_custom_fields(inventar, custom_attributes ):    
+    custom_attributes[0]["dateValue"] = inventar["Datum"]
+    custom_attributes[1]["stringValue"] = inventar["name"]
+    custom_attributes[2]["stringValue"] = inventar["Mängel"]
+    custom_attributes[3]["stringValue"] = inventar["accept"]
+    # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
+    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
 #4) Put-Request der zu ändernden Artikel nach WeClapp
 def update_articel(df_mapped, weClappAPI):
