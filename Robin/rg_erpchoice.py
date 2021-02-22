@@ -41,6 +41,9 @@ def choice():
 def erp(System):
     name = None
     db = client['Keys']
+    col = db['latestsystem']
+    datasets = col.insert_one({"System": str(System)})
+
     
 
 
