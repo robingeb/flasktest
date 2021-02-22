@@ -100,12 +100,12 @@ def signup(Artikelnr):
 
 
         
-        payload = "\r\n{\r\n    \"classification\": \r\n        {\"company_id\": \"BDx2AOwdcfwBI9Grb52w\" ,\r\n        \"department_id\": \"34RxZCwUMYG9WXA526Qz\" ,\r\n        \"place_id\": \"YFVj90X1OPPPSCejK0Ra\" },\r\n    \"core\": \r\n        {\"articel_id_buyer\": \""+Artikelnr+"\",\r\n         \"build_year\": \"2019\" ,\r\n         \"inventory_number\": \"123\" ,\r\n         \"price\": \""+price+"\" ,\r\n         \"serial_number\": \""+Artikelnr+"\" ,\r\n         \"Startup_date\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"supplier_id\": \"boHE2bqk1VzJ4tBANsH8\" },\r\n    \"historical_data\":\r\n        {\"created_at\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"created_by\": \"HKyUyCuVj0g12htOsAPmGCcffBq2\" ,\r\n         \"updated_at\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"updated_by\": \"HKyUyCuVj0g12htOsAPmGCcffBq2\" },\r\n    \"identifiers\":\r\n         {\"barcode\": \"1234\" ,\r\n          \"device_d\": \"1234\" ,\r\n          \"qr\": \"1234\" ,\r\n          \"rfid\": \"1234\" },\r\n    \"media\":\r\n        {\"attachments\": [\r\n        {\r\n        \"name\": \""+name+"\", \r\n        \"Datum\": "+timestamp2+",\r\n        \"nächstes Prüfdatum\": "+timestamp+"\r\n        \"mängel\": \""+mängel+"\",\r\n        \"accept\": "+accept+",\r\n        }\r\n        ]},\r\n    \"status\":\r\n        {\"archived\": true}\r\n}"
+        #payload = "\r\n{\r\n    \"classification\": \r\n        {\"company_id\": \"BDx2AOwdcfwBI9Grb52w\" ,\r\n        \"department_id\": \"34RxZCwUMYG9WXA526Qz\" ,\r\n        \"place_id\": \"YFVj90X1OPPPSCejK0Ra\" },\r\n    \"core\": \r\n        {\"articel_id_buyer\": \""+Artikelnr+"\",\r\n         \"build_year\": \"2019\" ,\r\n         \"inventory_number\": \"123\" ,\r\n         \"price\": \""+price+"\" ,\r\n         \"serial_number\": \""+Artikelnr+"\" ,\r\n         \"Startup_date\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"supplier_id\": \"boHE2bqk1VzJ4tBANsH8\" },\r\n    \"historical_data\":\r\n        {\"created_at\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"created_by\": \"HKyUyCuVj0g12htOsAPmGCcffBq2\" ,\r\n         \"updated_at\": \"16. Dezember 2020 um 10:41:33 UTC+1\" ,\r\n         \"updated_by\": \"HKyUyCuVj0g12htOsAPmGCcffBq2\" },\r\n    \"identifiers\":\r\n         {\"barcode\": \"1234\" ,\r\n          \"device_d\": \"1234\" ,\r\n          \"qr\": \"1234\" ,\r\n          \"rfid\": \"1234\" },\r\n    \"media\":\r\n        {\"attachments\": [\r\n        {\r\n        \"name\": \""+name+"\", \r\n        \"Datum\": "+timestamp2+",\r\n        \"nächstes Prüfdatum\": "+timestamp+"\r\n        \"mängel\": \""+mängel+"\",\r\n        \"accept\": "+accept+",\r\n        }\r\n        ]},\r\n    \"status\":\r\n        {\"archived\": true}\r\n}"
 
-        print(payload)
+        #print(payload)
         print("erfolgreich")
         #print(requests.request("PUT", url, headers=headers, data=payload))
-        return payload
+        return 'geht'
         
     else: print('nicht erfolgreich')
 
