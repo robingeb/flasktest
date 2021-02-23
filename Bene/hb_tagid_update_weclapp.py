@@ -6,6 +6,17 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from hb_weclapp import *
 
+
+
+
+# Um das letzte gespeicherte System aufzurufen:
+# db = client['Keys']
+# col = db['latestsystem']
+# System = col.find().limit(1).sort({$natural:-1})
+
+
+
+
 # Ziel ändern des Namens von "Standard-Schlinge 1A" auf "Standard-Schlinge 1AA"
 # TODO: Welche Felder werden benötigt, und welche Felder sind sinnvoll zu ändern
 
