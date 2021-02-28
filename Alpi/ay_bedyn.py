@@ -4,7 +4,7 @@ import json
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-from ay_dynamics.py import *
+from ay_dynamics import *
 
 
 
@@ -23,7 +23,7 @@ def main():
     client = MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
     
     #Instantiate Dynamics-API
-    dynamicsAPI = dynamicsAPI(url, auth)
+    dynamicsAPI = DynamicsAPI(url, auth)
     
     # Inventar und Device Liste von TagIdeasy erhalten
     # inventar, device = get_tagideasy()
