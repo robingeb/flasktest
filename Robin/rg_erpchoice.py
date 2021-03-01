@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, render_template, request, redirect
-from rg_forms import NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics, erpformmyfactory, erpformxentral
+from rg_forms import NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics, erpformmyfactory, erpformxentral, choicehomeForm
 import requests
 from datetime import datetime, date, timezone
 import json
@@ -17,9 +17,17 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return 'Home'
+    name = None
+    form = choicehomeForm()
+
+
+    if form.validate_on_submit():
+        return redirect(url_for('choice'))
+
+
+    return render_template('choice_home.html', form=form, name=name)
 
 
 
