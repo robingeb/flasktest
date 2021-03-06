@@ -146,7 +146,7 @@ def get_weclapp():
     
     
     
-    return(jsonify({"Ergebnis": data}))
+    return jsonify({"Ergebnis": data})
 
 
 

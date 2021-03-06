@@ -26,7 +26,7 @@ app = Flask(__name__)
 #mehrere db & collections können über eine Request in einer URL abgefragt werden
 #find() + limit um Response auf ein Paar Output-Elemente zu reduzieren
 
-app.config["MONGO-URI"] = "mongodb+srv://USER1:mamu13@cluster0.loonh.mongodb.net/test?authSource=admin&replicaSet=atlas-n1o4yx-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
+app.config["MONGO_URI"] = "mongodb+srv://USER1:mamu13@cluster0.loonh.mongodb.net/test?authSource=admin&replicaSet=atlas-n1o4yx-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
 mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb+srv://USER1:mamu13@cluster0.loonh.mongodb.net/test?authSource=admin&replicaSet=atlas-n1o4yx-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
 

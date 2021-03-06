@@ -55,3 +55,9 @@ class erpformmyfactory(FlaskForm):
     Password = StringField('password', validators=[Required()])
     Username = StringField('Username', validators=[Required()])
     submit = SubmitField('Submit')   
+
+class articlehomeForm(FlaskForm):
+    submit = SubmitField('Prüfbericht')
+
+class choicehomeForm(FlaskForm):
+    submit = SubmitField('Systemauswahl')
