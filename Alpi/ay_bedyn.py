@@ -147,22 +147,22 @@ def update_custom_fields(inventar, custom_attributes):
 
 
     Prüfbericht = "Prüfbericht:\n Name des Prüfers: "+inventar["Datum"]+"\n Mäng erl"
-    custom_attributes[0]["dateValue"] = inventar["Datum"]
-    custom_attributes[1]["stringValue"] = inventar["name"]
-    custom_attributes[2]["stringValue"] = inventar["Mängel"]
-    custom_attributes[3]["stringValue"] = inventar["accept"]
+    custom_attributes[0]["lastModifiedDateTime"] = inventar["Datum"]
+    custom_attributes[1]["device_name"] = inventar["name"]
+    #custom_attributes[2]["stringValue"] = inventar["Mängel"]
+    #custom_attributes[3]["stringValue"] = inventar["accept"]
     # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
-    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+    #custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
 # Prüffelder erstellen, falls noch keine vorhanden sind
 # TODO: Booleand Wert anders abspeichern in MongoDB (true, false)
 def add_custom_fields(inventar, custom_attributes ):    
-    custom_attributes[0]["dateValue"] = inventar["Datum"]
-    custom_attributes[1]["stringValue"] = inventar["name"]
-    custom_attributes[2]["stringValue"] = inventar["Mängel"]
-    custom_attributes[3]["stringValue"] = inventar["accept"]
+    custom_attributes[0]["lastModifiedDateTime"] = inventar["Datum"]
+    custom_attributes[1]["device_name"] = inventar["device_name"]
+    #custom_attributes[2]["stringValue"] = inventar["Mängel"]
+    #custom_attributes[3]["stringValue"] = inventar["accept"]
     # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
-    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+    #custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
 #4) Put-Request der zu ändernden Artikel nach Dynamics
 def update_articel(df_mapped, dynamicsApi):
