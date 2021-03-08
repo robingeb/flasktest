@@ -35,6 +35,7 @@ def get_config(client_mongo):
   
 def updates(system, mongo_url, client_mongo):
     # get erp-System authentification data and start update function of the System
+    # TODO: update Funktion für andere ERP Systeme 
     db = client_mongo['Keys']
     if system == "dynamics":
         col = db["Key_Dynamics"]
@@ -53,9 +54,7 @@ def updates(system, mongo_url, client_mongo):
         system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
     else: 
         print("Error: No such Erp System in Database")
-    
-
-    
+     
     
     
 
