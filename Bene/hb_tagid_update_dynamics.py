@@ -4,19 +4,15 @@ import json
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-from ay_dynamics import *
-
-
-
-
-
+from hb_dynamics import *
 
 
 def main():
     # Authentifizierungsdaten für Dynamics-Request
-    url = "http://10.105.11.42:7048/BC140/api/v1.0/items"
+    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" #?$filter=displayName eq 'Schutzblech vorn'"
+    #payload = {}
     auth = {
-    'AuthenticationToken': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
+    'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
     }
 
     
@@ -24,7 +20,7 @@ def main():
     
     #Instantiate Dynamics-API
     dynamicsAPI = DynamicsAPI(url, auth)
-    
+    print("try")
     # Inventar und Device Liste von TagIdeasy erhalten
     # inventar, device = get_tagideasy()
     inventar = get_tagideasy(client)
@@ -46,18 +42,11 @@ def main():
 
 
 #1) Get Artikel von TagIdeasy, welche geändert werden sollen
-def get_tagideasy(client_mongo):
-    #TODO: Mit Prüfmanagementdummy verknüpfen
-    # with open("1_example_inventar.json") as f:
-    #     inventar = json.loads(f.read()) 
-    # with open("1_example_geraete.json") as f:
-    #     device = json.loads(f.read())
-    # return inventar, device
+def get_tagideasy(client_mongo):   
 
     # Collection "Prüfberichte" in MongoDB auswählen
     db = client_mongo['Prüfberichte']
-    col = db['Prüfberichte']
-    #daten = col.find_one({"Artikelnummer": "002"})
+    col = db['Prüfberichte']    
 
     # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
     # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
@@ -73,7 +62,7 @@ def get_tagideasy(client_mongo):
 def get_articel(url, auth, ids, dynamicsAPI ):    
     # Abrufen aller Artikel    
     article_all = dynamicsAPI.get_request()
-    #print(article_all)
+    print(article_all)
     # Aussortieren der nicht zu updatenden Artikel
     article_update= []
     article_instances = []
@@ -92,6 +81,8 @@ def get_articel(url, auth, ids, dynamicsAPI ):
                 article_instances.append(instance)
 
             #index_inventar =  
+    print(article_update)
+    # print(article_instances)
     if len(article_update) == 0:
         #TODO. Anderen weg finden die ausführung zu stoppen(quit)
         raise Exception("Es gibt keine zu aktualisierenden Artikel") 
@@ -116,24 +107,19 @@ def map_attributes(article_ids, instance_dynamics, inventar):
     df_mapping.set_index("id", inplace=True)
     # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp (Fehlermeldung)
     #df_mapping.drop('version', axis=1, inplace=True)   #TODO: kein .drop
-    #print(df_mapping[["name", "articleNumber"]])
+    print(df_mapping[["displayName", "number"]])
     # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
-    for ids in article_ids: 
+    for ids in article_ids:              
         
-        # Beispielhaftes ändern des Namens und der Id
-        # df_mapping._set_value(ids[4], "name",  device["results"][ids[3]]["core"]["device_name"]) 
-        # df_mapping._set_value(ids[2], "articleNumber", ids[0] )
-        custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]
-        #print(custom_attributes[0])
-        #df_custom = pd.DataFrame.from_dict(custom_attributes)
-        #df_custom._set_value(0, )
-        print ("custom_attributes:")
-        print(custom_attributes)        
-        try:
-            update_custom_fields(inventar[ids[1]], custom_attributes[1])
-        except:
-            #print("Prüffelder müssen erstellt werden")
-            add_custom_fields(inventar[ids[1]], custom_attributes)
+        #custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]        
+        # print ("custom_attributes:")
+        # print(custom_attributes)           
+        update_custom_fields(inventar[ids[1]])     
+        # try:
+        #     update_custom_fields(inventar[ids[1]])
+        # except:
+        #     #print("Prüffelder müssen erstellt werden")
+        #     add_custom_fields(inventar[ids[1]])
 
         #print(custom_attributes[0]["dateValue"])
         #df_mapping._set_value(ids[2], "customAttributes")      
@@ -142,24 +128,25 @@ def map_attributes(article_ids, instance_dynamics, inventar):
     # print(df_mapping[["name", "articleNumber"]])
     return df_mapping
 
-def update_custom_fields(inventar, custom_attributes):
+def update_custom_fields(inventar):
     # Prüfbericht = "Prüfbericht:\n Name des Prüfers: "+inventar["Datum"]+"\n Mäng erl"
-    custom_attributes[0]["dateValue"] = inventar["Datum"]
-    custom_attributes[1]["stringValue"] = inventar["name"]
-    custom_attributes[2]["stringValue"] = inventar["Mängel"]
-    custom_attributes[3]["stringValue"] = inventar["accept"]
+    date = str(inventar["Datum"])
+    name = inventar["name"]
+    defects = inventar["Mängel"]
+    accept = str(inventar["accept"])
     # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
-    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+    next_inspection = str(inventar["nächstes Prüfdatum"])
+    print (date, name, defects, accept, next_inspection, sep=(", "))
 
 # Prüffelder erstellen, falls noch keine vorhanden sind
 # TODO: Booleand Wert anders abspeichern in MongoDB (true, false)
-def add_custom_fields(inventar, custom_attributes ):    
-    custom_attributes[0]["dateValue"] = inventar["Datum"]
-    custom_attributes[1]["stringValue"] = inventar["name"]
-    custom_attributes[2]["stringValue"] = inventar["Mängel"]
-    custom_attributes[3]["stringValue"] = inventar["accept"]
-    # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
-    custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+# def add_custom_fields(inventar):    
+#     custom_attributes[0]["dateValue"] = inventar["Datum"]
+#     custom_attributes[1]["stringValue"] = inventar["name"]
+#     custom_attributes[2]["stringValue"] = inventar["Mängel"]
+#     custom_attributes[3]["stringValue"] = inventar["accept"]
+#     # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
+#     custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
 #4) Put-Request der zu ändernden Artikel nach Dynamics
 def update_articel(df_mapped, dynamicsApi):
