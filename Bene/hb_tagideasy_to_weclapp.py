@@ -37,6 +37,7 @@ def main():
         r = weClappAPI.post_request(final_json)
         result.append(r)
     print(result)
+    return result
 
 def get_tagideasy():
     with open("1_example_inventar.json") as f:
