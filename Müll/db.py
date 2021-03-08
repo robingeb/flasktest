@@ -2,8 +2,15 @@ import pymongo
 from pymongo import MongoClient
 
 cluster = MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
-db = cluster["Testdaten"]
-collection = db["customers"]
+
+
+
+db = cluster['Keys']
+col = db['Updatefreq']
+
+
+    
+datasets = col.insert_one({"time": int(1209600)})
 
 
 #zum Testen des Codes ID anpassen
@@ -13,4 +20,4 @@ collection = db["customers"]
 #Alpi: 31-40
 post = {"_id":5, "name":"Robin", "score":1}
 
-collection.insert_one(post)
+col.insert_one(post)

@@ -144,6 +144,9 @@ def map_attributes(article_ids, instance_dynamics, inventar):
     return df_mapping
 
 def update_custom_fields(inventar, custom_attributes):
+
+
+    Prüfbericht = "Prüfbericht:\n Name des Prüfers: "+inventar["Datum"]+"\n Mäng erl"
     custom_attributes[0]["dateValue"] = inventar["Datum"]
     custom_attributes[1]["stringValue"] = inventar["name"]
     custom_attributes[2]["stringValue"] = inventar["Mängel"]
