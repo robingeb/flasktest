@@ -104,7 +104,7 @@ def map_attributes(article_ids, instance_dynamics, inventar):
         note = create_note(inventar[ids[1]])
         print(note)
         df_mapping.at[ids[2], "notes"] = note     
-        print(df_mapping.loc[ids[2]]["notes"])
+        # print(df_mapping.loc[ids[2]]["notes"])
     # print(df_mapping["display_name", "notes"].head())
     return df_mapping
 
