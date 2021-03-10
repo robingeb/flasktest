@@ -6,8 +6,6 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from hb_weclapp import *
 
-# Ziel ändern des Namens von "Standard-Schlinge 1A" auf "Standard-Schlinge 1AA"
-# TODO: Welche Felder werden benötigt, und welche Felder sind sinnvoll zu ändern
 
 def test():
     # Authentifizierungsdaten für Weclapp-Request
@@ -25,7 +23,11 @@ class UpdateWeClapp():
 
     def update(self):
         # MongoDB instantiate
-        client = MongoClient(self.mongo_url)
+        # TODO: PF. connection failed (wie darauf reagieren, Ausgabe: Error, Datenbank Zugriff nicht möglich)
+        try:
+            client = MongoClient(self.mongo_url)
+        except:
+            raise Exception("Error: Zugriff auf MongoDB nicht möglich")
         
         #Instatiate WeClapp-API
         weClappAPI = WeClappAPI(self.url, self.auth)
@@ -51,12 +53,8 @@ class UpdateWeClapp():
 
 
     #1) Get Artikel von TagIdeasy, welche geändert werden sollen
-    def get_tagideasy(self, client_mongo):    
-        # with open("1_example_inventar.json") as f:
-        #     inventar = json.loads(f.read()) 
-        # with open("1_example_geraete.json") as f:
-        #     device = json.loads(f.read())
-        # return inventar, device
+    def get_tagideasy(self, client_mongo):  
+        
 
         # Collection "Prüfberichte" in MongoDB auswählen
         db = client_mongo['Prüfberichte']
@@ -65,6 +63,7 @@ class UpdateWeClapp():
 
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
         # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
+        # TODO: Falsche Url, Authentifizierung
         data = []
         last_update = 0
         for doc in col.find({"Datum":{"$gt":last_update}}):
@@ -72,12 +71,14 @@ class UpdateWeClapp():
         return data
         #return daten
         
-
     #2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, ids, weClappAPI ):    
-        # Abrufen aller Artikel    
-        article_all = weClappAPI.get_request()
-        print(article_all)
+        # Abrufen aller Artikel
+        try:    
+            article_all = weClappAPI.get_request()
+        except:
+            raise Exception("Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
+        # print(article_all)
         
         # Aussortieren der nicht zu updatenden Artikel
         article_update= []
@@ -88,18 +89,16 @@ class UpdateWeClapp():
                 print(value)
                 if value[0] == instance["articleNumber"]:             
                     id = ids[i]                            
-                    # print(value[1])
-                    # device_index = get_device_index(value[1], device)
                     # id: [Seriennummer, Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id] 
-                    # id = id + [device_index, instance["id"]]
                     id.append(instance["id"])
                     article_update.append(id)
                     article_instances.append(instance)
         
                 #index_inventar =  
         if len(article_update) == 0:
-            #TODO. Anderen weg finden die ausführung zu stoppen(quit)
-            raise Exception("Es gibt keine zu aktualisierenden Artikel") 
+            #TODO. quti testen mit JobScheduler
+            # raise Exception("Es gibt keine zu aktualisierenden Artikel") 
+            quit()
 
             
         return article_update, article_instances
@@ -113,55 +112,35 @@ class UpdateWeClapp():
     #             return i
 
     #3) mappen der zu ändernden Attribute
-    def map_attributes(self, article_ids, instance_weclapp, inventar): 
-        #print(inventar[ids[1]])  
-
+    def map_attributes(self, article_ids, instance_weclapp, inventar):       
         # mappen der Werte aus device und inventar (TagIdeasy) zu den Pflichtfeldern für Weclapp    
         df_mapping = pd.DataFrame.from_dict(instance_weclapp)
         df_mapping.set_index("id", inplace=True)
         # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp (Fehlermeldung)
-        df_mapping.drop('version', axis=1, inplace=True)   
-        #print(df_mapping[["name", "articleNumber"]])
+        df_mapping.drop('version', axis=1, inplace=True) 
         # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
-        for ids in article_ids:             
-            # Beispielhaftes ändern des Namens und der Id
-            # df_mapping._set_value(ids[4], "name",  device["results"][ids[3]]["core"]["device_name"]) 
-            # df_mapping._set_value(ids[2], "articleNumber", ids[0] )
-            custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]
-            #print(custom_attributes[0])
-            #df_custom = pd.DataFrame.from_dict(custom_attributes)
-            #df_custom._set_value(0, )
-            #print ("custom_attributes:")
-            #print(custom_attributes)
-            
+        for ids in article_ids:          
+            custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]            
             try:
                 self.update_custom_fields(inventar[ids[1]], custom_attributes[1])
             except:            
                 self.add_custom_fields(inventar[ids[1]], custom_attributes)
-
-            #print(custom_attributes[0]["dateValue"])
-            #df_mapping._set_value(ids[2], "customAttributes")      
-            
-        # print(df_mapping)
-        # print(df_mapping[["name", "articleNumber"]])
         return df_mapping
 
+    # Prüffelder aktualisieren
     def update_custom_fields(self, inventar, custom_attributes):
         custom_attributes[0]["dateValue"] = inventar["Datum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
-        custom_attributes[3]["stringValue"] = inventar["accept"]
-        # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
+        custom_attributes[3]["stringValue"] = inventar["accept"]        
         custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
     # Prüffelder erstellen, falls noch keine vorhanden sind
-    # TODO: Boolschen Wert anders abspeichern in MongoDB (true, false)
     def add_custom_fields(self, inventar, custom_attributes ):    
         custom_attributes[0]["dateValue"] = inventar["Datum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
         custom_attributes[3]["stringValue"] = inventar["accept"]
-        # custom_attributes[4]["stringValue"] = inventar[ids[1]]["Artikelnummer"]
         custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
 
     #4) Put-Request der zu ändernden Artikel nach WeClapp
@@ -170,17 +149,14 @@ class UpdateWeClapp():
         columns = df_mapped.columns
         for index, row in df_mapped.iterrows():
             # transform row zu Dataframe für json transformation
-            df_article = pd.DataFrame([row], columns= columns)
-            #df_article = df_article.rename_axis('id').reset_index()
-            # print(df_article)
+            df_article = pd.DataFrame([row], columns= columns)            
 
             # transform to json
             result_json = df_article.to_json(orient="records")
             parsed = json.loads(result_json) [0]
             final_json = json.dumps(parsed, indent=4)
-            # print(final_json)
 
-            # put single articles to weclapp        
+            # put-request für aktualisiere Artikel         
             r = weClappAPI.put_request(final_json, index)
             result.append(r)
         return result
