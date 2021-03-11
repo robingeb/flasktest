@@ -29,75 +29,30 @@ col = db['Prüfberichte']
 
 last_update = 0
 Prüfbericht = []
+Pruefbericht = []
 
 for doc in col.find({"Datum":{"$gt":last_update}}):
-        Prüfbericht.append(doc)    
+    Prüfbericht.append(doc)    
     
+Prüfbericht = str(Prüfbericht)
+Prüfbericht = Prüfbericht.split(",")
+
+for x in Prüfbericht:
+    z = x.split(": ")
+    Pruefbericht.append(z[1])
+
+print(Pruefbericht)
+
 
  
-    
-print(Prüfbericht)
-print("hiasdf")
-    
+Prüfdatum = Pruefbericht[5]
+name = Pruefbericht[2]
+maengel = Pruefbericht[1]
+accept = str(Pruefbericht[3])    
+next_inspection = str(Prüfbericht[4])
+Prüftext = "Prüfbericht: \n Prüfdatum: " + Prüfdatum + "\n Mängel: " + maengel + " \n Prüfung bestanden: " + accept + "\n Nächster Prüftermin: " + next_inspection
+print(Pruefbericht[6])
 
+Aritkelnummer = Pruefbericht[6]
 
-def get_device_index(article_id, device):
-    for i, dev in  enumerate(device["value"]):
-        #print(article_id, dev["core"]["articel_id_manufacturer"] )
-        if dev["core"]["articel_id_manufacturer"] == article_id:
-            # print (i)
-            return i
-
-#3) mappen der zu ändernden Attribute
-def map_attributes(article_ids, instance_dynamics, inventar):     
-    # mappen der Werte aus device und inventar (TagIdeasy) zu den Pflichtfeldern für Weclapp    
-    df_mapping = pd.DataFrame.from_dict(instance_dynamics)
-    df_mapping.set_index("id", inplace=True)
-    # print(df_mapping.head())
-    df_mapping["notes"] = ""
-    
-    # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
-    for ids in article_ids:            
-        note = create_note(inventar[ids[1]])
-        print(note)
-        df_mapping.at[ids[2], "notes"] = note     
-        # print(df_mapping.loc[ids[2]]["notes"])
-    # print(df_mapping["display_name", "notes"].head())
-    return df_mapping
-
-def create_note(inventar):
-    # TODO: @Robin, Zeit in lesbar convertieren
-    date = str(inventar["Datum"])
-    name = inventar["name"]
-    defects = inventar["Mängel"]
-    accept = str(inventar["accept"])    
-    next_inspection = str(inventar["nächstes Prüfdatum"])
-    new_note = "Pruefbericht: \n Pruefdatum: " + date + "\n Maengel: " + defects + " \n Pruefung bestanden: " + accept + "\n Naechster Prueftermin: " + next_inspection
-    print (new_note)
-    return new_note
-
-
-#4) Put-Request der zu ändernden Artikel nach Dynamics
-def update_articel(df_mapped, dynamicsApi):
-    # Beispiel Upload der aktualisierten Artikel
-    # result = []
-    # columns = df_mapped.columns
-    # for index, row in df_mapped.iterrows():
-    #     # transform row zu Dataframe für json transformation
-    #     df_article = pd.DataFrame([row], columns= columns)
-
-    #     # transform to json
-    #     result_json = df_article.to_json(orient="records")
-    #     parsed = json.loads(result_json) [0]
-    #     final_json = json.dumps(parsed, indent=4)#     
-
-    #     # put single articles to weclapp        
-    #     r = dynamicsApi.put_request(final_json, index)
-    #     result.append(r)
-
-    # json-File mit allen aktualisierten Artikeln
-    result_json = df_mapped.to_json(orient="records")
-    parsed = json.loads(result_json) [0]
-    final_json = json.dumps(parsed, indent=4)
-    print(final_json)
-
+print(article_all)
