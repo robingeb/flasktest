@@ -14,7 +14,7 @@ def get_request():
     response = requests.request("GET", url, auth=(auth['username'], auth['password']))    
     content_dict = xmltodict.parse(response.text)
     #return jsonify(content_dict)
-    print(response)
+    print(response.text)
     
 
 
