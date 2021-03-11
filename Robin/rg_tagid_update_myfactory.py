@@ -6,9 +6,11 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 import requests
 import xmltodict
+from fpdf import FPDF 
+from datetime import date, datetime
 
 
-
+pdf = FPDF() 
 url = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel"
 auth = {
 'username': 'HB',
@@ -45,14 +47,47 @@ print(Pruefbericht)
 
 
  
-Prüfdatum = Pruefbericht[5]
+Prüfdatum = Pruefbericht[4]
 name = Pruefbericht[2]
 maengel = Pruefbericht[1]
 accept = str(Pruefbericht[3])    
-next_inspection = str(Prüfbericht[4])
+next_inspection = str(Pruefbericht[5])
 Prüftext = "Prüfbericht: \n Prüfdatum: " + Prüfdatum + "\n Mängel: " + maengel + " \n Prüfung bestanden: " + accept + "\n Nächster Prüftermin: " + next_inspection
-print(Pruefbericht[6])
+#print(Pruefbericht[6])
 
 Aritkelnummer = Pruefbericht[6]
 
-print(article_all)
+#print(article_all)
+#   
+
+pdf.add_page() 
+pdf.set_font("Arial", size = 15) 
+pdf.cell(200, 10, txt = "Prüfbericht:",  
+         ln = 1, align = 'C') 
+
+pdf.cell(200, 10, txt = "Prüfdatum: " + str(datetime.fromtimestamp(int(Prüfdatum) / 1e3)), 
+         ln = 2, align = 'C')  
+pdf.cell(200, 10, txt = "Mängel: " + maengel, 
+         ln = 2, align = 'C') 
+pdf.cell(200, 10, txt = "Prüfung bestanden: " + accept, 
+         ln = 2, align = 'C') 
+pdf.cell(200, 10, txt = "Nächster Prüftermin: " + str(datetime.fromtimestamp(int(next_inspection) / 1e3)), 
+         ln = 2, align = 'C') 
+
+
+
+print(type(next_inspection))
+print(type(Prüfdatum))
+print(Prüfdatum)
+print(next_inspection)
+pdf.output("Prüfbericht.pdf")    
+
+
+
+uploadurl = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel/"+str(Aritkelnummer)+"/document/Prüfbericht.pdf"
+
+
+
+#requests.request("POST", uploadurl, auth=(auth['username'], auth['password']))  
+
+
