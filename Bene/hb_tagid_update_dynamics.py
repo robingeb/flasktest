@@ -4,7 +4,7 @@ import json
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-from hb_dynamics import *
+from Bene.hb_dynamics import *
 
 
 def main():
@@ -102,7 +102,7 @@ def map_attributes(article_ids, instance_dynamics, inventar):
     # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
     for ids in article_ids:            
         note = create_note(inventar[ids[1]])
-        print(note)
+            print(note)
         df_mapping.at[ids[2], "notes"] = note     
         # print(df_mapping.loc[ids[2]]["notes"])
     # print(df_mapping["display_name", "notes"].head())

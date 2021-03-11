@@ -4,7 +4,7 @@ import json
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-from hb_weclapp import *
+from Bene.hb_weclapp import *
 
 
 def test():
@@ -38,8 +38,7 @@ class UpdateWeClapp():
 
         # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
         #tagIdeasy_ids = [[instance["core"]["serial_number"], instance["core"]["articel_id_buyer"], inventar["results"].index(instance) ] for instance in inventar["results"]]
-        tagIdeasy_ids = [[instance["Artikelnummer"], inventar.index(instance)] for instance in inventar]
-        print(tagIdeasy_ids)
+        tagIdeasy_ids = [[instance["Artikelnummer"], inventar.index(instance)] for instance in inventar]        
 
         # Relevante Artikel (Geräte) aus WeClapp laden (get-Request)
         weclapp_ids, weclapp_instances = self.get_articel(tagIdeasy_ids, weClappAPI)
@@ -85,8 +84,7 @@ class UpdateWeClapp():
         article_instances = []
         for instance in article_all["result"]:
             # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
-            for i, value in enumerate(ids):
-                print(value)
+            for i, value in enumerate(ids):                
                 if value[0] == instance["articleNumber"]:             
                     id = ids[i]                            
                     # id: [Seriennummer, Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id] 
