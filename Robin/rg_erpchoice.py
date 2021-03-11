@@ -11,13 +11,17 @@ from pymongo import MongoClient
 from flask_apscheduler import APScheduler
 # from middleware import *
 # from sy
-# import Bene.middleware
+#import sys
+#import os
+#sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+from Bene.middleware import *
 
 # set PYTHONPATH=%PYTHONPATH%; C:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\
 
 # bene: set configuration values
 class Config(object):
     SCHEDULER_API_ENABLED = True
+    
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -30,12 +34,12 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
 # bene: initialize Middleware Control Class
-# middleware = MiddlewareControl()
+middleware = MiddlewareControl()
 
 # bene: initialize scheduler
 scheduler = APScheduler()
 scheduler.init_app(app)
-scheduler.start()
+scheduler.start()   
 
 
 # bene: Scheduler Job (Cron um zu regelmäßigen Zeitpunkten einen Job auszuführen, Interval in regelmäßigen Intervallen einen Job auszuführen)
@@ -44,11 +48,11 @@ scheduler.start()
 # def job2():
 #     print('Job 2 executed')
 
-# # interval test
-# @scheduler.task('interval', id='do_job_1', seconds=60, misfire_grace_time=900)
-# def job1():
-#     print("job done")
-#     middleware.main()
+# interval test
+#@scheduler.task('interval', id='do_job_1', seconds=30, misfire_grace_time=900)
+def update_regulary():
+    print("job done")
+    middleware.init_updates()
     
 
 @app.route('/', methods=['GET', 'POST'])
@@ -101,7 +105,9 @@ def erp(System):
             
             datasets = col.insert_one({"URL": str(URL), "Password": str(Password)})
 
-        
+            # add Job
+            # scheduler.add_job("job1", update_regulary, seconds = 30) 
+                
             return 'geht'
 
         return render_template('erpweclapp.html', form=form, name=name)
@@ -139,7 +145,7 @@ def erp(System):
             URL = form.URL.data
 
             datasets = col.insert_one({"URL": str(URL), "Username": str(Username), "Password": str(Password)})
-        
+            
             return 'geht'
 
         return render_template('erpxentral.html', form=form, name=name)

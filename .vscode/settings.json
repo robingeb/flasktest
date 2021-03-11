@@ -1,0 +1,14 @@
+{
+    "notebook.kernelProviderAssociations": [
+    
+    ],
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${env:PYTHONPATH};${workspaceFolder}/src",
+    },
+    "python.envFile": "${workspaceFolder}/.env",
+    
+    
+    
+    
+}
+
