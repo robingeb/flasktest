@@ -15,19 +15,10 @@ def homepage():
     'username': 'Alpi',
     "password": "Alpi"
     }
-    if request.method == "GET":
-      response = requests.request("GET", url, auth=HTTPDigestAuth(auth['username'], auth['password'])) #filtern nach "name_de" oder "name_en"
-      data = json.loads(response.text)
-      return jsonify({"Result":data}) 
-    elif request.method == "POST":
-      headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Cookie': '_sid_=1'
-            }
-      response = requests.request("POST", url, auth=HTTPDigestAuth(auth['username'], auth['password'], data=payload)) 
-      data = json.loads(response.text)
-      return jsonify({"Result":data})
+    response = requests.request("GET", url, auth=HTTPDigestAuth(auth['username'], auth['password'])) #filtern nach "name_de" oder "name_en"
+    data = json.loads(response.text)
+    return jsonify({"Result":data}) 
+
 
 
   
