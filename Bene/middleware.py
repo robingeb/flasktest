@@ -1,10 +1,16 @@
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
+from datetime import datetime
 # from flask_apscheduler import APScheduler
 # from apscheduler.schedulers.background import BackgroundScheduler
 from Bene.hb_weclapp import *
 from Bene.hb_tagid_update_weclapp import UpdateWeClapp
+from apscheduler.schedulers.background import BackgroundScheduler
+
+
+
+
 
 # Um das letzte gespeicherte System aufzurufen:
 # db = client['Keys']
@@ -14,13 +20,26 @@ from Bene.hb_tagid_update_weclapp import UpdateWeClapp
 
 # scheduler = BackgroundScheduler()
 
+
 def test():
     middlewareControl = MiddlewareControl()
-    middlewareControl.init_updates()
+    middlewareControl.init_scheduler()
 
 class MiddlewareControl():
     def __init__(self):
-        pass
+        self.scheduler = BackgroundScheduler()
+        #print(scheduler)
+        self.scheduler.start()  
+
+    def init_scheduler(self):
+        print("test")
+          
+        self.scheduler.add_job(self.job_interval_updates, "interval", seconds=30)
+        
+    def job_interval_updates(self):
+        print("job1 done")
+        self.init_updates()
+    
 
     def init_updates(self):
         mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
@@ -73,6 +92,8 @@ class MiddlewareControl():
 
 if __name__ == "__main__":
     test()
+    
+    # test()
     
     
 

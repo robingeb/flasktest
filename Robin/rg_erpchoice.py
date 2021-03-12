@@ -9,25 +9,21 @@ from flask_pymongo import PyMongo
 from pymongo import MongoClient
 # bene: Notwendige imports
 from flask_apscheduler import APScheduler
-# from middleware import *
-# from sy
-#import sys
-#import os
-#sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+
 from Bene.middleware import *
 
-# set PYTHONPATH=%PYTHONPATH%; C:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\
+
 
 # bene: set configuration values
-class Config(object):
-    SCHEDULER_API_ENABLED = True
+# class Config(object):
+#     SCHEDULER_API_ENABLED = True
     
 
 app = Flask(__name__,template_folder = 'templates')
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
 # bene
-app.config.from_object(Config())
+# app.config.from_object(Config())
 
 app.config["MONGO_URI"] = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
 mongo = PyMongo(app)
@@ -37,9 +33,9 @@ client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb
 middleware = MiddlewareControl()
 
 # bene: initialize scheduler
-scheduler = APScheduler()
-scheduler.init_app(app)
-scheduler.start()   
+# scheduler = APScheduler()
+# scheduler.init_app(app)
+# scheduler.start()   
 
 
 # bene: Scheduler Job (Cron um zu regelmäßigen Zeitpunkten einen Job auszuführen, Interval in regelmäßigen Intervallen einen Job auszuführen)
@@ -106,7 +102,8 @@ def erp(System):
             datasets = col.insert_one({"URL": str(URL), "Password": str(Password)})
 
             # add Job
-            # scheduler.add_job("job1", update_regulary, seconds = 30) 
+            # scheduler.add_job("job1", update_regulary, 30) 
+            middleware.init_scheduler()
                 
             return 'geht'
 
