@@ -9,25 +9,20 @@ import xmltodict
 from fpdf import FPDF 
 from datetime import date, datetime
 
-
 pdf = FPDF() 
-url = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel"
+url = "http://132.187.226.135/www/api//index.php/v1/artikel"
 auth = {
-'username': 'HB',
-'password': 'HB'
+'username': 'Alpi',
+'password': 'Alpi'
 }
-
 
 
 article_all = requests.request("GET", url, auth=(auth['username'], auth['password']))  
 article_all = xmltodict.parse(article_all.text)
 
-    #print(article_all)
-
-    
 client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 db = client['Prüfberichte']
-col = db['Prüfberichte'] 
+col = db['Prüfberichte']
 
 last_update = 0
 Prüfbericht = []
@@ -80,14 +75,6 @@ print(type(next_inspection))
 print(type(Prüfdatum))
 print(Prüfdatum)
 print(next_inspection)
-pdf.output("Prüfbericht.pdf")    
+pdf.output("Prüfbericht.pdf")
 
-
-
-uploadurl = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel/"+str(Aritkelnummer)+"/document/Prüfbericht.pdf"
-
-
-
-#requests.request("POST", uploadurl, auth=(auth['username'], auth['password']))  
-
-
+uploadurl = "http://132.187.226.135/www/api//index.php/v1/artikel"+str(Aritkelnummer)+"/document/Prüfbericht.pdf"
