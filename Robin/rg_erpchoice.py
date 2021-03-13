@@ -8,9 +8,9 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 # bene: Notwendige imports
-from flask_apscheduler import APScheduler
+#from flask_apscheduler import APScheduler
 
-from Bene.middleware import *
+#from Bene.middleware import *
 
 
 
@@ -30,7 +30,7 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
 # bene: initialize Middleware Control Class
-middleware = MiddlewareControl()
+#middleware = MiddlewareControl()
 
 # bene: initialize scheduler
 # scheduler = APScheduler()
@@ -46,9 +46,9 @@ middleware = MiddlewareControl()
 
 # interval test
 #@scheduler.task('interval', id='do_job_1', seconds=30, misfire_grace_time=900)
-def update_regulary():
-    print("job done")
-    middleware.init_updates()
+#def update_regulary():
+   # print("job done")
+   # middleware.init_updates()
     
 
 @app.route('/', methods=['GET', 'POST'])
@@ -57,7 +57,16 @@ def home():
     form = choicehomeForm()
 
 
+    db = client['Prüfberichte']
+    col = db['Intervall']
+
+    
+
+
     if form.validate_on_submit():
+        
+        time = form.time.data
+        datasets = col.insert_one({"URL": time})
         return redirect(url_for('choice'))
 
 

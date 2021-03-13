@@ -60,4 +60,5 @@ class articlehomeForm(FlaskForm):
     submit = SubmitField('Prüfbericht')
 
 class choicehomeForm(FlaskForm):
+    time = IntegerField('Zeitintervall', validators=[Required()])
     submit = SubmitField('Systemauswahl')
