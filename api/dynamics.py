@@ -2,8 +2,7 @@ from flask import Flask, request, make_response, jsonify, json
 import requests
 
 
-#Erstellt neue Apllikationi
-app = Flask(__name__)
+
 
 def start(): 
     url = "http://10.105.11.42:7048/BC140/api/v1.0/items" #?$filter=displayName eq 'Schutzblech vorn'"

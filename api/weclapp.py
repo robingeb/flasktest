@@ -6,7 +6,7 @@ from requests.auth import HTTPDigestAuth
 
 #TODO: ERROR für fehlerhafte Internetverbindung, fehlerhafter Zugriff auf API
 
-def start():    
+def test():    
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {
     'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
@@ -94,4 +94,4 @@ class WeClappAPI():
     #     return(response)
 
 if __name__ == "__main__":
-    start()
+    test()
