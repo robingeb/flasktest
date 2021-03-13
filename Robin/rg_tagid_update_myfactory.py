@@ -64,7 +64,6 @@ pdf.add_page()
 pdf.set_font("Arial", size = 15) 
 pdf.cell(200, 10, txt = "Prüfbericht:",  
          ln = 1, align = 'C') 
-
 pdf.cell(200, 10, txt = "Prüfdatum: " + str(datetime.fromtimestamp(int(Prüfdatum) / 1e3)), 
          ln = 2, align = 'C')  
 pdf.cell(200, 10, txt = "Mängel: " + maengel, 

@@ -110,7 +110,7 @@ def map_attributes(article_ids, instance_dynamics, inventar):
 
 def create_note(inventar):
     # TODO: @Robin, Zeit in lesbar convertieren
-    date = str(inventar["Datum"])
+    date = str(datetime.fromtimestamp(int(inventar["Datum"] / 1e3))
     name = inventar["name"]
     defects = inventar["Mängel"]
     accept = str(inventar["accept"])    
