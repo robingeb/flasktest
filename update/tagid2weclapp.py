@@ -7,21 +7,36 @@ from pymongo import MongoClient
 from api.weclapp import *
 
 
-# def test():
-#     # Authentifizierungsdaten für Weclapp-Request
-#     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
-#     auth = {'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43' }
-#     mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
-#     updateWeClapp = UpdateWeClapp(url, auth, mongodb_url)
-#     updateWeClapp.update()
+def test():
+    # Authentifizierungsdaten für Weclapp-Request
+    url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+    auth = {'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43' }
+    mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
+    updateWeClapp = UpdateWeClapp(url, auth, mongodb_url)
+    updateWeClapp.update()
 
 class UpdateWeClapp():
+    """
+    Stellt eine Udatefunktion für WeClapp zur verfügung. 
+    Prüfberichte aus dem Prüfmanagementsystem können so nach MyFactory geladen werden. 
+
+    :param str url: gültige Zugangsurl zu Dynamics.
+    :param dict auth: Authentifizierungsdaten Form: {"AuthenticationToken": string }
+    :param str mongo_url: URL zur verwendeten MongoDB
+    """   
+
     def __init__(self, url, auth, mongo_url):
         self.url = url
         self.auth = auth
         self.mongo_url = mongo_url
 
     def update(self):
+        """
+        Führt update der Instanzen in WeClapp durch. 
+
+        :return: gibt dict mit den aktualisierten Instanzen zurück
+        """
+
         # MongoDB instantiate
         # TODO: PF. connection failed (wie darauf reagieren, Ausgabe: Error, Datenbank Zugriff nicht möglich)
         try:
@@ -59,7 +74,6 @@ class UpdateWeClapp():
         # Collection "Prüfberichte" in MongoDB auswählen
         db = client_mongo['Prüfberichte']
         col = db['Prüfberichte']
-        #daten = col.find_one({"Artikelnummer": "002"})
 
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
         # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
@@ -101,14 +115,6 @@ class UpdateWeClapp():
             quit()
 
         return article_update, article_instances
-
-    # def get_device_index(self, article_id, device):
-    #     #print("hello")
-    #     for i, dev in  enumerate(device["results"]):
-    #         #print(article_id, dev["core"]["articel_id_manufacturer"] )
-    #         if dev["core"]["articel_id_manufacturer"] == article_id:
-    #             # print (i)
-    #             return i
 
     # 3) mappen der zu ändernden Attribute
     def map_attributes(self, article_ids, instance_weclapp, inventar):
