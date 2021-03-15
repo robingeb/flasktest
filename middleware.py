@@ -5,6 +5,7 @@ from datetime import datetime
 from api.weclapp import *
 from update.tagid2weclapp import UpdateWeClapp
 from apscheduler.schedulers.background import BackgroundScheduler
+# import logging
 
 def test():
     middlewareControl = MiddlewareControl()
@@ -18,6 +19,7 @@ class MiddlewareControl():
         self.scheduler = BackgroundScheduler()
         self.scheduler.start()
 
+       
     def init_interval_scheduler(self):
         '''
         Jobs initialisieren, welcher in festen intervallen durchgeführt wird
@@ -38,12 +40,21 @@ class MiddlewareControl():
         client = MongoClient(mongo_url)
 
         # get configuration decitions of user saved in MongoDB
-        erp, update_time = self.get_config(client)
-        self.updates(erp, mongo_url, client)
+        erp, last_update_time = self.get_config(client)
+        result, done, updateTime, update_ids = self.updates(erp, mongo_url, client, last_update_time)
 
-        print(erp)
-        print(update_time)
-        # print(system_auth)
+        db = client['Keys']
+        col = db['Updatefreq']
+        if done:
+            col.insert_one({"time": updateTime})
+        else:
+            col.insert_one({"time": last_update_time})
+        # logging.info("Update: System: " + erp + "; Artikel Nummern: " + str(update_ids))
+
+        # print(updateTime)
+        # print(erp)
+        # print(last_update_time)
+        # print(result)
 
     def get_config(self, client_mongo):
         # get the last used erp-System
@@ -51,33 +62,39 @@ class MiddlewareControl():
         col = db['latestsystem']
         system = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
 
-        # get the update-frequenzy
+        # letzten Update Zeitpunkt erhalten
         col = db['Updatefreq']
-        update_frequ = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
-
+        try:
+            update_frequ = list(col.find())[0]
+        except:
+            return system["System"], 0
+        col.delete_many({})
         return system["System"], update_frequ["time"]
 
-    def updates(self, system, mongo_url, client_mongo):
+    def updates(self, system, mongo_url, client_mongo, last_update_time):
         # get erp-System authentification data and start update function of the System
         # TODO: update Funktion für andere ERP Systeme
         db = client_mongo['Keys']
         if system == "dynamics":
             col = db["Key_Dynamics"]
             system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
+            return 0, 0
         elif system == "weclapp":
             col = db['Key_Weclapp']
             system_auth = list(col.find().sort(
                 [('timestamp', -1)]).limit(1))[0]
             updateWeClapp = UpdateWeClapp(
                 system_auth["URL"], {"AuthenticationToken": system_auth["Password"]}, mongo_url)
-            result = updateWeClapp.update()
-            print(result)
+            result, done = updateWeClapp.update(last_update_time)
+            return result, done, updateWeClapp.get_update_time(), updateWeClapp.get_article_number()
         elif system == "xentral":
             col = db['Key_Xentral']
             system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
+            return 0, 0
         elif system == "myfactory":
             col = db['Key_MyFactory']
             system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
+            return 0, 0
         else:
             print("Error: No such Erp System in Database")
 
