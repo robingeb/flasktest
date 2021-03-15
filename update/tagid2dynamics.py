@@ -87,11 +87,7 @@ class UpdateDynamics():
     # 2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, url, auth, ids, dynamicsAPI):
         # Abrufen aller Artikel
-        try:
-            article_all = dynamicsAPI.get_request()
-        except:
-            raise Exception(
-                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
+        article_all = dynamicsAPI.get_request()
 
         # Aussortieren der nicht zu updatenden Artikel
         article_update = []

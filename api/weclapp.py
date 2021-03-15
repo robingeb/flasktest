@@ -11,8 +11,6 @@ def test():
     auth = {
     'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
     }
-    #payload="{\r\n    \"id\": \"3814\",\r\n    \"active\": true,\r\n    \"articleNumber\": \"012\",\r\n    \"applyCashDiscount\": true,\r\n    \"availableInSale\": true,\r\n    \"availableInShop\": false,\r\n    \"batchNumberRequired\": false,\r\n    \"billOfMaterialPartDeliveryPossible\": false,\r\n    \"productionArticle\": false,\r\n    \"serialNumberRequired\": false,\r\n    \"showOnDeliveryNote\": true,\r\n    \"taxRateType\": \"STANDARD\",\r\n    \"unitId\": \"2895\",\r\n    \"unitName\": \"Stk.\",\r\n    \"useAvailableForSalesChannels\": false,\r\n    \"useSalesBillOfMaterialItemPrices\": false,\r\n    \"useSalesBillOfMaterialItemPricesForPurchase\": false,\r\n\t\"name\": \"Fahrradsitz Neu Neu Neu\"\r\n}"
-
     payload = """{
         "id": "3814",
         "active": true,
@@ -35,18 +33,18 @@ def test():
     }"""
 
     weClappAPI = WeClappAPI(url, auth)
-    weClappAPI.put_request(payload, 3814)
+    print(weClappAPI.get_request())
 
 
 class WeClappAPI():
-     """
+    """
     Zugriff auf die Api von WeClapp. 
 
     :param str url: gültige Zugangsurl zu Dynamics.
     :param dict auth: Authentifizierungsdaten Form: {"AuthenticationToken": string } 
     """
 
-    def __init__(self, url, auth):        
+    def __init__(self, url, auth):
         self.url = url
         self.auth = auth
    
@@ -56,7 +54,11 @@ class WeClappAPI():
 
         :return: ein Dictionary mit Ergebniss des Requests.
         """  
-        response = requests.request("GET", self.url, headers=self.auth)
+        try:
+            response = requests.request("GET", self.url, headers=self.auth)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         data = json.loads(response.text)
         return data 
               
@@ -73,7 +75,11 @@ class WeClappAPI():
             'AuthenticationToken': self.auth["AuthenticationToken"],
             'Cookie': '_sid_=1'
         }
-        response = requests.request("POST", self.url, headers=headers, data=payload)
+        try: 
+            response = requests.request("POST", self.url, headers=headers, data=payload)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         return response.text
 
     def put_request(self, payload, id):
@@ -84,14 +90,17 @@ class WeClappAPI():
         :param id: id der Instanz in WeClapp.
         :return: ein Dictionary mit Instanz, welche durch den Request verändert wurd.
         """  
-        print("test_put_request")
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'AuthenticationToken': self.auth["AuthenticationToken"],
             'Cookie': '_sid_=1'
         }
-        response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)
+        try:
+            response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         return response.text
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ class DynamicsAPI():
     def __init__(self, url, auth):       
         self.url = url
         self.auth = auth
-        #self.payload = payload
+        
 
     def get_request(self):
         """
@@ -30,7 +30,11 @@ class DynamicsAPI():
 
         :return: ein Dictionary mit Ergebniss des Requests.
         """  
-        response = requests.request("GET", self.url, headers=self.auth)
+        try:
+            response = requests.request("GET", self.url, headers=self.auth)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         data = json.loads(response.text)
         return data 
 
@@ -47,7 +51,11 @@ class DynamicsAPI():
         'AuthenticationToken': self.auth["AuthenticationToken"],
         'Cookie': '_sid_=1'
         }
-        response = requests.request("POST", self.url, headers=headers, data=payload)
+        try:
+            response = requests.request("POST", self.url, headers=headers, data=payload)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         return response.text
 
     def put_request(self, payload, id):
@@ -64,7 +72,11 @@ class DynamicsAPI():
         'AuthenticationToken': self.auth["AuthenticationToken"],
         'Cookie': '_sid_=1'
         }
-        response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)
+        try:
+            response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)
+        except: 
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         return response.text
 
 

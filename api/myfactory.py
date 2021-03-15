@@ -31,7 +31,11 @@ class MyFactoryAPI():
 
         :return: ein Dictionary mit Ergebniss des Requests.
         """        
-        response = requests.request("GET", self.url, auth=(self.auth['username'], self.auth['password']))    
+        try:
+            response = requests.request("GET", self.url, auth=(self.auth['username'], self.auth['password']))   
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten") 
         content_dict = xmltodict.parse(response.text)        
         return content_dict
         

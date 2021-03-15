@@ -2,33 +2,27 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from datetime import datetime
-# from flask_apscheduler import APScheduler
-# from apscheduler.schedulers.background import BackgroundScheduler
 from api.weclapp import *
 from update.tagid2weclapp import UpdateWeClapp
 from apscheduler.schedulers.background import BackgroundScheduler
 
-# Um das letzte gespeicherte System aufzurufen:
-# db = client['Keys']
-# col = db['latestsystem']
-# System = col.find().limit(1).sort({$natural:-1})
-
-# def test():
-#     middlewareControl = MiddlewareControl()
-#     middlewareControl.init_scheduler()
-
+def test():
+    middlewareControl = MiddlewareControl()
+    middlewareControl.init_updates()
 
 class MiddlewareControl():
+    """
+    Klasse welche Methoden zur Verfügung stellt, die die Konfiguration der Middleware umsetzen.
+    """
     def __init__(self):
         self.scheduler = BackgroundScheduler()
-        # print(scheduler)
         self.scheduler.start()
 
-    def init_scheduler(self):
+    def init_interval_scheduler(self):
         '''
-        initialise job to update ERP-System automatically
+        Jobs initialisieren, welcher in festen intervallen durchgeführt wird
         '''
-        # print("test")
+        #TODO: Job Sekundenzeit übergeben
         self.scheduler.add_job(self.job_interval_updates,
                                "interval", seconds=30)
 
@@ -37,6 +31,9 @@ class MiddlewareControl():
         self.init_updates()
 
     def init_updates(self):
+        """
+        Update eines ERP Systems initialisieren
+        """
         mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
         client = MongoClient(mongo_url)
 

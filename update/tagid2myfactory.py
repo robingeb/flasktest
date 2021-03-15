@@ -22,8 +22,12 @@ def test():
 
 class UpdateMyFactory():
     """
-        Stellt eine Udatefunktion für MyFactory zur verfügung. Prüfberichte aus dem Prüfmanagementsystem können so nach MyFactory geladen werden. 
-        Da die MyFactory API keinen POST-Requests erlaubt wird als output ein PDF des Prüfberichts erstellt.
+    Stellt eine Udatefunktion für MyFactory zur Verfügung. Prüfberichte aus dem Prüfmanagementsystem können so nach MyFactory geladen werden. 
+    Da die MyFactory API keinen POST-Requests erlaubt wird als output ein PDF des Prüfberichts erstellt.
+
+    :param str url: gültige Zugangsurl zu Dynamics.
+    :param dict auth: Authentifizierungsdaten Form: {"username": string, "password": string }
+    :param str mongo_url: URL zur verwendeten MongoDB
     """   
 
     def __init__(self, url, auth, mongo_url):             

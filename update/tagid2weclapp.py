@@ -13,12 +13,12 @@ def test():
     auth = {'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43' }
     mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
     updateWeClapp = UpdateWeClapp(url, auth, mongodb_url)
-    updateWeClapp.update()
+    print(updateWeClapp.update())
 
 class UpdateWeClapp():
     """
-    Stellt eine Udatefunktion für WeClapp zur verfügung. 
-    Prüfberichte aus dem Prüfmanagementsystem können so nach MyFactory geladen werden. 
+    Stellt eine Udatefunktion für WeClapp zur Verfügung. 
+    Prüfberichte aus dem Prüfmanagementsystem können so nach WeClapp geladen werden. 
 
     :param str url: gültige Zugangsurl zu Dynamics.
     :param dict auth: Authentifizierungsdaten Form: {"AuthenticationToken": string }
@@ -70,14 +70,11 @@ class UpdateWeClapp():
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
     def get_tagideasy(self, client_mongo):
-
         # Collection "Prüfberichte" in MongoDB auswählen
         db = client_mongo['Prüfberichte']
         col = db['Prüfberichte']
 
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
-        # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
-        # TODO: Falsche Url, Authentifizierung
         data = []
         last_update = 0
         for doc in col.find({"Datum": {"$gt": last_update}}):
@@ -88,12 +85,7 @@ class UpdateWeClapp():
     # 2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, ids, weClappAPI):
         # Abrufen aller Artikel
-        try:
-            article_all = weClappAPI.get_request()
-        except:
-            raise Exception(
-                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
-        # print(article_all)
+        article_all = weClappAPI.get_request()
 
         # Aussortieren der nicht zu updatenden Artikel
         article_update = []

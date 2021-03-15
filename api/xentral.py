@@ -31,12 +31,16 @@ class XentralAPI():
 
         :return: ein Dictionary mit Ergebniss des Requests.
         """  
-        response = requests.request("GET", self.url, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']))
+        try:
+            response = requests.request("GET", self.url, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']))
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         data = json.loads(response.text)
         return data 
         
-    def post_request(self):
-         """
+    def post_request(self, payload):
+        """
         -------------POST-Request funktioniert nicht---------------------
         Führt einen POST-Request durch.
 
@@ -46,10 +50,13 @@ class XentralAPI():
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-             #'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43',
             'Cookie': '_sid_=1'
-            }
-        response = requests.request("POST", self.url, headers = headers, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']), data=self.payload)
+        }
+        try:
+            response = requests.request("POST", self.url, headers = headers, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']), data=payload)
+        except:
+            raise Exception(
+                "Connection Failed \n Überprüfe: \n fehlerhafte URL oder Authentifizerungsdaten")
         return response.text
 
     def put_request(self):
@@ -297,6 +304,6 @@ payload = """
 
 
 if __name__ == "__main__":
-    start()
+    test()
 
     
