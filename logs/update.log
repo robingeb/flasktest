@@ -1,0 +1,44 @@
+2021-03-15 21:59:16,949 Scheduler started
+2021-03-15 21:59:16,980  * Debugger is active!
+2021-03-15 21:59:17,017  * Debugger PIN: 141-834-372
+2021-03-15 21:59:17,032  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-15 22:01:17,479 Scheduler started
+2021-03-15 22:01:17,511  * Restarting with stat
+2021-03-15 22:01:20,346 Scheduler started
+2021-03-15 22:01:20,361  * Debugger is active!
+2021-03-15 22:01:20,412  * Debugger PIN: 141-834-372
+2021-03-15 22:01:20,422  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-15 22:05:58,497 Scheduler started
+2021-03-15 22:05:58,523  * Restarting with stat
+2021-03-15 22:06:00,632 Scheduler started
+2021-03-15 22:06:00,654  * Debugger is active!
+2021-03-15 22:06:00,685  * Debugger PIN: 141-834-372
+2021-03-15 22:06:00,685  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-15 22:11:46,019  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-15 22:11:46,692  * Restarting with stat
+2021-03-15 22:11:52,403 Scheduler started
+2021-03-15 22:11:52,413 Looking for jobs to run
+2021-03-15 22:11:52,415 No jobs; waiting until a job is added
+2021-03-15 22:11:52,442  * Debugger is active!
+2021-03-15 22:11:52,489  * Debugger PIN: 141-834-372
+2021-03-15 22:11:52,539  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-15 22:12:06,401 Scheduler started
+2021-03-15 22:12:06,409 Looking for jobs to run
+2021-03-15 22:12:06,411 No jobs; waiting until a job is added
+2021-03-15 22:12:06,636  * Restarting with stat
+2021-03-15 22:12:11,123 Scheduler started
+2021-03-15 22:12:11,123 Looking for jobs to run
+2021-03-15 22:12:11,123 No jobs; waiting until a job is added
+2021-03-15 22:12:11,154  * Debugger is active!
+2021-03-15 22:12:11,208  * Debugger PIN: 141-834-372
+2021-03-15 22:12:11,223  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-15 22:14:24,576 Scheduler started
+2021-03-15 22:14:24,577 Looking for jobs to run
+2021-03-15 22:14:24,582 No jobs; waiting until a job is added
+2021-03-15 22:14:24,653  * Restarting with stat
+2021-03-15 22:14:29,274 Scheduler started
+2021-03-15 22:14:29,274 Looking for jobs to run
+2021-03-15 22:14:29,274 No jobs; waiting until a job is added
+2021-03-15 22:14:29,294  * Debugger is active!
+2021-03-15 22:14:29,343  * Debugger PIN: 141-834-372
+2021-03-15 22:14:29,353  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

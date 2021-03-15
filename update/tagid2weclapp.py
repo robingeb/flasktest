@@ -4,7 +4,9 @@ import json
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
+from datetime import datetime, date, timezone
 from api.weclapp import *
+
 
 
 def test():
@@ -29,8 +31,18 @@ class UpdateWeClapp():
         self.url = url
         self.auth = auth
         self.mongo_url = mongo_url
+        self.last_update_time = 0
+        self.update_time = 0
+        self.update_article_number = []
 
-    def update(self):
+    def get_update_time(self): 
+        return self.update_time
+
+    def get_article_number(self):
+        return self.update_article_number
+
+
+    def update(self, last_update_time = 0):
         """
         Führt update der Instanzen in WeClapp durch. 
 
@@ -44,6 +56,13 @@ class UpdateWeClapp():
         except:
             raise Exception("Error: Zugriff auf MongoDB nicht möglich")
 
+        self.last_update_time = last_update_time
+
+        # aktuelle update Zeit speichern
+        now = datetime.now()
+        # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
+        self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
+        
         # Instatiate WeClapp-API
         weClappAPI = WeClappAPI(self.url, self.auth)
 
@@ -59,6 +78,11 @@ class UpdateWeClapp():
         # Relevante Artikel (Geräte) aus WeClapp laden (get-Request)
         weclapp_ids, weclapp_instances = self.get_articel(
             tagIdeasy_ids, weClappAPI)
+        
+        if len(weclapp_ids) == 0:
+            # TODO. quti testen mit JobScheduler
+            # raise Exception("Es gibt keine zu aktualisierenden Artikel")
+            return [], False
 
         # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben
         df_mapped = self.map_attributes(
@@ -66,21 +90,27 @@ class UpdateWeClapp():
 
         # aktualisierte Artikel in Weclapp updaten (put-Request)
         result = self. update_articel(df_mapped, weClappAPI)
-        return result
+        return result, True
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
     def get_tagideasy(self, client_mongo):
         # Collection "Prüfberichte" in MongoDB auswählen
+        # db = client_mongo['Keys']
+        # col = db['Updatefreq']
+        # last_update_dict = list(col.find().sort([('timestamp', -1)]).limit(1))[0] 
+        # last_update = last_update_dict["time"] * 1000
+
+        # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
+        data = []
+        #TODO: last update auslesen und einlesen in mongodb
+        # last_update = 0
+
         db = client_mongo['Prüfberichte']
         col = db['Prüfberichte']
-
-        # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
-        data = []
-        last_update = 0
-        for doc in col.find({"Datum": {"$gt": last_update}}):
+        for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
             data.append(doc)
         return data
-        # return daten
+        
 
     # 2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, ids, weClappAPI):
@@ -95,16 +125,14 @@ class UpdateWeClapp():
             for i, value in enumerate(ids):
                 if value[0] == instance["articleNumber"]:
                     id = ids[i]
-                    # id: [Seriennummer, Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id]
+                    # id: [Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id]
                     id.append(instance["id"])
                     article_update.append(id)
                     article_instances.append(instance)
+                    self.update_article_number.append(id[0])
 
                 # index_inventar =
-        if len(article_update) == 0:
-            # TODO. quti testen mit JobScheduler
-            # raise Exception("Es gibt keine zu aktualisierenden Artikel")
-            quit()
+        
 
         return article_update, article_instances
 
