@@ -22,7 +22,7 @@ def test():
 
 class UpdateMyFactory():
     """
-        Stellt eine Udatefunktion von MyFactory mit den Prüfberichten aus dem Prüfmanagementsystem zur Verfügung. 
+        Stellt eine Udatefunktion für MyFactory zur verfügung. Prüfberichte aus dem Prüfmanagementsystem können so nach MyFactory geladen werden. 
         Da die MyFactory API keinen POST-Requests erlaubt wird als output ein PDF des Prüfberichts erstellt.
     """   
 
