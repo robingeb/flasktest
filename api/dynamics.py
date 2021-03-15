@@ -12,14 +12,12 @@ def test():
     print(data)
 
 
-
-
 class DynamicsAPI():
     """
-        Zugriff auf die Api von Dynamics. 
+    Zugriff auf die Api von Dynamics. 
 
-        :param str url: gültige Zugangsurl zu Dynamics
-        :param dict auth: Authentifizierungsdaten Form: {"Authorization": string } 
+    :param str url: gültige Zugangsurl zu Dynamics
+    :param dict auth: Authentifizierungsdaten Form: {"Authorization": string } 
     """
     def __init__(self, url, auth):       
         self.url = url
@@ -28,9 +26,9 @@ class DynamicsAPI():
 
     def get_request(self):
         """
-            Führt einen GET-Request durch.
+        Führt einen GET-Request durch.
 
-            :return: ein Dictionary mit Ergebniss des Requests.
+        :return: ein Dictionary mit Ergebniss des Requests.
         """  
         response = requests.request("GET", self.url, headers=self.auth)
         data = json.loads(response.text)
@@ -38,9 +36,10 @@ class DynamicsAPI():
 
     def post_request(self, payload):
         """
-            Führt einen POST-Request durch.
+        Führt einen POST-Request durch.
 
-            :return: ein Dictionary mit Instanzen, welche nach Dynamics geladen wurden.
+        :param json payload:  als json formatierter string mit zur hinzufügenden Instanz.
+        :return: ein Dictionary mit Instanz, welche nach Dynamics geladen wurde.
         """  
         headers = {
         'Accept': 'application/json',
@@ -53,9 +52,11 @@ class DynamicsAPI():
 
     def put_request(self, payload, id):
         """
-            Führt einen PUT-Request durch.
+        Führt einen PUT-Request durch.
 
-            :return: ein Dictionary mit Instanzen, welche durch den Request verändert wurden.
+        :param payload: als json formatierter string mit aktualisierter Instanz.
+        :param id: id der Instanz in Dynamics.
+        :return: ein Dictionary mit Instanz, welche durch den Request verändert wurde.
         """  
         headers = {
         'Accept': 'application/json',

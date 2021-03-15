@@ -35,39 +35,38 @@ def test():
     }"""
 
     weClappAPI = WeClappAPI(url, auth)
-    # Um verschiedene Methoden (get, post, delete) zu starten, hier entsprechnde Methode wählen
-    #weClappAPI.get_request()
-    #weClappAPI.post_request(payload)
     weClappAPI.put_request(payload, 3814)
 
 
 class WeClappAPI():
-    def __init__(self, url, auth):
-        """
-        Zugriff auf die WeClapp-API
-        param: 
-        url: Url des zu verknüpfenden Systems
-        auth: Authentfizierungstoken
-        """        
+     """
+    Zugriff auf die Api von WeClapp. 
+
+    :param str url: gültige Zugangsurl zu Dynamics.
+    :param dict auth: Authentifizierungsdaten Form: {"AuthenticationToken": string } 
+    """
+
+    def __init__(self, url, auth):        
         self.url = url
         self.auth = auth
-        #self.payload = payload
-
    
-
-
     def get_request(self):
+        """
+        Führt einen GET-Request durch.
+
+        :return: ein Dictionary mit Ergebniss des Requests.
+        """  
         response = requests.request("GET", self.url, headers=self.auth)
         data = json.loads(response.text)
-        #Filtert und sortiert Daten
-        #article = [data["result"][x]["id"] for x in range(len(data["result"]))]
-        #ARG = data (ohne filter)
-        #return jsonify(article)
         return data 
-        
-
-        
+              
     def post_request(self, payload):
+        """
+        Führt einen POST-Request durch.
+
+        :param json payload:  als json formatierter string mit zur hinzufügenden Instanz.  
+        :return: ein Dictionary mit Instanz, welche nach Dynamics geladen wurden.
+        """  
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -78,6 +77,13 @@ class WeClappAPI():
         return response.text
 
     def put_request(self, payload, id):
+        """
+        Führt einen PUT-Request durch.
+
+        :param payload: als json formatierter string mit aktualisierter Instanz.
+        :param id: id der Instanz in WeClapp.
+        :return: ein Dictionary mit Instanz, welche durch den Request verändert wurd.
+        """  
         print("test_put_request")
         headers = {
             'Accept': 'application/json',
@@ -87,11 +93,6 @@ class WeClappAPI():
         }
         response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)
         return response.text
-        
-
-    # def delete_request(self, id):
-    #     response = requests.request("DELETE", self.url + "/" + id, headers=headers)
-    #     return(response)
 
 if __name__ == "__main__":
     test()

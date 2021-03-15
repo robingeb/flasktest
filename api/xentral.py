@@ -4,40 +4,45 @@ import requests
 import json
 from requests.auth import HTTPDigestAuth
 
-#TODO: Post Request nicht Erlaubt fehler (405)
-def start(payload):
+def test(payload = None):
     url = " http://132.187.226.135/www/api//index.php/v1/artikel"
     auth = {
     'username': 'HB',
     "password": "HB"
     }
-    xentralApi = XentralAPI(url, auth, payload)
-    # Um verschiedene Methoden (get, post, delete) zu starten, hier entsprechnde Methode wählen
-    #xentralApi.get_request()
-    xentralApi.post_request()
-
+    xentralApi = XentralAPI(url, auth)
+    xentralApi.get_request()
 
 class XentralAPI():
-    def __init__(self, url, auth, payload = None):        
+    """
+    Zugriff auf die Api von Xentral. 
+
+    :param str url: gültige Zugangsurl zu Dynamics
+    :param dict auth: Authentifizierungsdaten Form: {"username": string, "password": string } 
+    """
+    def __init__(self, url, auth):        
         self.url = url
         self.auth = auth
-        self.payload = payload
 
    
-
-
     def get_request(self):
+        """
+        Führt einen GET-Request durch.
+
+        :return: ein Dictionary mit Ergebniss des Requests.
+        """  
         response = requests.request("GET", self.url, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']))
         data = json.loads(response.text)
-        #Filtert und sortiert Daten
-        # article = [data["result"][x]["name"] for x in range(len(data["result"]))]
-        #ARG = data (ohne filter)
-        #return jsonify(article)
-        print(data) 
-        
-
+        return data 
         
     def post_request(self):
+         """
+        -------------POST-Request funktioniert nicht---------------------
+        Führt einen POST-Request durch.
+
+        :param json payload:  als json formatierter string mit zur hinzufügenden Instanz.
+        :return: ein Dictionary mit Instanz, welche nach Dynamics geladen wurde.
+        """  
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -45,11 +50,11 @@ class XentralAPI():
             'Cookie': '_sid_=1'
             }
         response = requests.request("POST", self.url, headers = headers, auth=HTTPDigestAuth(self.auth['username'], self.auth['password']), data=self.payload)
-        print(response.text)
-        
+        return response.text
 
-    def delete_request(self):
+    def put_request(self):
         pass
+        # TODO: Put Request testen
 
 payload = """
 {        
@@ -292,6 +297,6 @@ payload = """
 
 
 if __name__ == "__main__":
-    start(payload)
+    start()
 
     
