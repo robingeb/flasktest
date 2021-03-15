@@ -2,21 +2,11 @@ from flask import Flask, request, make_response, jsonify, json
 import requests
 
 
-
-
-def start(): 
-    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" #?$filter=displayName eq 'Schutzblech vorn'"
-    #payload = {}
+def test(): 
+    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" 
     auth = {
     'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
     }
-
-    # response = requests.request("GET", url, headers=headers) #data = payload
-    # data = json.loads(response.text)
-    #Filtert und sortiert Daten
-    #for displayName in data:
-        #   return(displayName)
-    #return(response.text)
     dynamicsAPI = DynamicsAPI(url, auth)
     data = dynamicsAPI.get_request()
     print(data)
@@ -25,21 +15,33 @@ def start():
 
 
 class DynamicsAPI():
+    """
+        Zugriff auf die Api von Dynamics. 
+
+        :param str url: gültige Zugangsurl zu Dynamics
+        :param dict auth: Authentifizierungsdaten Form: {"Authorization": string } 
+    """
     def __init__(self, url, auth):       
         self.url = url
         self.auth = auth
         #self.payload = payload
 
     def get_request(self):
+        """
+            Führt einen GET-Request durch.
+
+            :return: ein Dictionary mit Ergebniss des Requests.
+        """  
         response = requests.request("GET", self.url, headers=self.auth)
         data = json.loads(response.text)
-        #Filtert und sortiert Daten
-        #article = [data["result"][x]["id"] for x in range(len(data["result"]))]
-        #ARG = data (ohne filter)
-        #return jsonify(article)
         return data 
 
     def post_request(self, payload):
+        """
+            Führt einen POST-Request durch.
+
+            :return: ein Dictionary mit Instanzen, welche nach Dynamics geladen wurden.
+        """  
         headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -50,6 +52,11 @@ class DynamicsAPI():
         return response.text
 
     def put_request(self, payload, id):
+        """
+            Führt einen PUT-Request durch.
+
+            :return: ein Dictionary mit Instanzen, welche durch den Request verändert wurden.
+        """  
         headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -60,11 +67,5 @@ class DynamicsAPI():
         return response.text
 
 
-# def delete_request(self, id):
-#     response = requests.request("DELETE", self.url + "/" + id, headers=headers)
-#     return(response)
-
-
-
 if __name__ == "__main__":
-    start()
+    test()
