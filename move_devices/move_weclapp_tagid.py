@@ -12,41 +12,19 @@ def main():
         'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
     }
 
-    # initialice WeClappAPI und Geräte erhalten
+    # initialice WeClappAPI und Geräte-Instanzen als Liste ausgeben
     weClappAPI = WeClappAPI(url, auth)
     machine_instances = get_weclapp(weClappAPI)
-
-    # Minimum der benötigten Attribute von WeClapp für einen erfolgreichen POST-Request
-    # weclapp_article_attributes = ["articleNumber", "name", "unitId"]
 
     # Datenstruktur von TagIdeasy 
     device, inventar = get_tagideasy()
 
-
-
     result = []
 
-    # Geräte Instanzen aus WeClapp erhalten
-    # x, y = get_tagweclapp()
-
-    # Geräte zum API Input-Schema von WeClapp mappen
+    # Geräte zum API Input-Schema von TagIdeasy mappen
     mapped_inventar, mapped_device = map_attributes(device, inventar, machine_instances)
 
-    
-
-    # TODO: Existiert möglichkeit mehrere Artikel auf einmal zu pushen?
-
-    # Iterate throug articles and push them to weclapp
-    # for index, row in devices_mapped.iterrows():
-    #     df_article = pd.DataFrame([row], columns=weclapp_article_attributes)
-    #     # transform to json
-    #     result_json = df_article.to_json(orient="records")
-    #     parsed = json.loads(result_json)[0]
-    #     final_json = json.dumps(parsed, indent=4)
-    #     print(final_json)
-    #     # push single articles to weclapp
-    #     r = weClappAPI.post_request(final_json)
-    #     result.append(r)
+    # Ausgeben der beiden Listen. Kein Upload da TagIdeasy nicht gegeben.
     print(mapped_inventar)
     print(mapped_device)
     return result
@@ -74,8 +52,10 @@ def get_weclapp(weClappAPI):
 
 def map_attributes(inventar, device, machine_instances):
 
+    # Erstellen zweier Listen gemäß der Datenstruktur von TagIdeasy
     instances_inventar = []
     instances_device = []
+
     for x in range(len(machine_instances)):
         print(x)
         inventar_add = inventar
