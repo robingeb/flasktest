@@ -11,10 +11,16 @@ def main():
     auth = {
         'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
     }
+
+    # Minimum der benötigten Attribute von WeClapp für einen erfolgreichen POST-Request
     weclapp_article_attributes = ["articleNumber", "name", "unitId"]
 
     result = []
+
+    # Geräte Instanzen aus TagIdeasy erhalten
     x, y = get_tagideasy()
+
+    # Geräte zum API Input-Schema von WeClapp mappen
     devices_mapped = map_attributes(x, y, weclapp_article_attributes)
 
     # initialice WeClappAPI
@@ -48,7 +54,7 @@ def get_tagideasy():
 def map_attributes(inventar, device, weclapp_article_attributes):
 
     # get serial number from v1_inventar and match as articel number
-    article_number = [inventar["results"][x]["core"]["serial_number"]
+    article_number = [inventar["results"][x]["core"]["inventory_number"]
                       for x in range(len(inventar["results"]))]
 
     # get article id to identify the device-categorie in geräte_v1
