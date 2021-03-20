@@ -81,7 +81,7 @@ def erp(System):
 
             # add Job
             # scheduler.add_job("job1", update_regulary, 30)
-            middleware.init_interval_scheduler()
+            middleware.init_interval_job()
 
             return 'geht'
 

@@ -20,9 +20,9 @@ class MiddlewareControl():
         self.scheduler.start()
 
        
-    def init_interval_scheduler(self):
+    def init_interval_job(self):
         '''
-        Jobs initialisieren, welcher in festen intervallen durchgeführt wird
+        Job initialisieren, welcher in festen Intervallen durchgeführt wird
         '''
         #TODO: Job Sekundenzeit übergeben
         self.scheduler.add_job(self.job_interval_updates,
