@@ -19,7 +19,7 @@ def test():
 class UpdateDynamics():
     """
     Stellt eine Udatefunktion für Dynamics zur verfügung. Prüfberichte aus dem Prüfmanagementsystem können so nach Dynamics geladen werden. 
-    Da die MyFactory API keinen POST-Requests erlaubt wird als output ein json des Prüfberichts erstellt.
+    Da die MyFactory API keinen POST-Requests erlaubt wird als Output ein json des Prüfberichts erstellt.
 
     :param str url: gültige Zugangsurl zu Dynamics.
     :param dict auth: Authentifizierungsdaten Form: {"Authorization": string }
@@ -50,7 +50,6 @@ class UpdateDynamics():
         inventar = self.get_tagideasy(client)
 
         # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
-        #tagIdeasy_ids = [[instance["core"]["serial_number"], instance["core"]["articel_id_buyer"], inventar["results"].index(instance) ] for instance in inventar["results"]]
         tagIdeasy_ids = [[instance["Artikelnummer"],
                         inventar.index(instance)] for instance in inventar]
 

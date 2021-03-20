@@ -7,13 +7,19 @@ from flask import jsonify
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
+# import logging
 # bene: Notwendige imports
 #from flask_apscheduler import APScheduler
 from middleware import *
 
+
+
 app = Flask(__name__, template_folder='templates')
+# logging instantiate
+# logging.basicConfig( filename='logs/demo.log', format='%(asctime)s %(message)s', level=logging.DEBUG)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
+
 
 app.config["MONGO_URI"] = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
 mongo = PyMongo(app)
@@ -25,6 +31,8 @@ middleware = MiddlewareControl()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    app.logger.info('Processing default request')
+
     name = None
     form = choicehomeForm()
 
@@ -73,7 +81,7 @@ def erp(System):
 
             # add Job
             # scheduler.add_job("job1", update_regulary, 30)
-            middleware.init_interval_scheduler()
+            middleware.init_interval_job()
 
             return 'geht'
 
