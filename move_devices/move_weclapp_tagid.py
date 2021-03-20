@@ -88,31 +88,6 @@ def map_attributes(inventar, device, machine_instances):
     return instances_inventar, instances_device
 
 
-    # # get serial number from v1_inventar and match as articel number
-    # article_number = [inventar["results"][x]["core"]["inventory_number"]
-    #                   for x in range(len(inventar["results"]))]
-
-    # # get article id to identify the device-categorie in geräte_v1
-    # article_id = [inventar["results"][x]["core"]["articel_id_buyer"]
-    #               for x in range(len(inventar["results"]))]
-
-    # # get device name from geräte_v1 with help of the article id
-    # device_name = []
-    # for x in range(len(inventar["results"])):
-    #     for y in range(len(device["results"])):
-    #         if device["results"][y]["core"]["articel_id_manufacturer"] == article_id[x]:
-    #             device_name.append(device["results"][y]["core"]["device_name"])
-
-    # # generate unit_id (2895 for Stk. )
-    # id = 2895
-    # unit_id = [id] * len(article_id)
-
-    # articles = np.array([article_number, device_name, unit_id])
-    # articles = articles.transpose()
-    # df_articles = pd.DataFrame(articles, columns=weclapp_article_attributes)
-    # #result_json = df_articles.to_json(orient="records")
-    return df_articles
-
 
 if __name__ == "__main__":
     main()
