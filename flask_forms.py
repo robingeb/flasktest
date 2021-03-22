@@ -35,8 +35,8 @@ class choiceform(FlaskForm):
     submit = SubmitField('Submit')
 
 class erpformweclapp(FlaskForm):
-    URL = StringField('url', validators=[Required()])
-    Password = StringField('password', validators=[Required()])
+    URL = StringField('URL', validators=[Required()])
+    Password = StringField('API-Key', validators=[Required()])
     submit = SubmitField('Submit')
 
 class erpformdynamics(FlaskForm):
