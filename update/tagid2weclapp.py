@@ -108,7 +108,8 @@ class UpdateWeClapp():
 
         db = client_mongo['Prüfberichte']
         col = db['Prüfberichte']
-        for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
+        #for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
+        for doc in col.find({"Datum": {"$gt": 0}}):
             data.append(doc)
         return data
         
@@ -131,10 +132,10 @@ class UpdateWeClapp():
                     article_update.append(id)
                     article_instances.append(instance)
                     self.update_article_number.append(id[0])
-
+                    
                 # index_inventar =
         
-        self.ids
+        self.ids = article_update
         return  article_instances
 
     # 3) mappen der zu ändernden Attribute
