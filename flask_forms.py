@@ -12,7 +12,7 @@ from datetime import datetime, date, time, timedelta
 class NameForm(FlaskForm):
  
     ID = IntegerField('ID des Prüfers', validators=[Required()])
-    name = StringField('What is your name?')
+    name = StringField('Name des Prüfers')
     mängel = TextAreaField('Mängel')
     accept = BooleanField('Gerät bestanden')
     date1 = DateTimeField(
