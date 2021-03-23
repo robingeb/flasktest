@@ -132,9 +132,6 @@ class UpdateWeClapp():
                     article_update.append(id)
                     article_instances.append(instance)
                     self.update_article_number.append(id[0])
-                    
-                # index_inventar =
-        
         self.ids = article_update
         return  article_instances
 
@@ -145,7 +142,7 @@ class UpdateWeClapp():
         df_mapping.set_index("id", inplace=True)
         # Version-Spalte löschen, da dieser Wert nicht geupdatet werden darf bei WeClapp (Fehlermeldung)
         df_mapping.drop('version', axis=1, inplace=True)
-        # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
+        # id: [Artikelnummer, index in Inventar-Liste, -Index in Devicel-Liste- , Weclapp-Id]
         for ids in self.ids:
             custom_attributes = df_mapping.loc[ids[2]]["customAttributes"]
             try:
@@ -157,19 +154,19 @@ class UpdateWeClapp():
 
     # Prüffelder aktualisieren
     def update_custom_fields(self, inventar, custom_attributes):
-        custom_attributes[0]["dateValue"] = inventar["Datum"]
+        custom_attributes[0]["dateValue"] = inventar["nächstes Prüfdatum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
         custom_attributes[3]["stringValue"] = inventar["accept"]
-        custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+        custom_attributes[5]["dateValue"] = inventar["Datum"]
 
     # Prüffelder erstellen, falls noch keine vorhanden sind
     def add_custom_fields(self, inventar, custom_attributes):
-        custom_attributes[0]["dateValue"] = inventar["Datum"]
+        custom_attributes[0]["dateValue"] = inventar["nächstes Prüfdatum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
         custom_attributes[3]["stringValue"] = inventar["accept"]
-        custom_attributes[5]["dateValue"] = inventar["nächstes Prüfdatum"]
+        custom_attributes[5]["dateValue"] = inventar["Datum"]
 
     # 4) Put-Request der zu ändernden Artikel nach WeClapp
     def update_articel(self, df_mapped, weClappAPI):
