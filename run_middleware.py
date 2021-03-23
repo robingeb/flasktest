@@ -60,8 +60,8 @@ def choice():
 
     return render_template('choice.html', form=form, name=name)
 
-
 @app.route('/erp/<string:System>', methods=['GET', 'POST'])
+
 def erp(System):
     name = None
     db = client['Keys']
