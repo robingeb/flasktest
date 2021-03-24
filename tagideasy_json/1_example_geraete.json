@@ -9,9 +9,9 @@
 			{"articel_id_manufacturer": "10001" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
-			 "device_name": "Standard-Schlinge 1AA" ,
+			 "device_name": "Hebebühne" ,
 			 "keywords":  [
-			   { "0": "Schlinge"}  ],
+			   { "0": "Heben"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
 		"historical_data":
 			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
@@ -33,7 +33,7 @@
 			{"articel_id_manufacturer": "10002" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
-			 "device_name": "Standard-Schlinge 1B" ,
+			 "device_name": "Seilzug" ,
 			 "keywords":  [
 			   { "0": "Schlinge"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
@@ -56,7 +56,7 @@
 			{"articel_id_manufacturer": "10003" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
-			 "device_name": "Standard-Schlinge 1C" ,
+			 "device_name": "Presse" ,
 			 "keywords":  [
 			   { "0": "Schlinge"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },

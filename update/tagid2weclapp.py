@@ -108,8 +108,8 @@ class UpdateWeClapp():
 
         db = client_mongo['Prüfberichte']
         col = db['Prüfberichte']
-        #for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
-        for doc in col.find({"Datum": {"$gt": 0}}):
+        for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
+        #for doc in col.find({"Datum": {"$gt": 0}}):
             data.append(doc)
         return data
         
