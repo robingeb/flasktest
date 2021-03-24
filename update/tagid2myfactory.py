@@ -18,7 +18,8 @@ def test():
         'username': 'HB',
         'password': 'HB'
     }
-    updateMyFactory = UpdateMyFactory(url, auth, mongo_url)
+    client = MongoClient(mongo_url)
+    updateMyFactory = UpdateMyFactory(url, auth, client)
     updateMyFactory.update(0)
 
 class UpdateMyFactory():
@@ -31,22 +32,19 @@ class UpdateMyFactory():
     :param str mongo_url: URL zur verwendeten MongoDB
     """   
 
-    def __init__(self, url, auth, mongo_url):             
+    def __init__(self, url, auth, client):             
         #self.client = pymongo.MongoClient(mongo_url)
-        self.mongo_url = mongo_url
+        self.client = client
         self.url = url
         self.auth = auth
 
-
-    def update(self, last_update_time):
+#TODO: aktuelle Update zeit einbauen
+    def update(self,  client, last_update_time = 0, actual_update_time = 0):
         """
         :return: pdf mit Prüfberichten
         
         """
-        try:
-            client = MongoClient(self.mongo_url)
-        except:
-            raise Exception("Error: Zugriff auf MongoDB nicht möglich")
+
 
         self.last_update_time = last_update_time
         
@@ -79,79 +77,15 @@ class UpdateMyFactory():
         # Werte aus Prüfbericht werden als PDF dargestellt und in /output geladen
         info_success = self.map_attributes(
             myfactory_names, inventar)
-
-        return  info_success
-
-
-
-
-
-
         
-
-        
-
-        # last_update = 0
-        # Prüfbericht = []
-        # Pruefbericht = []
-
-        # # db = self.client['Prüfberichte']
-        # col = db['Prüfberichte']
-        # for doc in col.find({"Datum": {"$gt": last_update}}):
-        #     Prüfbericht.append(doc)
-
-        # Prüfbericht = str(Prüfbericht)
-        # Prüfbericht = Prüfbericht.split(",")
-
-        # for x in Prüfbericht:
-        #     z = x.split(": ")
-        #     Pruefbericht.append(z[1])
-
-        # Prüfdatum = Pruefbericht[4]
-        # name = Pruefbericht[2]
-        # maengel = Pruefbericht[1]
-        # accept = str(Pruefbericht[3])
-        # next_inspection = str(Pruefbericht[5])
-        # Aritkelnummer = Pruefbericht[6]
-        
-        # Prüftext = "Prüfbericht: \n Prüfdatum: " + Prüfdatum + "\n Mängel: " + maengel + \
-        #     " \n Prüfung bestanden: " + accept + "\n Nächster Prüftermin: " + next_inspection
-        # print(Pruefbericht[6])
-
-        
-
-        # print(article_all)
-        #
-
-        # pdf.add_page()
-        # pdf.set_font("Arial", size=15)
-        # pdf.cell(200, 10, txt="Prüfbericht:",
-        #         ln=1, align='C')
-        # pdf.cell(200, 10, txt="Prüfdatum: " + str(datetime.fromtimestamp(int(Prüfdatum) / 1e3)),
-        #         ln=2, align='C')
-        # pdf.cell(200, 10, txt="Mängel: " + maengel,
-        #         ln=2, align='C')
-        # pdf.cell(200, 10, txt="Prüfung bestanden: " + accept,
-        #         ln=2, align='C')
-        # pdf.cell(200, 10, txt="Nächster Prüftermin: " + str(datetime.fromtimestamp(int(next_inspection) / 1e3)),
-        #         ln=2, align='C')
-
-
-        # print(type(next_inspection))
-        # print(type(Prüfdatum))
-        # print(Prüfdatum)
-        # print(next_inspection)
-        # pdf.output("update/output/myFactory_" + str(Prüfdatum) + "_Prüfbericht.pdf")
-
-        # Exemplarische UploadUrl
-        uploadurl = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel/" + \
-            str(Aritkelnummer)+"/document/Prüfbericht.pdf"
+        pdf_created = len(self.ids)
+        return  info_success, pdf_created
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
     def get_tagideasy(self, client_mongo):
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
         data = []
-        db = client_mongo['Prüfberichte']
+        db = self.client['Prüfberichte']
         col = db['Prüfberichte']
         for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
         #for doc in col.find({"Datum": {"$gt": 0}}):
@@ -180,8 +114,6 @@ class UpdateMyFactory():
                     # id: [Artikelnummer, index in Inventar-Liste, id MyFactory , Artikelnummer-MyFactory]
                     article_name.append(instance_name)
                     article_update.append(id)
-                    #article_instances.append(instance_attributes)
-                    #self.update_article_number.append(id[0])
         self.ids = article_update
         return  article_name
 
@@ -190,11 +122,12 @@ class UpdateMyFactory():
         # mappen der Werte von TagIdeasy zu den Feldern des PDFs für MyFactory
         pdf = FPDF()
         for i in range(len(instance_myfactory)):
-            Prüfdatum = inventars[i]["Datum"]
-            name = inventars[i]["name"]
-            maengel = inventars[i]["Mängel"]
-            accept = str(inventars[i]["accept"])
-            next_inspection = str(inventars[i]["nächstes Prüfdatum"])
+            pos_inventars = self.ids[i][1]
+            Prüfdatum = inventars[pos_inventars]["Datum"]
+            name = inventars[pos_inventars]["name"]
+            maengel = inventars[pos_inventars]["Mängel"]
+            accept = str(inventars[pos_inventars]["accept"])
+            next_inspection = str(inventars[pos_inventars]["nächstes Prüfdatum"])
             id_myfactory = str(self.ids[i][2])
             Artikelnummer = str(self.ids[i][0])
             Artikelnummer_MyFactory = str(self.ids[i][3])
@@ -204,13 +137,15 @@ class UpdateMyFactory():
         
             pdf.add_page()
             pdf.set_font("Arial", size=15)
+            pdf.cell(200, 10, txt="Pdf erstellt am:  " + str(datetime.fromtimestamp(self.update_time / 1e3)),
+                    ln=1, align='C'),
             pdf.cell(200, 10, txt="Artikelnummer TagIdeasy: " + str(Artikelnummer),
                     ln=1, align='C'),
             pdf.cell(200, 10, txt="Artikelnummer MyFactory: " + str(Artikelnummer_MyFactory),
                     ln=1, align='C'), 
             pdf.cell(200, 10, txt="Id MyFactory: " + str(id_myfactory),
                     ln=1, align='C'),  
-            pdf.cell(200, 10, txt="Geprüfte Anlagen: " + artikel_name,
+            pdf.cell(200, 10, txt="Geprüfte Anlage: " + artikel_name,
                     ln=1, align='C'),  
             pdf.cell(200, 10, txt="-------------------------------------------------------------",
                     ln=1, align='C')                 

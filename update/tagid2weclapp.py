@@ -14,8 +14,10 @@ def test():
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43' }
     mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
-    updateWeClapp = UpdateWeClapp(url, auth, mongodb_url)
-    print(updateWeClapp.update())
+    client = MongoClient(mongodb_url)
+    updateWeClapp = UpdateWeClapp(url, auth, client)
+    update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
+    print(updateWeClapp.update(actual_update_time=update_time))
 
 class UpdateWeClapp():
     """
@@ -27,10 +29,10 @@ class UpdateWeClapp():
     :param str mongo_url: URL zur verwendeten MongoDB
     """   
 
-    def __init__(self, url, auth, mongo_url):
+    def __init__(self, url, auth, mongo):
         self.url = url
         self.auth = auth
-        self.mongo_url = mongo_url
+        self.client = mongo
         self.last_update_time = 0
         self.update_time = 0
         self.update_article_number = []
@@ -43,7 +45,7 @@ class UpdateWeClapp():
         return self.update_article_number
 
 
-    def update(self, last_update_time = 0):
+    def update(self, last_update_time = 0, actual_update_time = 0):
         """
         Führt update der Instanzen in WeClapp durch. 
 
@@ -52,24 +54,25 @@ class UpdateWeClapp():
 
         # MongoDB instantiate
         # TODO: PF. connection failed (wie darauf reagieren, Ausgabe: Error, Datenbank Zugriff nicht möglich)
-        try:
-            client = MongoClient(self.mongo_url)
-        except:
-            raise Exception("Error: Zugriff auf MongoDB nicht möglich")
+        # try:
+        #     client = MongoClient(self.mongo_url)
+        # except:
+        #     raise Exception("Error: Zugriff auf MongoDB nicht möglich")
 
         self.last_update_time = last_update_time
 
         # aktuelle update Zeit speichern
-        now = datetime.now()
+        # now = datetime.now()
         # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
-        self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
+        # self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
+        self.update_time = actual_update_time 
         
         # Instatiate WeClapp-API
         weClappAPI = WeClappAPI(self.url, self.auth)
 
         # Inventar und Device Liste von TagIdeasy erhalten
         # inventar, device = get_tagideasy()
-        inventar = self.get_tagideasy(client)
+        inventar = self.get_tagideasy()
 
         # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
         #ids = [[instance["core"]["serial_number"], instance["core"]["articel_id_buyer"], inventar["results"].index(instance) ] for instance in inventar["results"]]
@@ -94,7 +97,7 @@ class UpdateWeClapp():
         return result, True
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
-    def get_tagideasy(self, client_mongo):
+    def get_tagideasy(self):
         # Collection "Prüfberichte" in MongoDB auswählen
         # db = client_mongo['Keys']
         # col = db['Updatefreq']
@@ -106,7 +109,7 @@ class UpdateWeClapp():
         #TODO: last update auslesen und einlesen in mongodb
         # last_update = 0
 
-        db = client_mongo['Prüfberichte']
+        db = self.client['Prüfberichte']
         col = db['Prüfberichte']
         for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
         #for doc in col.find({"Datum": {"$gt": 0}}):
