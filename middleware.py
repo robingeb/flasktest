@@ -4,6 +4,9 @@ from pymongo import MongoClient
 from datetime import datetime
 from api.weclapp import *
 from update.tagid2weclapp import UpdateWeClapp
+from update.tagid2myfactory import UpdateMyFactory
+from update.tagid2dynamics import UpdateDynamics
+from move_devices. move_tagid_weclapp import MoveTagidWeclapp
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date, timezone
 # import logging
@@ -55,7 +58,8 @@ class MiddlewareControl():
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         # TODO: 0 zu last_update_time
         # update methode aufrufen
-        result, done, update_ids = self.updates(erp, self.client, 0, actual_update_time)
+        result, done, ids = self.updates(erp, self.client, 0, actual_update_time)
+        print(result, done, ids )
 
         db = self.client['Keys']
         col = db['Updatefreq']
@@ -85,34 +89,61 @@ class MiddlewareControl():
         return system["System"], update_frequ["time"]
 
     def updates(self, system, client_mongo, last_update_time, actual_update_time):
-        # get erp-System authentification data and start update function of the System
+        # Update-Funktion für das vom Nutzer gewählte ERP-System starten
         # TODO: update Funktion für andere ERP Systeme
         db = client_mongo['Keys']
         if system == "dynamics":
+            # Authentifizierungsdaten abrufen
             col = db["Key_Dynamics"]
-            system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
-            return 0, 0
+            system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
+            # init weclapp-Update Klasse
+            updateDynamics = UpdateDynamics(
+                system_auth["URL"], {"Authorization": system_auth["BasicAuth"]}, client_mongo)
+            # update-Methode ausführen
+            result, done = updateDynamics.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
+            return result, done, updateDynamics.get_article_number()
+
         elif system == "weclapp":
-            # letzten Zeitstempel
+            # Authentifizierungsdaten abrufen
             col = db['Key_Weclapp']
-            system_auth = list(col.find().sort(
-                [('timestamp', -1)]).limit(1))[0]
+            try:
+                system_auth = list(col.find().sort(
+                    [('timestamp', -1)]).limit(1))[0]
+            except:
+                raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+            # device-export 
+            export_result, export_article_number = self.device_export(system_auth["URL"], {"AuthenticationToken": system_auth["Password"]})
             # init weclapp-Update Klasse
             updateWeClapp = UpdateWeClapp(
                 system_auth["URL"], {"AuthenticationToken": system_auth["Password"]}, client_mongo)
-            result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
-            return result, done, updateWeClapp.get_article_number()
+            # update-Methode ausführen
+            update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
+            update_article_number = updateWeClapp.get_article_number()
+            return [update_result, export_result], done, [update_article_number, export_article_number]
 
         elif system == "xentral":
             col = db['Key_Xentral']
             system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
             return 0, 0
+
         elif system == "myfactory":
+            # Authentifizierungsdaten abrufen
             col = db['Key_MyFactory']
-            system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))
-            return 0, 0
+            system_auth = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
+            # init MyFactory-Update Klasse
+            updateMyFactory = UpdateMyFactory(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
+            # update-Methode ausführen
+            pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+            return pdf_created, done, 0
         else:
             print("Error: No such Erp System in Database")
+
+        
+    def device_export(self, url, auth):
+        moveTagidWeclapp = MoveTagidWeclapp(url,auth)
+        ids, result = moveTagidWeclapp.export()
+        return ids, result
+
 
 
 if __name__ == "__main__":

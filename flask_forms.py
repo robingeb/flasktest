@@ -60,5 +60,6 @@ class articlehomeForm(FlaskForm):
     submit = SubmitField('Prüfbericht')
 
 class choicehomeForm(FlaskForm):
-    time = IntegerField('Zeitintervall', validators=[Required()])
-    submit = SubmitField('Systemauswahl')
+    time = IntegerField('Zeitintervall zwischen Updates', validators=[Required()])
+    export = SelectField(u'Anlagen-Export', choices=[('tagid_erp', 'TagIdeasy zu ERP-System'), ('erp_tagid', 'ERP-System zu TagIdeasy'), ('no', 'kein Export')])
+    submit = SubmitField('Submit')
