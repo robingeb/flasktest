@@ -1,4 +1,4 @@
-<h2>ERP System</h2>
+<h2>Grundeinstellungen</h2>
 <form method="POST">
     {{ form.csrf_token }}
     
@@ -6,6 +6,10 @@
     <p>
         {{form.time.label}} <br>
         {{form.time(size=30)}}
+    </p>
+    <p>
+        {{form.export.label}} <br>
+        {{form.export(size=4)}}
     </p>
     <p>
         {{form.submit}} <br>

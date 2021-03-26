@@ -13,7 +13,8 @@ def test():
             'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
         }
     mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
-    updateDynamics = UpdateDynamics(url, auth, mongodb_url)
+    client = MongoClient(mongodb_url)
+    updateDynamics = UpdateDynamics(url, auth, client)
     print(updateDynamics.update())
 
 class UpdateDynamics():
@@ -26,58 +27,72 @@ class UpdateDynamics():
     :param str mongo_url: URL zur verwendeten MongoDB
     """   
 
-    def __init__(self, url, auth, mongo_url):
+    def __init__(self, url, auth, client):
         self.url = url
         self.auth = auth
-        self.mongo_url = mongo_url
+        self.client = client
+        self.update_time = 0
+        self.update_article_number = []
+        self.ids = []
 
-    def update(self):
+    def get_update_time(self): 
+        return self.update_time
+
+    def get_article_number(self):
+        return self.update_article_number
+
+    def update(self, last_update_time = 0, actual_update_time = 0):
         """
         Führt update der Instanzen in WeClapp durch. 
 
         :return: gibt json mit den (theoretisch) aktualisierten Instanzen zurück
         """
-        try:
-            client = MongoClient(self.mongo_url)
-        except:
-            raise Exception("Error: Zugriff auf MongoDB nicht möglich")
 
         # Instantiate Dynamics-API
         dynamicsAPI = DynamicsAPI(self.url, self.auth)
 
+        self.last_update_time = last_update_time
+        self.update_time = actual_update_time
+
         # Inventar und Device Liste von TagIdeasy erhalten
         # inventar, device = get_tagideasy()
-        inventar = self.get_tagideasy(client)
+        inventar = self.get_tagideasy()
 
-        # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
+        # Liste von Ids von Instanzen im Inventar: [Artikelnummer, index in inventar-list]
         tagIdeasy_ids = [[instance["Artikelnummer"],
                         inventar.index(instance)] for instance in inventar]
 
         # Relevante Artikel (Geräte) aus Dynamics laden (get-Request)
-        dynamics_ids, dynamics_instances = self.get_articel(
+        dynamics_instances = self.get_articel(
             self.url, self.auth, tagIdeasy_ids, dynamicsAPI)
+        
+        if len(self.ids) == 0:
+            # TODO. quti testen mit JobScheduler
+            # raise Exception("Es gibt keine zu aktualisierenden Artikel")
+            return [], False
 
         # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben
-        df_mapped = self.map_attributes(dynamics_ids, dynamics_instances, inventar)
+        df_mapped = self.map_attributes(self.ids, dynamics_instances, inventar)
 
         # aktualisierte Artikel in Weclapp updaten (put-Request)
-        result = self.update_articel(df_mapped, dynamicsAPI)
-        return result
+        result, success = self.update_articel(df_mapped, dynamicsAPI)        
+        return result, success
         # print(weclapp_ids)
 
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
-    def get_tagideasy(self, client_mongo):
+    def get_tagideasy(self):
 
         # Collection "Prüfberichte" in MongoDB auswählen
-        db = client_mongo['Prüfberichte']
+        db = self.client['Prüfberichte']
         col = db['Prüfberichte']
 
-        # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von WeClapp erstellt worden sind
-        # TODO: Abbruchfunktion, wenn keine Prüfberichte geladen werden konnten
         data = []
-        last_update = 0
-        for doc in col.find({"Datum": {"$gt": last_update}}):
+        # Alle Prüfberichte erhalten, welche Zeit dem letzten Update von Dynamics erstellt worden sind
+        db = self.client['Prüfberichte']
+        col = db['Prüfberichte']
+        for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
+        #for doc in col.find({"Datum": {"$gt": 0}}):
             data.append(doc)
         return data
         # return daten
@@ -86,23 +101,26 @@ class UpdateDynamics():
     # 2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, url, auth, ids, dynamicsAPI):
         # Abrufen aller Artikel
-        article_all = dynamicsAPI.get_request()
+        try:
+            article_all = dynamicsAPI.get_request()
+        except: 
+            raise Exception("Error: Zugriff auf Dynamics nicht möglich")
 
         # Aussortieren der nicht zu updatenden Artikel
         article_update = []
         article_instances = []
         for instance in article_all["value"]:
-            # Liste von Ids [Artikelnummer, index in inventar-list, WeClapp-Id]
             for i, value in enumerate(ids):
-                # print(value)
+                # Nur Artikel nehmen, welche die selbe Artikelnummer wie einer der Prüfberichte besitzen
                 if value[0] == instance["number"]:
                     id = ids[i]
                     id.append(instance["id"])
                     article_update.append(id)
                     article_instances.append(instance)
-        if len(article_update) == 0:
-            quit()
-        return article_update, article_instances
+                    self.update_article_number.append(id[0])       
+         # Liste von Ids [Artikelnummer, index in inventar-list, Dynamics-Id]
+        self.ids = article_update
+        return article_instances
 
 
     def get_device_index(self, article_id, device):
@@ -163,7 +181,7 @@ class UpdateDynamics():
         result_json = df_mapped.to_json(orient="records")
         parsed = json.loads(result_json)[0]
         final_json = json.dumps(parsed, indent=4)
-        return final_json
+        return final_json, True
 
 
 if __name__ == "__main__":

@@ -39,7 +39,7 @@ class UpdateMyFactory():
         self.auth = auth
 
 #TODO: aktuelle Update zeit einbauen
-    def update(self,  client, last_update_time = 0, actual_update_time = 0):
+    def update(self, last_update_time = 0, actual_update_time = 0):
         """
         :return: pdf mit Prüfberichten
         
@@ -59,7 +59,7 @@ class UpdateMyFactory():
 
         # Inventar und Device Liste von TagIdeasy erhalten
         # inventar, device = get_tagideasy()
-        inventar = self.get_tagideasy(client)
+        inventar = self.get_tagideasy()
 
         # Erstellen einer Liste aus Artikelnummer und Index für alle Prüfberichte in TagIdeasy
         tagid_ids = [[instance["Artikelnummer"],
@@ -79,10 +79,10 @@ class UpdateMyFactory():
             myfactory_names, inventar)
         
         pdf_created = len(self.ids)
-        return  info_success, pdf_created
+        return  pdf_created, info_success
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
-    def get_tagideasy(self, client_mongo):
+    def get_tagideasy(self):
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
         data = []
         db = self.client['Prüfberichte']

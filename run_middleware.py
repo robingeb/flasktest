@@ -31,18 +31,19 @@ middleware = MiddlewareControl()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    app.logger.info('Processing default request')
+    # app.logger.info('Processing default request')
 
     name = None
     form = choicehomeForm()
 
-    db = client['Prüfberichte']
-    col = db['Intervall']
+    db = client['Keys']
+    col = db['settings']
 
     if form.validate_on_submit():
 
         time = form.time.data
-        datasets = col.insert_one({"URL": time})
+        export = form.export.data
+        datasets = col.insert_one({"URL": time, "EXPORT": export})
         return redirect(url_for('choice'))
 
     return render_template('choice_home.html', form=form, name=name)
@@ -81,7 +82,7 @@ def erp(System):
 
             # add Job
             # scheduler.add_job("job1", update_regulary, 30)
-            middleware.init_interval_job()
+            # middleware.init_interval_job()
 
             return 'geht'
 

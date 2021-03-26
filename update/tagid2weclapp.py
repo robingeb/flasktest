@@ -84,8 +84,7 @@ class UpdateWeClapp():
             tagid_ids, weClappAPI)
         
         if len(self.ids) == 0:
-            # TODO. quti testen mit JobScheduler
-            # raise Exception("Es gibt keine zu aktualisierenden Artikel")
+            # raise Exception("Es gibt keine zu aktualisierenden Analgen")
             return [], False
 
         # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben
@@ -120,7 +119,10 @@ class UpdateWeClapp():
     # 2) Get-Request der Artikel um die ids der zu updatenden Geräte zu erhalten
     def get_articel(self, tagid_ids, weClappAPI):
         # Abrufen aller Artikel
-        article_all = weClappAPI.get_request()
+        try:
+            article_all = weClappAPI.get_request()
+        except: 
+            raise Exception("Error: Zugriff auf Dynamics nicht möglich")
 
         # Aussortieren der nicht zu updatenden Artikel
         article_update = []
