@@ -26,8 +26,6 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient(
     "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
-# initialize Middleware Control Class
-middleware = MiddlewareControl()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -43,7 +41,7 @@ def home():
 
         time = form.time.data
         export = form.export.data
-        datasets = col.insert_one({"URL": time, "EXPORT": export})
+        datasets = col.insert_one({"INTERVALL": time, "EXPORT": export})
         return redirect(url_for('choice'))
 
     return render_template('choice_home.html', form=form, name=name)
@@ -79,6 +77,9 @@ def erp(System):
 
             datasets = col.insert_one(
                 {"URL": str(URL), "Password": str(Password)})
+
+            # initialize Middleware Control Class
+            middleware = MiddlewareControl()
 
             # add Job
             # scheduler.add_job("job1", update_regulary, 30)

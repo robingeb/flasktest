@@ -29,6 +29,10 @@ class MiddlewareControl():
             self.client = MongoClient(mongo_url)
         except:
             raise Exception("Error: Zugriff auf MongoDB nicht möglich")
+        erp, time_intervall, device_export = self.get_config(self.client)
+        self.erp = erp
+        self.time_intervall = time_intervall
+        self.device_export = device_export
         
        
     def init_interval_job(self):
@@ -37,7 +41,7 @@ class MiddlewareControl():
         '''
         #TODO: Job Sekundenzeit übergeben
         self.scheduler.add_job(self.job_interval_updates,
-                               "interval", seconds=30)
+                               "interval", seconds=self.time_intervall)
 
     def job_interval_updates(self):
         print("job1 done")
@@ -52,16 +56,24 @@ class MiddlewareControl():
 
         # Variablen für Update:
         # get configuration decitions of user saved in MongoDB
-        erp, last_update_time = self.get_config(self.client)
+        
+        # letzten Update Zeitpunkt erhalten
+        db = self.client['Keys']
+        col = db['Updatefreq']
+        try:
+            last_update_time = list(col.find())[0]
+        except:
+            last_update_time = 0
+
+        col.delete_many({})
         # Zeitpunkt des aktuellen Updates 
         now = datetime.now()
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         # TODO: 0 zu last_update_time
         # update methode aufrufen
-        result, done, ids = self.updates(erp, self.client, 0, actual_update_time)
+        result, done, ids = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
         print(result, done, ids )
-
-        db = self.client['Keys']
+        
         col = db['Updatefreq']
         # Update-Zeit speichern in MongoDB
         if done:
@@ -74,22 +86,33 @@ class MiddlewareControl():
 
 
     def get_config(self, client_mongo):
-        # get the last used erp-System
+        # das ERP-System, welches verwendet wird erhalten. Falls mehrere in der DB wird das zuletzt verwendete übergeben
         db = self.client['Keys']
         col = db['latestsystem']
         system = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
 
-        # letzten Update Zeitpunkt erhalten
-        col = db['Updatefreq']
-        try:
-            update_frequ = list(col.find())[0]
-        except:
-            return system["System"], 0
-        col.delete_many({})
-        return system["System"], update_frequ["time"]
+        # Einstellungen (Zeitintervall und Anlagen-Export erhalten)
+        col = db["settings"]
+        settings = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
+        time_intervall = settings["INTERVALL"]
+        export = settings["EXPORT"]
 
-    def updates(self, system, client_mongo, last_update_time, actual_update_time):
-        # Update-Funktion für das vom Nutzer gewählte ERP-System starten
+        return system["System"], time_intervall, export
+
+    def updates(self, system, client_mongo, last_update_time, actual_update_time, device_export):
+        """
+        Update eines ERP-Systems
+
+        :param system: gewähltes ERP-System durch den Nutzer
+        :param client_mongo: MongoDB
+        :param last_update_time: letztes Update Datum
+        :param actual_update_time: aktuelles Update Datum
+        :param device_export: ob ein Anlagen-Export durchgeführt wird und in welche Richttung
+
+        :return result: 2 Dim. Matrix mit Dictionary der Update und Export Funktion
+        :return ids: 2 Dim. Matrix mit Liste der Artikelnummern welche upgedatet und exportiert worden sind
+        :return done: Boolean, ob Update funktioniert hat
+        """
         # TODO: update Funktion für andere ERP Systeme
         db = client_mongo['Keys']
         if system == "dynamics":
@@ -111,11 +134,12 @@ class MiddlewareControl():
                     [('timestamp', -1)]).limit(1))[0]
             except:
                 raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+            url = system_auth["URL"]
+            auth = {"AuthenticationToken": system_auth["Password"]}
             # device-export 
-            export_result, export_article_number = self.device_export(system_auth["URL"], {"AuthenticationToken": system_auth["Password"]})
+            export_result, export_article_number = self.device_export_weclapp(url, auth , device_export)
             # init weclapp-Update Klasse
-            updateWeClapp = UpdateWeClapp(
-                system_auth["URL"], {"AuthenticationToken": system_auth["Password"]}, client_mongo)
+            updateWeClapp = UpdateWeClapp(url, auth, client_mongo)
             # update-Methode ausführen
             update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
             update_article_number = updateWeClapp.get_article_number()
@@ -139,10 +163,15 @@ class MiddlewareControl():
             print("Error: No such Erp System in Database")
 
         
-    def device_export(self, url, auth):
-        moveTagidWeclapp = MoveTagidWeclapp(url,auth)
-        ids, result = moveTagidWeclapp.export()
-        return ids, result
+    def device_export_weclapp(self, url, auth, device_export):
+        if device_export == "tagid_erp":
+            moveTagidWeclapp = MoveTagidWeclapp(url,auth)
+            ids, result = moveTagidWeclapp.export()
+        elif device_export == "erp_tagid":
+            pass
+        else:
+            return ["No Export"], ["No Export"]
+        return result, ids
 
 
 
