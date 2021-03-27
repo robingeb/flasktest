@@ -7,7 +7,7 @@ from flask import jsonify
 import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-# import logging
+import logging
 # bene: Notwendige imports
 #from flask_apscheduler import APScheduler
 from middleware import *
@@ -16,7 +16,7 @@ from middleware import *
 
 app = Flask(__name__, template_folder='templates')
 # logging instantiate
-# logging.basicConfig( filename='logs/demo.log', format='%(asctime)s %(message)s', level=logging.DEBUG)
+logging.basicConfig( filename='logs/demo.log', format='%(asctime)s %(name)s %(message)s', level=logging.DEBUG)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
 
@@ -83,7 +83,7 @@ def erp(System):
 
             # add Job
             # scheduler.add_job("job1", update_regulary, 30)
-            # middleware.init_interval_job()
+            middleware.init_interval_job()
 
             return 'geht'
 
