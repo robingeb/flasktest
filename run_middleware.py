@@ -85,7 +85,7 @@ def erp(System):
             # scheduler.add_job("job1", update_regulary, 30)
             middleware.init_interval_job()
 
-            return 'geht'
+            return 'Die Zugangsdaten für weclapp wurden gespeichert!\nSie können das Fenster jetzt schließen.'
 
         return render_template('erpweclapp.html', form=form, name=name)
 
@@ -101,7 +101,7 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "BasicAuth": str(BasicAuth)})
 
-            return 'geht'
+            return 'Die Zugangsdaten für Microsoft Dynamics wurden gespeichert!\nSie können das Fenster jetzt schließen.'
 
         return render_template('erpdynamics.html', form=form, name=name)
 
@@ -117,7 +117,7 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Username": str(Username), "Password": str(Password)})
 
-            return 'geht'
+            return 'Die Zugangsdaten für Xentral wurden gespeichert!\nSie können das Fenster jetzt schließen.
 
         return render_template('erpxentral.html', form=form, name=name)
 
@@ -133,11 +133,11 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Username": str(Username), "Password": str(Password)})
 
-            return 'geht'
+            return 'Die Zugangsdaten für MyFactory wurden gespeichert!\nSie können das Fenster jetzt schließen.'
 
         return render_template('erpmyfactory.html', form=form, name=name)
 
-    return 'geht nicht'
+    return 'Das ERP-System wurde nicht gefunden'
 
 
 if __name__ == '__main__':
