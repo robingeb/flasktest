@@ -9,7 +9,7 @@ from update.tagid2dynamics import UpdateDynamics
 from move_devices. move_tagid_weclapp import MoveTagidWeclapp
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date, timezone
-# import logging
+import logging
 
 def test():
     middlewareControl = MiddlewareControl()
@@ -20,8 +20,8 @@ class MiddlewareControl():
     Klasse welche Methoden zur Verfügung stellt, die die Konfiguration der Middleware umsetzen.
     """
     def __init__(self):
-        #self.scheduler = BackgroundScheduler()
-        #self.scheduler.start()
+        self.scheduler = BackgroundScheduler()
+        self.scheduler.start()
 
         # init Database
         mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
@@ -81,19 +81,19 @@ class MiddlewareControl():
         else:
             col.insert_one({"time": last_update_time})
         # print(result)
-        
-        # logging.info("Update: System: " + erp + "; Artikel Nummern: " + str(update_ids))
+        logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+        logging.info("Update: System: " + self.erp + "; Artikel Nummern: " + str(ids[0]) )
 
 
     def get_config(self, client_mongo):
         # das ERP-System, welches verwendet wird erhalten. Falls mehrere in der DB wird das zuletzt verwendete übergeben
         db = self.client['Keys']
         col = db['latestsystem']
-        system = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
+        system = list(col.find().sort([('_id', -1)]).limit(1))[0]
 
         # Einstellungen (Zeitintervall und Anlagen-Export erhalten)
         col = db["settings"]
-        settings = list(col.find().sort([('timestamp', -1)]).limit(1))[0]
+        settings = list(col.find().sort([('_id', -1)]).limit(1))[0]
         time_intervall = settings["INTERVALL"]
         export = settings["EXPORT"]
 
@@ -160,6 +160,7 @@ class MiddlewareControl():
             pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
             return pdf_created, done, 0
         else:
+            logging.error("Keine ERP-System spezifiziert" )
             print("Error: No such Erp System in Database")
 
         

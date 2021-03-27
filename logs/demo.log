@@ -1,0 +1,182 @@
+2021-03-27 11:02:10,204  * Restarting with stat
+2021-03-27 11:02:14,353  * Debugger is active!
+2021-03-27 11:02:14,463  * Debugger PIN: 141-834-372
+2021-03-27 11:02:14,513  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-27 11:02:31,927 127.0.0.1 - - [27/Mar/2021 11:02:31] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-27 11:02:34,872 127.0.0.1 - - [27/Mar/2021 11:02:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-27 11:02:49,848 127.0.0.1 - - [27/Mar/2021 11:02:49] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-27 11:02:49,891 127.0.0.1 - - [27/Mar/2021 11:02:49] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-27 11:02:52,868 127.0.0.1 - - [27/Mar/2021 11:02:52] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-27 11:02:52,948 127.0.0.1 - - [27/Mar/2021 11:02:52] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:02:57,925 127.0.0.1 - - [27/Mar/2021 11:02:57] "[35m[1mPOST /erp/weclapp HTTP/1.1[0m" 500 -
+2021-03-27 11:02:58,032 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-27 11:02:58,065 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-27 11:02:58,096 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-27 11:02:58,407 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-27 11:02:58,499 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-27 11:02:58,719 127.0.0.1 - - [27/Mar/2021 11:02:58] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-27 11:05:29,805  * Restarting with stat
+2021-03-27 11:05:34,553  * Debugger is active!
+2021-03-27 11:05:34,608  * Debugger PIN: 141-834-372
+2021-03-27 11:05:34,655  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-27 11:06:02,751 127.0.0.1 - - [27/Mar/2021 11:06:02] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-27 11:06:11,560 127.0.0.1 - - [27/Mar/2021 11:06:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-27 11:06:11,594 127.0.0.1 - - [27/Mar/2021 11:06:11] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-27 11:06:14,106 127.0.0.1 - - [27/Mar/2021 11:06:14] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-27 11:06:14,174 127.0.0.1 - - [27/Mar/2021 11:06:14] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:06:30,320 Scheduler started
+2021-03-27 11:06:30,321 Looking for jobs to run
+2021-03-27 11:06:30,322 No jobs; waiting until a job is added
+2021-03-27 11:06:30,942 Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-27 11:06:30,943 127.0.0.1 - - [27/Mar/2021 11:06:30] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:06:30,943 Looking for jobs to run
+2021-03-27 11:06:30,943 Next wakeup is due at 2021-03-27 11:07:00.941451+01:00 (in 29.998000 seconds)
+2021-03-27 11:07:00,950 Looking for jobs to run
+2021-03-27 11:07:00,951 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:07:00 CET)" (scheduled at 2021-03-27 11:07:00.941451+01:00)
+2021-03-27 11:07:00,952 Next wakeup is due at 2021-03-27 11:07:30.941451+01:00 (in 29.990792 seconds)
+2021-03-27 11:07:01,092 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:01,379 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:01,388 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:01,505 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:01,514 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:01,632 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:01,641 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:01,774 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:01,783 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:01,942 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:01,989 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:02,206 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-27 11:07:02,249 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:07:30 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 48, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 85, in init_updates
+    logging.info("Update: System: " + erp + "; Artikel Nummern: " + str(update_ids))
+NameError: name 'logging' is not defined
+2021-03-27 11:07:30,952 Looking for jobs to run
+2021-03-27 11:07:30,953 Next wakeup is due at 2021-03-27 11:08:00.941451+01:00 (in 29.989243 seconds)
+2021-03-27 11:07:30,953 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:08:00 CET)" (scheduled at 2021-03-27 11:07:30.941451+01:00)
+2021-03-27 11:07:31,054 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:31,230 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:31,238 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:31,405 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:31,416 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:31,566 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:31,573 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:31,728 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:31,735 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:31,861 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:07:31,894 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:07:32,051 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-27 11:07:32,091 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:08:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 48, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 85, in init_updates
+    logging.info("Update: System: " + erp + "; Artikel Nummern: " + str(update_ids))
+NameError: name 'logging' is not defined
+2021-03-27 11:08:00,943 Looking for jobs to run
+2021-03-27 11:08:00,944 Next wakeup is due at 2021-03-27 11:08:30.941451+01:00 (in 29.997521 seconds)
+2021-03-27 11:08:00,944 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:08:30 CET)" (scheduled at 2021-03-27 11:08:00.941451+01:00)
+2021-03-27 11:08:01,024 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:01,180 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:08:01,191 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:01,351 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:08:01,361 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:01,536 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:08:01,546 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:01,713 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:08:01,722 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:01,853 https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-27 11:08:01,886 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:08:02,071 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-27 11:08:02,113 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:08:30 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 48, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 85, in init_updates
+    logging.info("Update: System: " + erp + "; Artikel Nummern: " + str(update_ids))
+NameError: name 'logging' is not defined
+2021-03-27 11:20:22,394  * Restarting with stat
+2021-03-27 11:20:27,479  * Debugger is active!
+2021-03-27 11:20:27,512  * Debugger PIN: 141-834-372
+2021-03-27 11:20:27,532  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-27 11:20:39,832 The CSRF token has expired.
+2021-03-27 11:20:39,870 127.0.0.1 - - [27/Mar/2021 11:20:39] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:20:40,358 127.0.0.1 - - [27/Mar/2021 11:20:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-27 11:20:48,640 The CSRF token has expired.
+2021-03-27 11:20:48,645 127.0.0.1 - - [27/Mar/2021 11:20:48] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:20:56,214 127.0.0.1 - - [27/Mar/2021 11:20:56] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-27 11:21:00,767 127.0.0.1 - - [27/Mar/2021 11:21:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-27 11:21:00,806 127.0.0.1 - - [27/Mar/2021 11:21:00] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-27 11:21:03,042 127.0.0.1 - - [27/Mar/2021 11:21:03] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-27 11:21:03,089 127.0.0.1 - - [27/Mar/2021 11:21:03] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:21:09,676 Scheduler started
+2021-03-27 11:21:09,676 Looking for jobs to run
+2021-03-27 11:21:09,677 No jobs; waiting until a job is added
+2021-03-27 11:21:10,179 Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-27 11:21:10,181 127.0.0.1 - - [27/Mar/2021 11:21:10] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-27 11:21:10,181 Looking for jobs to run
+2021-03-27 11:21:10,183 Next wakeup is due at 2021-03-27 11:21:40.179597+01:00 (in 29.997000 seconds)
+2021-03-27 11:21:40,185 Looking for jobs to run
+2021-03-27 11:21:40,186 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:21:40 CET)" (scheduled at 2021-03-27 11:21:40.179597+01:00)
+2021-03-27 11:21:40,186 Next wakeup is due at 2021-03-27 11:22:10.179597+01:00 (in 29.993965 seconds)
+2021-03-27 11:21:40,323 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:21:40,555 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-27 11:21:40,596 Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-27 11:21:40,596 Update: System: weclapp; Artikel Nummern: []
+2021-03-27 11:21:40,597 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:22:10 CET)" executed successfully
+2021-03-27 11:22:10,186 Looking for jobs to run
+2021-03-27 11:22:10,187 Next wakeup is due at 2021-03-27 11:22:40.179597+01:00 (in 29.993221 seconds)
+2021-03-27 11:22:10,187 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:22:40 CET)" (scheduled at 2021-03-27 11:22:10.179597+01:00)
+2021-03-27 11:22:10,290 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-27 11:22:10,472 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-27 11:22:10,509 Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-27 11:22:10,510 Update: System: weclapp; Artikel Nummern: []
+2021-03-27 11:22:10,511 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:22:40 CET)" executed successfully
+werkzeug 2021-03-27 11:26:49,894  * Restarting with stat
+werkzeug 2021-03-27 11:26:53,167  * Debugger is active!
+werkzeug 2021-03-27 11:26:53,205  * Debugger PIN: 141-834-372
+werkzeug 2021-03-27 11:26:53,222  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+werkzeug 2021-03-27 11:27:00,690 127.0.0.1 - - [27/Mar/2021 11:27:00] "[37mGET / HTTP/1.1[0m" 200 -
+werkzeug 2021-03-27 11:27:07,256 127.0.0.1 - - [27/Mar/2021 11:27:07] "[32mPOST / HTTP/1.1[0m" 302 -
+werkzeug 2021-03-27 11:27:07,292 127.0.0.1 - - [27/Mar/2021 11:27:07] "[37mGET /choice HTTP/1.1[0m" 200 -
+werkzeug 2021-03-27 11:27:09,238 127.0.0.1 - - [27/Mar/2021 11:27:09] "[32mPOST /choice HTTP/1.1[0m" 302 -
+werkzeug 2021-03-27 11:27:09,301 127.0.0.1 - - [27/Mar/2021 11:27:09] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+apscheduler.scheduler 2021-03-27 11:27:13,942 Scheduler started
+apscheduler.scheduler 2021-03-27 11:27:13,943 Looking for jobs to run
+apscheduler.scheduler 2021-03-27 11:27:13,944 No jobs; waiting until a job is added
+apscheduler.scheduler 2021-03-27 11:27:14,465 Added job "MiddlewareControl.job_interval_updates" to job store "default"
+werkzeug 2021-03-27 11:27:14,466 127.0.0.1 - - [27/Mar/2021 11:27:14] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+apscheduler.scheduler 2021-03-27 11:27:14,466 Looking for jobs to run
+apscheduler.scheduler 2021-03-27 11:27:14,467 Next wakeup is due at 2021-03-27 11:27:44.465822+01:00 (in 29.997998 seconds)
+apscheduler.scheduler 2021-03-27 11:27:44,476 Looking for jobs to run
+apscheduler.executors.default 2021-03-27 11:27:44,478 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:27:44 CET)" (scheduled at 2021-03-27 11:27:44.465822+01:00)
+apscheduler.scheduler 2021-03-27 11:27:44,479 Next wakeup is due at 2021-03-27 11:28:14.465822+01:00 (in 29.988250 seconds)
+urllib3.connectionpool 2021-03-27 11:27:44,605 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+urllib3.connectionpool 2021-03-27 11:27:44,819 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+root 2021-03-27 11:27:44,866 Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+root 2021-03-27 11:27:44,866 Update: System: weclapp; Artikel Nummern: []
+apscheduler.executors.default 2021-03-27 11:27:44,866 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:28:14 CET)" executed successfully
+apscheduler.scheduler 2021-03-27 11:28:14,483 Looking for jobs to run
+apscheduler.scheduler 2021-03-27 11:28:14,484 Next wakeup is due at 2021-03-27 11:28:44.465822+01:00 (in 29.982411 seconds)
+apscheduler.executors.default 2021-03-27 11:28:14,484 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:28:44 CET)" (scheduled at 2021-03-27 11:28:14.465822+01:00)
+urllib3.connectionpool 2021-03-27 11:28:14,601 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+urllib3.connectionpool 2021-03-27 11:28:14,769 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+root 2021-03-27 11:28:14,803 Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+root 2021-03-27 11:28:14,803 Update: System: weclapp; Artikel Nummern: []
+apscheduler.executors.default 2021-03-27 11:28:14,804 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:28:44 CET)" executed successfully
+apscheduler.scheduler 2021-03-27 11:28:44,482 Looking for jobs to run
+apscheduler.scheduler 2021-03-27 11:28:44,484 Next wakeup is due at 2021-03-27 11:29:14.465822+01:00 (in 29.982665 seconds)
+apscheduler.executors.default 2021-03-27 11:28:44,484 Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:29:14 CET)" (scheduled at 2021-03-27 11:28:44.465822+01:00)
+urllib3.connectionpool 2021-03-27 11:28:44,591 Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+urllib3.connectionpool 2021-03-27 11:28:44,732 https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+root 2021-03-27 11:28:44,765 Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+root 2021-03-27 11:28:44,765 Update: System: weclapp; Artikel Nummern: []
+apscheduler.executors.default 2021-03-27 11:28:44,766 Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 11:29:14 CET)" executed successfully

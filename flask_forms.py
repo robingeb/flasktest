@@ -37,24 +37,24 @@ class choiceform(FlaskForm):
 class erpformweclapp(FlaskForm):
     URL = StringField('URL', validators=[Required()])
     Password = StringField('API-Key', validators=[Required()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Middleware starten')
 
 class erpformdynamics(FlaskForm):
     URL = StringField('URL', validators=[Required()])
     BasicAuth = StringField('BasicAuth', validators=[Required()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Middleware starten')
 
 class erpformxentral(FlaskForm):
     URL = StringField('url', validators=[Required()])
     Password = StringField('password', validators=[Required()])
     Username = StringField('Username', validators=[Required()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Middleware starten')
 
 class erpformmyfactory(FlaskForm):
     URL = StringField('url', validators=[Required()])
     Password = StringField('password', validators=[Required()])
     Username = StringField('Username', validators=[Required()])
-    submit = SubmitField('Submit')   
+    submit = SubmitField('Middleware starten')   
 
 class articlehomeForm(FlaskForm):
     submit = SubmitField('Prüfbericht')
