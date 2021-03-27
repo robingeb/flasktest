@@ -59,6 +59,12 @@ class erpformmyfactory(FlaskForm):
 class articlehomeForm(FlaskForm):
     submit = SubmitField('Prüfbericht')
 
+class choicestartForm(FlaskForm):
+    submit = SubmitField('Neue Konfiguration starten')
+
+class choiceendForm(FlaskForm):
+    submit = SubmitField('Neue Konfiguration starten')
+
 class choicehomeForm(FlaskForm):
     time = IntegerField('Zeitintervall zwischen Updates', validators=[Required()])
     time_unit = SelectField(u'Zeiteinheit', choices=[('seconds', 'Sekunden'), ('minutes', 'Minuten'), ('hours', 'Stunden'), ('days', 'Tage')], validators=[Required()])
