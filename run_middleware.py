@@ -12,7 +12,12 @@ import logging
 #from flask_apscheduler import APScheduler
 from middleware import *
 
+# ------------------------------------ INFO -----------------------------------------------------------------------
+# Run Button wählen, um Anwendung zu starten
+# 
 
+
+#-------------------------------------Start A
 
 app = Flask(__name__, template_folder='templates')
 # logging instantiate
