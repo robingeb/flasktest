@@ -29,10 +29,12 @@ class MiddlewareControl():
             self.client = MongoClient(mongo_url)
         except:
             raise Exception("Error: Zugriff auf MongoDB nicht möglich")
-        erp, time_intervall, device_export = self.get_config(self.client)
-        self.erp = erp
-        self.time_intervall = time_intervall
-        self.device_export = device_export
+        # erp, time_intervall, time_unit, device_export = self.init_config(self.client)
+        # self.erp = erp
+        # self.time_intervall = time_intervall
+        # self.time_unit = time_unit
+        # self.device_export = device_export
+        self.init_config(self.client)
         
        
     def init_interval_job(self):
@@ -41,7 +43,7 @@ class MiddlewareControl():
         '''
         #TODO: Job Sekundenzeit übergeben
         self.scheduler.add_job(self.job_interval_updates,
-                               "interval", seconds=self.time_intervall)
+                               "interval", self.time_unit=self.time_intervall)
 
     def job_interval_updates(self):
         print("job1 done")
@@ -85,19 +87,22 @@ class MiddlewareControl():
         logging.info("Update: System: " + self.erp + "; Artikel Nummern: " + str(ids[0]) )
 
 
-    def get_config(self, client_mongo):
+    def init_config(self, client_mongo):
         # das ERP-System, welches verwendet wird erhalten. Falls mehrere in der DB wird das zuletzt verwendete übergeben
         db = self.client['Keys']
         col = db['latestsystem']
         system = list(col.find().sort([('_id', -1)]).limit(1))[0]
+        self.erp = system["System"]
 
         # Einstellungen (Zeitintervall und Anlagen-Export erhalten)
         col = db["settings"]
         settings = list(col.find().sort([('_id', -1)]).limit(1))[0]
-        time_intervall = settings["INTERVALL"]
-        export = settings["EXPORT"]
+        self.time_intervall = settings["INTERVALL"]
+        self.time_unit = settings["TIME_UNIT"]
+        self.export = settings["EXPORT"]
+        
 
-        return system["System"], time_intervall, export
+        # return system["System"], time_intervall, time_unit, export
 
     def updates(self, system, client_mongo, last_update_time, actual_update_time, device_export):
         """

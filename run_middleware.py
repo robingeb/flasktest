@@ -14,10 +14,12 @@ from middleware import *
 
 # ------------------------------------ INFO -----------------------------------------------------------------------
 # Run Button wählen, um Anwendung zu starten
-# 
+# Local Host öffnen:  http://127.0.0.1:5000/
+# Wenn Seite nicht gefunden werden kann, nochmal laden, da Anwendung noch nicht fertig erstellt wurde.
+# Anwendung kann geschlossen werden indem strg + c im Terminal eingegeben wird
 
 
-#-------------------------------------Start A
+#------------------------------------- Start Anwendung -----------------------------------------------------------
 
 app = Flask(__name__, template_folder='templates')
 # logging instantiate
@@ -45,8 +47,9 @@ def home():
     if form.validate_on_submit():
 
         time = form.time.data
-        export = form.export.data
-        datasets = col.insert_one({"INTERVALL": time, "EXPORT": export})
+        time_unit = form.time_unit.data
+        export = form.export.data        
+        datasets = col.insert_one({"INTERVALL": time, "TIME_UNIT": time_unit, "EXPORT": export})
         return redirect(url_for('choice'))
 
     return render_template('choice_home.html', form=form, name=name)
@@ -122,7 +125,7 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Username": str(Username), "Password": str(Password)})
 
-            return 'Die Zugangsdaten für Xentral wurden gespeichert!\nSie können das Fenster jetzt schließen.
+            return "Die Zugangsdaten für Xentral wurden gespeichert!\nSie können das Fenster jetzt schließen."
 
         return render_template('erpxentral.html', form=form, name=name)
 

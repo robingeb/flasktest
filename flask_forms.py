@@ -61,5 +61,6 @@ class articlehomeForm(FlaskForm):
 
 class choicehomeForm(FlaskForm):
     time = IntegerField('Zeitintervall zwischen Updates', validators=[Required()])
-    export = SelectField(u'Anlagen-Export', choices=[('tagid_erp', 'TagIdeasy zu ERP-System'), ('erp_tagid', 'ERP-System zu TagIdeasy'), ('no', 'kein Export')])
+    time_unit = SelectField(u'Zeiteinheit', choices=[('seconds', 'Sekunden'), ('minutes', 'Minuten'), ('hours', 'Stunden'), ('days', 'Tage')], validators=[Required()])
+    export = SelectField(u'Anlagen-Export', choices=[('tagid_erp', 'TagIdeasy zu ERP-System'), ('erp_tagid', 'ERP-System zu TagIdeasy'), ('no', 'kein Export')], validators=[Required()])
     submit = SubmitField('Submit')
