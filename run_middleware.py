@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, render_template, request, redirect
-from flask_forms import NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics, erpformmyfactory, erpformxentral, choicehomeForm
+from flask_forms import choiceendForm, choicestartForm, NameForm, articleForm, choiceform, erpformweclapp, erpformdynamics, erpformmyfactory, erpformxentral, choicehomeForm
 import requests
 from datetime import datetime, date, timezone
 import json
@@ -33,8 +33,35 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient(
     "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
+@app.route('/end', methods=['GET', 'POST'])
+def end():
+    name = None
+    form = choiceendForm()
+
+    if form.validate_on_submit():
+
+        return redirect(url_for('home'))
+
+    return render_template('choice_end.html', form=form, name=name)
+
+
 
 @app.route('/', methods=['GET', 'POST'])
+def homi():
+    name = None
+    form = choicestartForm()
+
+    if form.validate_on_submit():
+
+        return redirect(url_for('home'))
+
+    return render_template('choice_start.html', form=form, name=name)
+
+
+
+    
+
+@app.route('/system', methods=['GET', 'POST'])
 def home():
     # app.logger.info('Processing default request')
 
