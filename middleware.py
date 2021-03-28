@@ -43,7 +43,7 @@ class MiddlewareControl():
         '''
         #TODO: Job Sekundenzeit übergeben
         self.scheduler.add_job(self.job_interval_updates,
-                               "interval", self.time_unit=self.time_intervall)
+                               "interval", seconds=self.time_intervall)
 
     def job_interval_updates(self):
         print("job1 done")
@@ -99,7 +99,7 @@ class MiddlewareControl():
         settings = list(col.find().sort([('_id', -1)]).limit(1))[0]
         self.time_intervall = settings["INTERVALL"]
         self.time_unit = settings["TIME_UNIT"]
-        self.export = settings["EXPORT"]
+        self.device_export = settings["EXPORT"]
         
 
         # return system["System"], time_intervall, time_unit, export
