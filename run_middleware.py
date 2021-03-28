@@ -27,6 +27,8 @@ logging.basicConfig( filename='logs/demo.log', format='%(asctime)s %(name)s %(me
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
 
+# initialize Middleware Control Class
+middleware = MiddlewareControl()
 
 app.config["MONGO_URI"] = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
 mongo = PyMongo(app)
@@ -50,12 +52,14 @@ def end():
 def homi():
     name = None
     form = choicestartForm()
+    info = middleware.get_config()
+    activ = middleware.get_activ()
 
     if form.validate_on_submit():
 
         return redirect(url_for('home'))
 
-    return render_template('choice_start.html', form=form, name=name)
+    return render_template('choice_start.html', form=form, name=name, info = info, activ = activ)
 
 
 
@@ -70,6 +74,7 @@ def home():
 
     db = client['Keys']
     col = db['settings']
+    
 
     if form.validate_on_submit():
 
@@ -113,14 +118,10 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Password": str(Password)})
 
-            # initialize Middleware Control Class
-            middleware = MiddlewareControl()
-
-            # add Job
-            # scheduler.add_job("job1", update_regulary, 30)
+            middleware.init_config()
             middleware.init_interval_job()
 
-            return 'Die Zugangsdaten für weclapp wurden gespeichert!\nSie können das Fenster jetzt schließen.'
+            return redirect(url_for(''))
 
         return render_template('erpweclapp.html', form=form, name=name)
 

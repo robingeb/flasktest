@@ -160,3 +160,230 @@ AttributeError: 'MiddlewareControl' object has no attribute 'device_export'
 2021-03-27 14:54:52,590 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
 2021-03-27 14:54:52,590 root Update: System: weclapp; Artikel Nummern: []
 2021-03-27 14:54:52,591 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-27 14:55:22 CET)" executed successfully
+2021-03-28 14:39:12,516 werkzeug  * Restarting with stat
+2021-03-28 14:39:16,259 werkzeug  * Debugger is active!
+2021-03-28 14:39:16,301 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:39:16,311 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:39:26,668 werkzeug 127.0.0.1 - - [28/Mar/2021 14:39:26] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 14:50:46,066 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 14:50:46,998 werkzeug  * Restarting with stat
+2021-03-28 14:50:59,359 werkzeug  * Debugger is active!
+2021-03-28 14:50:59,403 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:50:59,454 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:53:20,550 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
+2021-03-28 14:53:21,246 werkzeug  * Restarting with stat
+2021-03-28 14:53:26,068 werkzeug  * Debugger is active!
+2021-03-28 14:53:26,100 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:53:26,178 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:54:45,116 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 14:54:45,646 werkzeug  * Restarting with stat
+2021-03-28 14:54:49,316 apscheduler.scheduler Scheduler started
+2021-03-28 14:54:49,316 apscheduler.scheduler Looking for jobs to run
+2021-03-28 14:54:49,316 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 14:54:50,076 werkzeug  * Debugger is active!
+2021-03-28 14:54:50,110 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:54:50,121 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:56:58,167 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 14:56:58,840 werkzeug  * Restarting with stat
+2021-03-28 14:57:03,178 apscheduler.scheduler Scheduler started
+2021-03-28 14:57:03,180 apscheduler.scheduler Looking for jobs to run
+2021-03-28 14:57:03,181 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 14:57:04,193 werkzeug  * Debugger is active!
+2021-03-28 14:57:04,246 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:57:04,288 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:57:13,908 werkzeug 127.0.0.1 - - [28/Mar/2021 14:57:13] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 14:59:03,905 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 14:59:04,575 werkzeug  * Restarting with stat
+2021-03-28 14:59:08,643 apscheduler.scheduler Scheduler started
+2021-03-28 14:59:08,653 apscheduler.scheduler Looking for jobs to run
+2021-03-28 14:59:08,653 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 14:59:09,392 werkzeug  * Debugger is active!
+2021-03-28 14:59:09,415 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:59:09,430 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:59:09,646 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:09] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-28 14:59:09,862 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:09] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-28 14:59:09,956 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:09] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-28 14:59:09,968 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:09] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-28 14:59:10,190 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:10] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-28 14:59:10,271 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:10] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 14:59:10,492 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:10] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 14:59:20,233 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
+2021-03-28 14:59:21,172 werkzeug  * Restarting with stat
+2021-03-28 14:59:24,366 apscheduler.scheduler Scheduler started
+2021-03-28 14:59:24,366 apscheduler.scheduler Looking for jobs to run
+2021-03-28 14:59:24,366 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 14:59:25,124 werkzeug  * Debugger is active!
+2021-03-28 14:59:25,155 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:59:25,155 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 14:59:25,387 werkzeug 127.0.0.1 - - [28/Mar/2021 14:59:25] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 14:59:35,581 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 14:59:36,235 werkzeug  * Restarting with stat
+2021-03-28 14:59:39,853 apscheduler.scheduler Scheduler started
+2021-03-28 14:59:39,867 apscheduler.scheduler Looking for jobs to run
+2021-03-28 14:59:39,872 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 14:59:40,633 werkzeug  * Debugger is active!
+2021-03-28 14:59:40,686 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 14:59:40,699 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:00:02,210 apscheduler.scheduler Scheduler started
+2021-03-28 15:00:02,210 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:00:02,210 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:00:02,925 werkzeug  * Restarting with stat
+2021-03-28 15:00:05,403 apscheduler.scheduler Scheduler started
+2021-03-28 15:00:05,403 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:00:05,403 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:00:06,020 werkzeug  * Debugger is active!
+2021-03-28 15:00:06,036 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:00:06,051 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:00:06,120 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:06] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:00:14,051 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:14] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:00:32,743 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:32] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:00:37,840 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:37] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-28 15:00:37,868 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:37] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-28 15:00:47,041 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:47] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-28 15:00:47,094 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:47] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-28 15:00:49,162 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:49] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-28 15:00:49,216 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:49] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,329 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[35m[1mPOST /erp/weclapp HTTP/1.1[0m" 500 -
+2021-03-28 15:00:54,439 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,514 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,544 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,692 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,714 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 15:00:54,845 werkzeug 127.0.0.1 - - [28/Mar/2021 15:00:54] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 15:01:46,910 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
+2021-03-28 15:01:47,539 werkzeug  * Restarting with stat
+2021-03-28 15:01:51,480 apscheduler.scheduler Scheduler started
+2021-03-28 15:01:51,508 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:01:51,515 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:01:52,628 werkzeug  * Debugger is active!
+2021-03-28 15:01:52,689 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:01:52,774 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:02:00,818 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:00] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:02:22,652 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:22] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-28 15:02:22,689 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:22] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-28 15:02:32,890 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:32] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-28 15:02:32,941 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:32] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-28 15:02:34,939 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:34] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-28 15:02:35,001 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:35] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 15:02:39,882 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-28 15:02:39,882 werkzeug 127.0.0.1 - - [28/Mar/2021 15:02:39] "[37mPOST /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 15:02:39,882 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:02:39,898 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:03:09.882533+02:00 (in 30.000000 seconds)
+2021-03-28 15:03:09,899 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:03:09,899 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:03:09 CEST)" (scheduled at 2021-03-28 15:03:09.882533+02:00)
+2021-03-28 15:03:09,899 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:03:39.882533+02:00 (in 29.982762 seconds)
+2021-03-28 15:03:10,026 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:10,329 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-28 15:03:10,335 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:10,474 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-28 15:03:10,477 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:10,600 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-28 15:03:10,622 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:10,800 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-28 15:03:10,816 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:10,959 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-28 15:03:11,001 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:03:11,260 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-28 15:03:11,322 root Exportierte Anlagen: System: weclapp; Artikel Nummern: []
+2021-03-28 15:03:11,323 root Update: System: weclapp; Artikel Nummern: []
+2021-03-28 15:03:11,323 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:03:39 CEST)" executed successfully
+2021-03-28 15:03:31,749 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
+2021-03-28 15:03:32,443 werkzeug  * Restarting with stat
+2021-03-28 15:03:35,495 apscheduler.scheduler Scheduler started
+2021-03-28 15:03:35,503 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:03:35,504 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:03:36,279 werkzeug  * Debugger is active!
+2021-03-28 15:03:36,297 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:03:36,312 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:03:51,205 apscheduler.scheduler Scheduler started
+2021-03-28 15:03:51,207 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:03:51,208 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:03:52,099 werkzeug  * Restarting with stat
+2021-03-28 15:03:54,938 apscheduler.scheduler Scheduler started
+2021-03-28 15:03:54,938 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:03:54,938 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:03:55,532 werkzeug  * Debugger is active!
+2021-03-28 15:03:55,547 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:03:55,547 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:05:02,982 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 15:05:03,621 werkzeug  * Restarting with stat
+2021-03-28 15:05:06,696 apscheduler.scheduler Scheduler started
+2021-03-28 15:05:06,698 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:05:06,698 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:05:07,398 werkzeug  * Debugger is active!
+2021-03-28 15:05:07,431 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:05:07,448 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:05:15,476 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:15] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:05:19,887 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:19] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-28 15:05:19,924 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:19] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-28 15:05:27,347 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:27] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-28 15:05:27,362 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:27] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-28 15:05:29,650 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:29] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-28 15:05:29,719 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:29] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 15:05:34,331 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-28 15:05:34,331 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:05:34,331 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:06:04.331737+02:00 (in 30.000000 seconds)
+2021-03-28 15:05:34,362 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[35m[1mPOST /erp/weclapp HTTP/1.1[0m" 500 -
+2021-03-28 15:05:34,464 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-28 15:05:34,467 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-28 15:05:34,483 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-28 15:05:34,678 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-28 15:05:34,810 werkzeug 127.0.0.1 - - [28/Mar/2021 15:05:34] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 15:06:04,343 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:06:04,343 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:06:04 CEST)" (scheduled at 2021-03-28 15:06:04.331737+02:00)
+2021-03-28 15:06:04,343 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:06:34.331737+02:00 (in 29.988662 seconds)
+2021-03-28 15:06:04,439 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:06:04,627 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-28 15:06:04,687 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-28 15:06:04,687 root Update: System: weclapp; Artikel Nummern: []
+2021-03-28 15:06:04,688 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:06:34 CEST)" executed successfully
+2021-03-28 15:06:34,350 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:06:34,350 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:07:04.331737+02:00 (in 29.981565 seconds)
+2021-03-28 15:06:34,350 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:07:04 CEST)" (scheduled at 2021-03-28 15:06:34.331737+02:00)
+2021-03-28 15:06:34,450 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:06:34,666 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-28 15:06:34,697 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-28 15:06:34,698 root Update: System: weclapp; Artikel Nummern: []
+2021-03-28 15:06:34,698 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:07:04 CEST)" executed successfully
+2021-03-28 15:07:04,350 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:07:04,350 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:07:34.331737+02:00 (in 29.980892 seconds)
+2021-03-28 15:07:04,350 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:07:34 CEST)" (scheduled at 2021-03-28 15:07:04.331737+02:00)
+2021-03-28 15:07:04,451 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 15:07:04,636 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-28 15:07:04,687 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-28 15:07:04,688 root Update: System: weclapp; Artikel Nummern: []
+2021-03-28 15:07:04,688 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-28 15:07:34 CEST)" executed successfully
+2021-03-28 15:07:33,656 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-28 15:07:34,327 werkzeug  * Restarting with stat
+2021-03-28 15:07:37,396 apscheduler.scheduler Scheduler started
+2021-03-28 15:07:37,398 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:07:37,398 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:07:38,093 werkzeug  * Debugger is active!
+2021-03-28 15:07:38,108 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:07:38,124 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:07:45,799 apscheduler.scheduler Scheduler started
+2021-03-28 15:07:45,802 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:07:45,803 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:07:46,553 werkzeug  * Restarting with stat
+2021-03-28 15:07:49,737 apscheduler.scheduler Scheduler started
+2021-03-28 15:07:49,741 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:07:49,743 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 15:07:50,829 werkzeug  * Debugger is active!
+2021-03-28 15:07:50,860 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 15:07:50,860 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 15:07:50,960 werkzeug 127.0.0.1 - - [28/Mar/2021 15:07:50] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 15:07:52,665 werkzeug 127.0.0.1 - - [28/Mar/2021 15:07:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-28 15:07:52,703 werkzeug 127.0.0.1 - - [28/Mar/2021 15:07:52] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-28 15:07:58,741 werkzeug 127.0.0.1 - - [28/Mar/2021 15:07:58] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-28 15:07:58,767 werkzeug 127.0.0.1 - - [28/Mar/2021 15:07:58] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-28 15:08:00,740 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:00] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-28 15:08:00,787 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:00] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 15:08:04,465 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-28 15:08:04,465 apscheduler.scheduler Looking for jobs to run
+2021-03-28 15:08:04,465 apscheduler.scheduler Next wakeup is due at 2021-03-28 15:08:34.465271+02:00 (in 30.000000 seconds)
+2021-03-28 15:08:04,496 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[35m[1mPOST /erp/weclapp HTTP/1.1[0m" 500 -
+2021-03-28 15:08:04,580 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-28 15:08:04,604 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-28 15:08:04,613 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-28 15:08:04,812 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-28 15:08:04,934 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -

@@ -29,19 +29,26 @@ class MiddlewareControl():
             self.client = MongoClient(mongo_url)
         except:
             raise Exception("Error: Zugriff auf MongoDB nicht möglich")
-        # erp, time_intervall, time_unit, device_export = self.init_config(self.client)
-        # self.erp = erp
-        # self.time_intervall = time_intervall
-        # self.time_unit = time_unit
-        # self.device_export = device_export
-        self.init_config(self.client)
+        
+        self.erp = ""
+        self.time_intervall = 0
+        self.time_unit = ""
+        self.device_export = ""
+        self.init_config()
+        self.activ = False
+
+    def get_config(self): 
+        return [self.erp, self.device_export, self.time_intervall, self.time_unit]
+
+    def get_activ(self):
+        return self.activ
         
        
     def init_interval_job(self):
         '''
         Job initialisieren, welcher in festen Intervallen durchgeführt wird
         '''
-        #TODO: Job Sekundenzeit übergeben
+        self.activ = True
         self.scheduler.add_job(self.job_interval_updates,
                                "interval", seconds=self.time_intervall)
 
@@ -87,7 +94,7 @@ class MiddlewareControl():
         logging.info("Update: System: " + self.erp + "; Artikel Nummern: " + str(ids[0]) )
 
 
-    def init_config(self, client_mongo):
+    def init_config(self):
         # das ERP-System, welches verwendet wird erhalten. Falls mehrere in der DB wird das zuletzt verwendete übergeben
         db = self.client['Keys']
         col = db['latestsystem']
