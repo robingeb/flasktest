@@ -121,7 +121,7 @@ def erp(System):
             middleware.init_config()
             middleware.init_interval_job()
 
-            return redirect(url_for(''))
+            return redirect(url_for('homi'))
 
         return render_template('erpweclapp.html', form=form, name=name)
 

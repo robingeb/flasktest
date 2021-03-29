@@ -6,7 +6,8 @@ from api.weclapp import *
 from update.tagid2weclapp import UpdateWeClapp
 from update.tagid2myfactory import UpdateMyFactory
 from update.tagid2dynamics import UpdateDynamics
-from move_devices. move_tagid_weclapp import MoveTagidWeclapp
+from move_devices.move_tagid_weclapp import MoveTagidWeclapp
+from move_devices.move_weclapp_tagid import MoveWeclappTagid
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date, timezone
 import logging
@@ -48,9 +49,22 @@ class MiddlewareControl():
         '''
         Job initialisieren, welcher in festen Intervallen durchgeführt wird
         '''
-        self.activ = True
-        self.scheduler.add_job(self.job_interval_updates,
-                               "interval", seconds=self.time_intervall)
+        if self.time_unit == "seconds":
+            self.activ = True
+            self.scheduler.add_job(self.job_interval_updates,
+                                "interval", seconds=self.time_intervall)
+        elif self.time_unit == "minutes":
+            self.activ = True
+            self.scheduler.add_job(self.job_interval_updates,
+                                "interval", minutes=self.time_intervall)
+        elif self.time_unit == "hours":
+            self.activ = True
+            self.scheduler.add_job(self.job_interval_updates,
+                                "interval", hours=self.time_intervall)
+        elif self.time_unit == "days":
+            self.activ = True
+            self.scheduler.add_job(self.job_interval_updates,
+                                "interval", days=self.time_intervall)
 
     def job_interval_updates(self):
         print("job1 done")
@@ -181,11 +195,22 @@ class MiddlewareControl():
             moveTagidWeclapp = MoveTagidWeclapp(url,auth)
             ids, result = moveTagidWeclapp.export()
         elif device_export == "erp_tagid":
-            pass
+            moveWeclappTagid = MoveWeclappTagid(url, auth)
+            ids, result = moveWeclappTagid.export([10000,20000])
         else:
             return ["No Export"], ["No Export"]
         return result, ids
 
+    def device_export_dynamics(self, url, auth, device_export):
+        if device_export == "tagid_erp":
+            #moveTagidDynamics = MoveTagidDynamics(url,auth)
+            # ids, result = moveTagidDynamics.export()
+            pass
+        elif device_export == "erp_tagid":
+            pass
+        else:
+            return ["No Export"], ["No Export"]
+        return result, ids
 
 
 if __name__ == "__main__":

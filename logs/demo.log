@@ -387,3 +387,72 @@ AttributeError: 'MiddlewareControl' object has no attribute 'device_export'
 2021-03-28 15:08:04,613 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
 2021-03-28 15:08:04,812 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
 2021-03-28 15:08:04,934 werkzeug 127.0.0.1 - - [28/Mar/2021 15:08:04] "[37mGET /erp/weclapp?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-28 20:30:22,838 apscheduler.scheduler Scheduler started
+2021-03-28 20:30:22,841 apscheduler.scheduler Looking for jobs to run
+2021-03-28 20:30:22,841 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 20:30:23,743 werkzeug  * Restarting with stat
+2021-03-28 20:30:26,991 apscheduler.scheduler Scheduler started
+2021-03-28 20:30:26,992 apscheduler.scheduler Looking for jobs to run
+2021-03-28 20:30:26,993 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-28 20:30:27,720 werkzeug  * Debugger is active!
+2021-03-28 20:30:27,757 werkzeug  * Debugger PIN: 141-834-372
+2021-03-28 20:30:27,771 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-28 20:30:30,536 werkzeug 127.0.0.1 - - [28/Mar/2021 20:30:30] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 20:30:31,498 werkzeug 127.0.0.1 - - [28/Mar/2021 20:30:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-28 20:30:39,447 werkzeug 127.0.0.1 - - [28/Mar/2021 20:30:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-28 20:30:39,504 werkzeug 127.0.0.1 - - [28/Mar/2021 20:30:39] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-28 20:30:59,927 werkzeug 127.0.0.1 - - [28/Mar/2021 20:30:59] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-28 20:31:00,024 werkzeug 127.0.0.1 - - [28/Mar/2021 20:31:00] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-28 20:31:02,816 werkzeug 127.0.0.1 - - [28/Mar/2021 20:31:02] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-28 20:31:02,900 werkzeug 127.0.0.1 - - [28/Mar/2021 20:31:02] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-28 20:31:08,770 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-28 20:31:08,771 werkzeug 127.0.0.1 - - [28/Mar/2021 20:31:08] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-03-28 20:31:08,771 apscheduler.scheduler Looking for jobs to run
+2021-03-28 20:31:08,772 apscheduler.scheduler Next wakeup is due at 2021-03-28 20:31:48.769707+02:00 (in 39.997003 seconds)
+2021-03-28 20:31:08,806 werkzeug 127.0.0.1 - - [28/Mar/2021 20:31:08] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-28 20:31:48,780 apscheduler.scheduler Looking for jobs to run
+2021-03-28 20:31:48,783 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:40], next run at: 2021-03-28 20:31:48 CEST)" (scheduled at 2021-03-28 20:31:48.769707+02:00)
+2021-03-28 20:31:48,784 apscheduler.scheduler Next wakeup is due at 2021-03-28 20:32:28.769707+02:00 (in 39.988167 seconds)
+2021-03-28 20:31:48,898 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-28 20:31:49,085 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-28 20:31:49,127 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-28 20:31:49,128 root Update: System: weclapp; Artikel Nummern: []
+2021-03-28 20:31:49,129 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:40], next run at: 2021-03-28 20:32:28 CEST)" executed successfully
+2021-03-29 10:34:13,076 apscheduler.scheduler Scheduler started
+2021-03-29 10:34:13,078 apscheduler.scheduler Looking for jobs to run
+2021-03-29 10:34:13,079 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 10:34:13,789 werkzeug  * Restarting with stat
+2021-03-29 10:34:15,983 apscheduler.scheduler Scheduler started
+2021-03-29 10:34:15,985 apscheduler.scheduler Looking for jobs to run
+2021-03-29 10:34:15,985 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 10:34:16,596 werkzeug  * Debugger is active!
+2021-03-29 10:34:16,619 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 10:34:16,630 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 10:34:18,701 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:18] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 10:34:25,670 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:25] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-29 10:34:25,715 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:25] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-29 10:34:37,816 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:37] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-29 10:34:37,861 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:37] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-29 10:34:40,386 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:40] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-29 10:34:40,441 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:40] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-29 10:34:44,215 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 10:34:44,216 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:44] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-03-29 10:34:44,216 apscheduler.scheduler Looking for jobs to run
+2021-03-29 10:34:44,217 apscheduler.scheduler Next wakeup is due at 2021-03-29 10:37:44.214692+02:00 (in 179.997003 seconds)
+2021-03-29 10:34:44,237 werkzeug 127.0.0.1 - - [29/Mar/2021 10:34:44] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 10:37:44,222 apscheduler.scheduler Looking for jobs to run
+2021-03-29 10:37:44,227 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:03:00], next run at: 2021-03-29 10:37:44 CEST)" (scheduled at 2021-03-29 10:37:44.214692+02:00)
+2021-03-29 10:37:44,228 apscheduler.scheduler Next wakeup is due at 2021-03-29 10:40:44.214692+02:00 (in 179.989851 seconds)
+2021-03-29 10:37:44,349 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-29 10:37:44,844 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-29 10:37:44,906 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-29 10:37:44,907 root Update: System: weclapp; Artikel Nummern: []
+2021-03-29 10:37:44,908 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:03:00], next run at: 2021-03-29 10:40:44 CEST)" executed successfully
+2021-03-29 10:40:44,239 apscheduler.scheduler Looking for jobs to run
+2021-03-29 10:40:44,240 apscheduler.scheduler Next wakeup is due at 2021-03-29 10:43:44.214692+02:00 (in 179.973712 seconds)
+2021-03-29 10:40:44,240 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:03:00], next run at: 2021-03-29 10:43:44 CEST)" (scheduled at 2021-03-29 10:40:44.214692+02:00)
+2021-03-29 10:40:44,348 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-29 10:40:44,802 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-29 10:40:44,838 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['No Export']
+2021-03-29 10:40:44,839 root Update: System: weclapp; Artikel Nummern: []
+2021-03-29 10:40:44,841 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:03:00], next run at: 2021-03-29 10:43:44 CEST)" executed successfully

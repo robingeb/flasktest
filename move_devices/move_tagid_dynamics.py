@@ -24,6 +24,7 @@ class MoveTagidDynamics():
     def export(self):
 
         # Minimum der benötigten Attribute von WeClapp für einen erfolgreichen POST-Request
+        # TODO Anpassen an Dynamics
         weclapp_article_attributes = ["articleNumber", "name", "unitId"]
 
         result = []
