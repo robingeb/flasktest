@@ -2,12 +2,14 @@ import pymongo
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 from datetime import datetime
-from api.weclapp import *
+# from api.weclapp import *
 from update.tagid2weclapp import UpdateWeClapp
 from update.tagid2myfactory import UpdateMyFactory
 from update.tagid2dynamics import UpdateDynamics
 from move_devices.move_tagid_weclapp import MoveTagidWeclapp
 from move_devices.move_weclapp_tagid import MoveWeclappTagid
+from move_devices.move_dynamics_tagid import MoveDynamicsTagid
+from move_devices.move_tagid_dynamics import MoveTagidDynamics
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date, timezone
 import logging
@@ -21,6 +23,7 @@ class MiddlewareControl():
     Klasse welche Methoden zur Verfügung stellt, die die Konfiguration der Middleware umsetzen.
     """
     def __init__(self):
+        # init Scheduler
         self.scheduler = BackgroundScheduler()
         self.scheduler.start()
 
@@ -31,15 +34,20 @@ class MiddlewareControl():
         except:
             raise Exception("Error: Zugriff auf MongoDB nicht möglich")
         
+        # Konfiguration
         self.erp = ""
         self.time_intervall = 0
         self.time_unit = ""
         self.device_export = ""
-        self.init_config()
+        self.article_number_range = [0, 0]
+        try:
+            self.init_config()
+        except:
+            pass
         self.activ = False
 
     def get_config(self): 
-        return [self.erp, self.device_export, self.time_intervall, self.time_unit]
+        return [self.erp, self.device_export, self.time_intervall, self.time_unit, self.article_number_range]
 
     def get_activ(self):
         return self.activ
@@ -94,8 +102,8 @@ class MiddlewareControl():
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         # TODO: 0 zu last_update_time
         # update methode aufrufen
-        result, done, ids = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-        print(result, done, ids )
+        result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+        print(result, ids, done )
         
         col = db['Updatefreq']
         # Update-Zeit speichern in MongoDB
@@ -121,7 +129,11 @@ class MiddlewareControl():
         self.time_intervall = settings["INTERVALL"]
         self.time_unit = settings["TIME_UNIT"]
         self.device_export = settings["EXPORT"]
-        
+        # Wenn Anlagen-Export von ERP nach Tagid kann Artikel-Nummer Wertebereich eingschrängt werden.
+        if self.device_export == "erp_tagid":
+            self.article_number_range = settings["ARTICLENUMBERRANGE"]
+        else:
+            self.article_number_range = ["",""]
 
         # return system["System"], time_intervall, time_unit, export
 
@@ -169,7 +181,7 @@ class MiddlewareControl():
             # update-Methode ausführen
             update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
             update_article_number = updateWeClapp.get_article_number()
-            return [update_result, export_result], done, [update_article_number, export_article_number]
+            return [update_result, export_result], [update_article_number, export_article_number], done
 
         elif system == "xentral":
             col = db['Key_Xentral']
@@ -183,8 +195,8 @@ class MiddlewareControl():
             # init MyFactory-Update Klasse
             updateMyFactory = UpdateMyFactory(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
             # update-Methode ausführen
-            pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-            return pdf_created, done, 0
+            pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+            return pdf_created, article_numbers , done
         else:
             logging.error("Keine ERP-System spezifiziert" )
             print("Error: No such Erp System in Database")
@@ -196,18 +208,20 @@ class MiddlewareControl():
             ids, result = moveTagidWeclapp.export()
         elif device_export == "erp_tagid":
             moveWeclappTagid = MoveWeclappTagid(url, auth)
-            ids, result = moveWeclappTagid.export([10000,20000])
+            ids, result = moveWeclappTagid.export(self.article_number_range)
         else:
             return ["No Export"], ["No Export"]
         return result, ids
 
     def device_export_dynamics(self, url, auth, device_export):
+        #TODO Skripte funktionieren noch nicht
         if device_export == "tagid_erp":
-            #moveTagidDynamics = MoveTagidDynamics(url,auth)
-            # ids, result = moveTagidDynamics.export()
+            moveTagidDynamics = MoveTagidDynamics(url,auth)
+            ids, result = moveTagidDynamics.export()
             pass
         elif device_export == "erp_tagid":
-            pass
+            moveDynamicsTagid = MoveDynamicsTagid(url,auth)
+            ids, result = moveTagidDynamics.export()
         else:
             return ["No Export"], ["No Export"]
         return result, ids
