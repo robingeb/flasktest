@@ -13,7 +13,7 @@ def test():
     move.export([10000,20000])
     print(move.get_article_number())
 
-class MoveWeclappTagid():
+class MoveDynamicsTagid():
     def __init__(self, url, auth):
         self.url = url
         self.auth = auth
@@ -22,8 +22,8 @@ class MoveWeclappTagid():
     def get_article_number(self):
         return self.export_article_number
 
-    #   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert
-    def export(self, article_number_range):
+    
+    def export(self, article_number_range = [0,0]):
 
         
         # initialice WeClappAPI und Geräte-Instanzen als Liste ausgeben
@@ -41,7 +41,7 @@ class MoveWeclappTagid():
         df_inventar = pd.DataFrame.from_dict(mapped_inventar)
         df_device = pd.DataFrame.from_dict(mapped_device)
 
-        # transform to json
+        # transform zu json für API Upload (nicht umsetzbar)
         result_json = df_inventar.to_json(orient="records")
         parsed = json.loads(result_json)
         inventar_json = json.dumps(parsed, indent=4)
@@ -52,7 +52,7 @@ class MoveWeclappTagid():
 
         print(inventar_json)
         print(device_json)
-        return [mapped_inventar, mapped_device]
+        return self.export_article_number, [mapped_inventar, mapped_device]
 
 
     def get_tagideasy(self):
@@ -74,8 +74,12 @@ class MoveWeclappTagid():
             machine_instances = []
             for instance in article_all["result"]:
                 an = int(instance["articleNumber"])
-                # Suche nur auf Anlagen eingrenzen (hier Beispielhaft: ArtikelNummer >1000 für Anlagen und <2000)
-                if an >= min_article_number and an < max_article_number:
+                # Wenn Range [0,0], dann Suche nicht eingrenzen.
+                if article_number_range != [0,0]: 
+                    # Suche nur auf Anlagen eingrenzen 
+                    if an >= min_article_number and an < max_article_number:
+                        machine_instances.append(instance)
+                else:
                     machine_instances.append(instance)
             return  machine_instances
 
@@ -103,3 +107,4 @@ class MoveWeclappTagid():
 
 if __name__ == "__main__":
     test()
+

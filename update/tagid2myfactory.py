@@ -20,7 +20,7 @@ def test():
     }
     client = MongoClient(mongo_url)
     updateMyFactory = UpdateMyFactory(url, auth, client)
-    updateMyFactory.update(0)
+    print(updateMyFactory.update())
 
 class UpdateMyFactory():
     """
@@ -37,6 +37,7 @@ class UpdateMyFactory():
         self.client = client
         self.url = url
         self.auth = auth
+        self.ids = []
 
 #TODO: aktuelle Update zeit einbauen
     def update(self, last_update_time = 0, actual_update_time = 0):
@@ -66,7 +67,7 @@ class UpdateMyFactory():
                           inventar.index(instance)] for instance in inventar]
 
         # Relevante Artikel (Geräte) aus MyFactory laden (get-Request)
-        myfactory_names = self.get_articel(
+        myfactory_names, article_number = self.get_articel(
             tagid_ids, myFactoryAPI)
         
         if len(self.ids) == 0:
@@ -79,7 +80,7 @@ class UpdateMyFactory():
             myfactory_names, inventar)
         
         pdf_created = len(self.ids)
-        return  pdf_created, info_success
+        return  pdf_created, article_number, info_success
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
     def get_tagideasy(self):
@@ -100,6 +101,7 @@ class UpdateMyFactory():
         # Aussortieren der nicht zu updatenden Artikel
         article_name = []
         article_update = []
+        article_number = []
         # article_ = []
         for instance in article["entry"]:
             # Liste von Ids [Artikelnummer, index in inventar-list]
@@ -112,10 +114,13 @@ class UpdateMyFactory():
                     instance_name = instance_attributes['d:Bezeichnung']
                     id = id + [instance_id, instance_article_number]
                     # id: [Artikelnummer, index in Inventar-Liste, id MyFactory , Artikelnummer-MyFactory]
+                    article_number.append(instance_article_number)
                     article_name.append(instance_name)
                     article_update.append(id)
+                    
         self.ids = article_update
-        return  article_name
+        
+        return  article_name, article_number
 
     # 3) mappen der zu ändernden Attribute
     def map_attributes(self, instance_myfactory, inventars):

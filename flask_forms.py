@@ -68,5 +68,7 @@ class choiceendForm(FlaskForm):
 class choicehomeForm(FlaskForm):
     time = IntegerField('Zeitintervall zwischen Updates', validators=[Required()])
     time_unit = SelectField(u'Zeiteinheit', choices=[('seconds', 'Sekunden'), ('minutes', 'Minuten'), ('hours', 'Stunden'), ('days', 'Tage')], validators=[Required()])
-    export = SelectField(u'Anlagen-Export', choices=[('tagid_erp', 'TagIdeasy zu ERP-System'), ('erp_tagid', 'ERP-System zu TagIdeasy'), ('no', 'kein Export')], validators=[Required()])
+    export = SelectField(u'Anlagen-Export (nur für weclapp und Dynamics)', choices=[('tagid_erp', 'TagIdeasy zu ERP-System'), ('erp_tagid', 'ERP-System zu TagIdeasy'), ('no', 'kein Export')], validators=[Required()])
+    article_number_min = StringField('Artikel-Nummer Untergrenze')
+    article_number_max = StringField('Artikel-Nummer Obergrenze')
     submit = SubmitField('Bestätigen')

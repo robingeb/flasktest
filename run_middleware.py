@@ -80,8 +80,10 @@ def home():
 
         time = form.time.data
         time_unit = form.time_unit.data
-        export = form.export.data        
-        datasets = col.insert_one({"INTERVALL": time, "TIME_UNIT": time_unit, "EXPORT": export})
+        export = form.export.data   
+        article_number_min = form.article_number_min.data
+        article_number_max = form.article_number_max.data     
+        datasets = col.insert_one({"INTERVALL": time, "TIME_UNIT": time_unit, "EXPORT": export, "ARTICLENUMBERRANGE": [article_number_min, article_number_max]})
         return redirect(url_for('choice'))
 
     return render_template('choice_home.html', form=form, name=name)
@@ -118,6 +120,7 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Password": str(Password)})
 
+            # Middleware mit User-Settings Konfigurieren und Job starten
             middleware.init_config()
             middleware.init_interval_job()
 
@@ -137,7 +140,11 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "BasicAuth": str(BasicAuth)})
 
-            return 'Die Zugangsdaten für Microsoft Dynamics wurden gespeichert!\nSie können das Fenster jetzt schließen.'
+            # Middleware mit User-Settings Konfigurieren und Job starten
+            middleware.init_config()
+            middleware.init_interval_job()
+
+            return redirect(url_for('homi'))
 
         return render_template('erpdynamics.html', form=form, name=name)
 
@@ -153,7 +160,11 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Username": str(Username), "Password": str(Password)})
 
-            return "Die Zugangsdaten für Xentral wurden gespeichert!\nSie können das Fenster jetzt schließen."
+            # Middleware mit User-Settings Konfigurieren und Job starten
+            middleware.init_config()
+            middleware.init_interval_job()
+
+            return redirect(url_for('homi'))
 
         return render_template('erpxentral.html', form=form, name=name)
 
@@ -169,7 +180,11 @@ def erp(System):
             datasets = col.insert_one(
                 {"URL": str(URL), "Username": str(Username), "Password": str(Password)})
 
-            return 'Die Zugangsdaten für MyFactory wurden gespeichert!\nSie können das Fenster jetzt schließen.'
+            # Middleware mit User-Settings Konfigurieren und Job starten
+            middleware.init_config()
+            middleware.init_interval_job()
+
+            return redirect(url_for('homi'))
 
         return render_template('erpmyfactory.html', form=form, name=name)
 

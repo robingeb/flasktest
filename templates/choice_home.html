@@ -15,6 +15,15 @@
         {{form.export.label}} <br>
         {{form.export(size=4)}}
     </p>
+    <p>Optional bei Anlagen-Export von ERP-System zu TagIdeasy: <br> Artikel-Nummer Wertebereich von Anlagen im ERP-System angeben</p>
+    <p>
+        {{form.article_number_min.label}} <br>
+        {{form.article_number_min(size=30)}}
+    </p>
+    <p>
+        {{form.article_number_max.label}} <br>
+        {{form.article_number_max(size=30)}}
+    </p>
     <p>
         {{form.submit}} <br>
       

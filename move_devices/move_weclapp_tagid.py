@@ -22,8 +22,8 @@ class MoveWeclappTagid():
     def get_article_number(self):
         return self.export_article_number
 
-    #   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert
-    def export(self, article_number_range):
+    
+    def export(self, article_number_range = [0,0]):
 
         
         # initialice WeClappAPI und Geräte-Instanzen als Liste ausgeben
@@ -74,8 +74,12 @@ class MoveWeclappTagid():
             machine_instances = []
             for instance in article_all["result"]:
                 an = int(instance["articleNumber"])
-                # Suche nur auf Anlagen eingrenzen (hier Beispielhaft: ArtikelNummer >1000 für Anlagen und <2000)
-                if an >= min_article_number and an < max_article_number:
+                # Wenn Range [0,0], dann Suche nicht eingrenzen.
+                if article_number_range != [0,0]: 
+                    # Suche nur auf Anlagen eingrenzen 
+                    if an >= min_article_number and an < max_article_number:
+                        machine_instances.append(instance)
+                else:
                     machine_instances.append(instance)
             return  machine_instances
 
