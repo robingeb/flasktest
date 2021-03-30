@@ -23,7 +23,7 @@ from middleware import *
 
 app = Flask(__name__, template_folder='templates')
 # logging instantiate
-logging.basicConfig( filename='logs/demo.log', format='%(asctime)s %(name)s %(message)s', level=logging.DEBUG)
+logging.basicConfig( filename='logs/debug.log', format='%(asctime)s %(name)s %(message)s', level=logging.DEBUG)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['CSRF_ENABLED'] = True
 
@@ -46,6 +46,12 @@ def end():
 
     return render_template('choice_end.html', form=form, name=name)
 
+@app.route('/background_process_test', methods=['GET', 'POST'])
+def background_process_test():
+    print ("Hello")
+    middleware.init_interval_job()    
+    return ("nichts")
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -54,6 +60,8 @@ def homi():
     form = choicestartForm()
     info = middleware.get_config()
     activ = middleware.get_activ()
+    if info[4] == [0,0]:
+        info[4] = ["",""]
 
     if form.validate_on_submit():
 
@@ -74,7 +82,9 @@ def home():
 
     db = client['Keys']
     col = db['settings']
-    
+
+    if middleware.get_job("job_interval") != None:
+        middleware.remove_job("job_interval")
 
     if form.validate_on_submit():
 
