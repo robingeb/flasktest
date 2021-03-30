@@ -48,7 +48,7 @@ def end():
 
 @app.route('/background_process_test', methods=['GET', 'POST'])
 def background_process_test():
-    print ("Hello")
+    print ("Job restarted")
     middleware.init_interval_job()    
     return ("nichts")
 

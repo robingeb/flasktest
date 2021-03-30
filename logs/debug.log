@@ -1926,3 +1926,194 @@ KeyError: 0
 2021-03-30 02:41:24,725 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['11115']
 2021-03-30 02:41:24,726 root Update: System: weclapp; Artikel Nummern: []
 2021-03-30 02:41:24,726 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:41:54 CEST)" executed successfully
+2021-03-30 02:49:23,429 apscheduler.scheduler Scheduler started
+2021-03-30 02:49:23,431 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:49:23,432 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:49:24,144 werkzeug  * Restarting with stat
+2021-03-30 02:49:26,923 apscheduler.scheduler Scheduler started
+2021-03-30 02:49:26,925 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:49:26,926 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:49:27,617 werkzeug  * Debugger is active!
+2021-03-30 02:49:27,690 werkzeug  * Debugger PIN: 141-834-372
+2021-03-30 02:49:27,766 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-30 02:49:32,764 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:32] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:49:39,437 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-30 02:49:39,472 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:39] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-30 02:49:46,309 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:46] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-30 02:49:46,337 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:46] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-30 02:49:49,095 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:49] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-30 02:49:49,149 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:49] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-03-30 02:49:53,761 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-30 02:49:53,762 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:53] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-03-30 02:49:53,762 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:49:53,763 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:50:23.760916+02:00 (in 29.997003 seconds)
+2021-03-30 02:49:53,803 werkzeug 127.0.0.1 - - [30/Mar/2021 02:49:53] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:50:23,765 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:50:23,767 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:50:23 CEST)" (scheduled at 2021-03-30 02:50:23.760916+02:00)
+2021-03-30 02:50:23,769 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:50:53.760916+02:00 (in 29.994353 seconds)
+2021-03-30 02:50:23,849 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,049 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:50:24,058 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,193 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:50:24,198 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,365 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:50:24,371 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,505 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:50:24,511 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,687 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:50:24,715 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:24,854 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-30 02:50:24,887 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:25,064 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4841 HTTP/1.1" 200 None
+2021-03-30 02:50:25,085 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:25,242 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4841 HTTP/1.1" 200 None
+2021-03-30 02:50:25,255 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:25,429 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4846 HTTP/1.1" 200 None
+2021-03-30 02:50:25,437 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:25,581 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4851 HTTP/1.1" 200 None
+2021-03-30 02:50:25,643 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['11115', '11116', '11117', '11118', '11119']
+2021-03-30 02:50:25,643 root Update: System: weclapp; Artikel Nummern: ['11116', '11116', '11117', '11118']
+2021-03-30 02:50:25,643 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:50:53 CEST)" executed successfully
+2021-03-30 02:50:53,780 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:50:53,782 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:51:23.760916+02:00 (in 29.979864 seconds)
+2021-03-30 02:50:53,782 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:51:23 CEST)" (scheduled at 2021-03-30 02:50:53.760916+02:00)
+2021-03-30 02:50:53,842 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:53,990 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 02:50:53,996 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:54,114 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 02:50:54,121 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:54,228 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 02:50:54,234 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:54,341 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 02:50:54,347 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:54,457 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 02:50:54,488 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:50:54,649 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-30 02:50:54,659 root Exportierte Anlagen: System: weclapp; Artikel Nummern: []
+2021-03-30 02:50:54,660 root Update: System: weclapp; Artikel Nummern: []
+2021-03-30 02:50:54,660 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:51:23 CEST)" executed successfully
+2021-03-30 02:55:02,794 apscheduler.scheduler Scheduler started
+2021-03-30 02:55:02,795 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:55:02,797 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:55:03,658 werkzeug  * Restarting with stat
+2021-03-30 02:55:07,488 apscheduler.scheduler Scheduler started
+2021-03-30 02:55:07,489 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:55:07,490 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:55:08,135 werkzeug  * Debugger is active!
+2021-03-30 02:55:08,170 werkzeug  * Debugger PIN: 141-834-372
+2021-03-30 02:55:08,190 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-30 02:55:08,594 werkzeug 127.0.0.1 - - [30/Mar/2021 02:55:08] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:55:11,037 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-30 02:55:11,038 werkzeug 127.0.0.1 - - [30/Mar/2021 02:55:11] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-30 02:55:11,038 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:55:11,039 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:55:41.037045+02:00 (in 29.998000 seconds)
+2021-03-30 02:55:11,071 werkzeug 127.0.0.1 - - [30/Mar/2021 02:55:11] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:55:41,045 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:55:41,047 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:55:41 CEST)" (scheduled at 2021-03-30 02:55:41.037045+02:00)
+2021-03-30 02:55:41,048 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:56:11.037045+02:00 (in 29.990480 seconds)
+2021-03-30 02:55:41,170 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:41,388 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:55:41,398 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:41,545 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:55:41,551 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:41,685 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:55:41,694 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:41,868 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:55:41,886 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:42,041 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:55:42,078 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:55:42,248 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-30 02:55:42,295 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['11115', '11116', '11117', '11118', '11119']
+2021-03-30 02:55:42,296 root Update: System: weclapp; Artikel Nummern: []
+2021-03-30 02:55:42,296 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:56:11 CEST)" executed successfully
+2021-03-30 02:57:11,626 apscheduler.scheduler Scheduler started
+2021-03-30 02:57:11,627 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:57:11,628 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:57:12,297 werkzeug  * Restarting with stat
+2021-03-30 02:57:14,794 apscheduler.scheduler Scheduler started
+2021-03-30 02:57:14,795 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:57:14,796 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 02:57:15,395 werkzeug  * Debugger is active!
+2021-03-30 02:57:15,419 werkzeug  * Debugger PIN: 141-834-372
+2021-03-30 02:57:15,425 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-30 02:57:15,631 werkzeug 127.0.0.1 - - [30/Mar/2021 02:57:15] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:57:19,760 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-30 02:57:19,761 werkzeug 127.0.0.1 - - [30/Mar/2021 02:57:19] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-30 02:57:19,762 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:57:19,763 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:57:49.760991+02:00 (in 29.998001 seconds)
+2021-03-30 02:57:19,793 werkzeug 127.0.0.1 - - [30/Mar/2021 02:57:19] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 02:57:49,772 apscheduler.scheduler Looking for jobs to run
+2021-03-30 02:57:49,774 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:57:49 CEST)" (scheduled at 2021-03-30 02:57:49.760991+02:00)
+2021-03-30 02:57:49,775 apscheduler.scheduler Next wakeup is due at 2021-03-30 02:58:19.760991+02:00 (in 29.987665 seconds)
+2021-03-30 02:57:49,836 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,012 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:57:50,018 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,153 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:57:50,163 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,306 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:57:50,321 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,475 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:57:50,492 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,656 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-03-30 02:57:50,688 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:50,811 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-30 02:57:50,877 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:51,056 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4949 HTTP/1.1" 200 None
+2021-03-30 02:57:51,081 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:51,224 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4949 HTTP/1.1" 200 None
+2021-03-30 02:57:51,232 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:51,392 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4954 HTTP/1.1" 200 None
+2021-03-30 02:57:51,400 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 02:57:51,554 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4959 HTTP/1.1" 200 None
+2021-03-30 02:57:51,609 root Exportierte Anlagen: System: weclapp; Artikel Nummern: ['11115', '11116', '11117', '11118', '11119']
+2021-03-30 02:57:51,609 root Update: System: weclapp; Artikel Nummern: ['11116', '11116', '11117', '11118']
+2021-03-30 02:57:51,609 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 02:58:19 CEST)" executed successfully
+2021-03-30 03:00:08,006 apscheduler.scheduler Scheduler started
+2021-03-30 03:00:08,007 apscheduler.scheduler Looking for jobs to run
+2021-03-30 03:00:08,008 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 03:00:08,683 werkzeug  * Restarting with stat
+2021-03-30 03:00:11,332 apscheduler.scheduler Scheduler started
+2021-03-30 03:00:11,334 apscheduler.scheduler Looking for jobs to run
+2021-03-30 03:00:11,334 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 03:00:11,920 werkzeug  * Debugger is active!
+2021-03-30 03:00:11,940 werkzeug  * Debugger PIN: 141-834-372
+2021-03-30 03:00:11,949 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-30 03:00:11,995 werkzeug 127.0.0.1 - - [30/Mar/2021 03:00:11] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 03:00:15,079 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-30 03:00:15,080 werkzeug 127.0.0.1 - - [30/Mar/2021 03:00:15] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-30 03:00:15,080 apscheduler.scheduler Looking for jobs to run
+2021-03-30 03:00:15,081 apscheduler.scheduler Next wakeup is due at 2021-03-30 03:00:45.079748+02:00 (in 29.999000 seconds)
+2021-03-30 03:00:15,106 werkzeug 127.0.0.1 - - [30/Mar/2021 03:00:15] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 03:00:45,081 apscheduler.scheduler Looking for jobs to run
+2021-03-30 03:00:45,084 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 03:00:45 CEST)" (scheduled at 2021-03-30 03:00:45.079748+02:00)
+2021-03-30 03:00:45,085 apscheduler.scheduler Next wakeup is due at 2021-03-30 03:01:15.079748+02:00 (in 29.996839 seconds)
+2021-03-30 03:00:45,160 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:45,307 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 03:00:45,313 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:45,468 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 03:00:45,476 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:45,594 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 03:00:45,600 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:45,712 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 03:00:45,717 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:45,827 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-03-30 03:00:45,862 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:46,010 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-03-30 03:00:46,026 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-03-30 03:00:46,179 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/4954 HTTP/1.1" 200 None
+2021-03-30 03:00:46,231 root Exportierte Anlagen: System: weclapp; Artikel Nummern: []
+2021-03-30 03:00:46,231 root Update: System: weclapp; Artikel Nummern: ['11117']
+2021-03-30 03:00:46,231 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-30 03:01:15 CEST)" executed successfully
+2021-03-30 11:01:33,580 apscheduler.scheduler Scheduler started
+2021-03-30 11:01:33,588 apscheduler.scheduler Looking for jobs to run
+2021-03-30 11:01:33,592 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 11:01:35,361 werkzeug  * Restarting with stat
+2021-03-30 11:01:39,499 apscheduler.scheduler Scheduler started
+2021-03-30 11:01:39,501 apscheduler.scheduler Looking for jobs to run
+2021-03-30 11:01:39,503 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-30 11:01:40,392 werkzeug  * Debugger is active!
+2021-03-30 11:01:40,485 werkzeug  * Debugger PIN: 141-834-372
+2021-03-30 11:01:40,512 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-30 11:01:43,522 werkzeug 127.0.0.1 - - [30/Mar/2021 11:01:43] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-30 11:01:46,505 werkzeug 127.0.0.1 - - [30/Mar/2021 11:01:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-30 11:01:46,551 werkzeug 127.0.0.1 - - [30/Mar/2021 11:01:46] "[37mGET /system HTTP/1.1[0m" 200 -

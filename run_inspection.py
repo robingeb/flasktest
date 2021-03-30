@@ -97,7 +97,7 @@ def signup(Artikelnr):
         # print(payload)
         print("erfolgreich")
         #print(requests.request("PUT", url, headers=headers, data=payload))
-        return 'geht'
+        return redirect(url_for('home'))
 
     else:
         print('nicht erfolgreich')

@@ -147,10 +147,7 @@ class UpdateWeClapp():
         custom_attributes[0]["dateValue"] = inventar["nächstes Prüfdatum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
-        if inventar["accept"] == "True":
-            accept = True
-        else: accept = False
-        custom_attributes[3]["booleanValue"] = accept
+        custom_attributes[3]["booleanValue"] = inventar["accept"]
         custom_attributes[5]["dateValue"] = inventar["Datum"]
 
     # Prüffelder erstellen, falls noch keine vorhanden sind
@@ -158,7 +155,7 @@ class UpdateWeClapp():
         custom_attributes[0]["dateValue"] = inventar["nächstes Prüfdatum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
-        custom_attributes[3]["stringValue"] = inventar["accept"]
+        custom_attributes[3]["booleanValue"] = inventar["accept"]
         custom_attributes[5]["dateValue"] = inventar["Datum"]
 
     # 4) Put-Request der zu ändernden Artikel nach WeClapp
