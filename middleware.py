@@ -82,13 +82,13 @@ class MiddlewareControl():
 
     def job_interval_updates(self):
         print("job Update initialisiert")
-        self.init_updates()
+        self.init_execution()
 
     # def job_interval_updates_pause(self):
     #     print("job1 done")
     #     self.scheduler.resume_job()
 
-    def init_updates(self):
+    def init_execution(self):
         """
         Update eines ERP Systems initialisieren
         """
@@ -110,11 +110,11 @@ class MiddlewareControl():
         now = datetime.now()
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         # TODO: 0 zu last_update_time
-        # update methode aufrufen
-        result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+        # durchführen eines Job-interfalls
+        result, ids, done = self.execute_job(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
         print(result, ids, done )
         
-        # col = db['Updatefreq']
+        
         # Update-Zeit speichern in MongoDB
         if done:
             col.insert_one({"time": actual_update_time})
@@ -148,7 +148,7 @@ class MiddlewareControl():
 
         # return system["System"], time_intervall, time_unit, export
 
-    def updates(self, system, client_mongo, last_update_time, actual_update_time, device_export):
+    def execute_job(self, system, client_mongo, last_update_time, actual_update_time, device_export):
         """
         Update eines ERP-Systems
 
@@ -208,7 +208,7 @@ class MiddlewareControl():
             # update-Methode ausführen
             pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
             
-            return pdf_created, article_numbers, done
+            return [ "kein Export", pdf_created], ["kein Export", article_numbers], done
         else:
             logging.error("Keine ERP-System spezifiziert" )
             print("Error: No such Erp System in Database")
