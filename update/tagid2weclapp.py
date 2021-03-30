@@ -52,19 +52,9 @@ class UpdateWeClapp():
         :return: gibt dict mit den aktualisierten Instanzen zurück
         """
 
-        # MongoDB instantiate
-        # TODO: PF. connection failed (wie darauf reagieren, Ausgabe: Error, Datenbank Zugriff nicht möglich)
-        # try:
-        #     client = MongoClient(self.mongo_url)
-        # except:
-        #     raise Exception("Error: Zugriff auf MongoDB nicht möglich")
-
         self.last_update_time = last_update_time
 
         # aktuelle update Zeit speichern
-        # now = datetime.now()
-        # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
-        # self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         self.update_time = actual_update_time 
         
         # Instatiate WeClapp-API
@@ -74,7 +64,7 @@ class UpdateWeClapp():
         # inventar, device = get_tagideasy()
         inventar = self.get_tagideasy()
 
-        # Liste von Ids von Instanzen im Inventar: [Seriennummer, Artikelnummer, index in inventar-list]
+        # Liste von Ids von Instanzen im Inventar: [Artikelnummer, index in inventar-list]
         #ids = [[instance["core"]["serial_number"], instance["core"]["articel_id_buyer"], inventar["results"].index(instance) ] for instance in inventar["results"]]
         tagid_ids = [[instance["Artikelnummer"],
                           inventar.index(instance)] for instance in inventar]
@@ -97,11 +87,6 @@ class UpdateWeClapp():
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
     def get_tagideasy(self):
-        # Collection "Prüfberichte" in MongoDB auswählen
-        # db = client_mongo['Keys']
-        # col = db['Updatefreq']
-        # last_update_dict = list(col.find().sort([('timestamp', -1)]).limit(1))[0] 
-        # last_update = last_update_dict["time"] * 1000
 
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
         data = []
@@ -162,7 +147,10 @@ class UpdateWeClapp():
         custom_attributes[0]["dateValue"] = inventar["nächstes Prüfdatum"]
         custom_attributes[1]["stringValue"] = inventar["name"]
         custom_attributes[2]["stringValue"] = inventar["Mängel"]
-        custom_attributes[3]["stringValue"] = inventar["accept"]
+        if inventar["accept"] == "True":
+            accept = True
+        else: accept = False
+        custom_attributes[3]["booleanValue"] = accept
         custom_attributes[5]["dateValue"] = inventar["Datum"]
 
     # Prüffelder erstellen, falls noch keine vorhanden sind

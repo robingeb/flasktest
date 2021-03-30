@@ -67,8 +67,8 @@ class MoveWeclappTagid():
             article_all = weClappAPI.get_request()
 
             # Articel-number
-            min_article_number = article_number_range[0]
-            max_article_number = article_number_range[1]
+            min_article_number = int(article_number_range[0])
+            max_article_number = int(article_number_range[1])
 
             # Aussortieren der nicht zu updatenden Artikel
             machine_instances = []

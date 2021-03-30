@@ -1,78 +1,39 @@
-2021-03-29 13:29:04,350 apscheduler.scheduler Scheduler started
-2021-03-29 13:29:04,352 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:29:04,353 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:30:27,117 apscheduler.scheduler Scheduler started
-2021-03-29 13:30:27,118 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:30:27,119 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:30:27,948 werkzeug  * Restarting with stat
-2021-03-29 13:30:30,314 apscheduler.scheduler Scheduler started
-2021-03-29 13:30:30,316 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:30:30,316 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:30:30,921 werkzeug  * Debugger is active!
-2021-03-29 13:30:30,948 werkzeug  * Debugger PIN: 141-834-372
-2021-03-29 13:30:30,957 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-03-29 13:30:31,843 werkzeug 127.0.0.1 - - [29/Mar/2021 13:30:31] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:30:51,208 werkzeug 127.0.0.1 - - [29/Mar/2021 13:30:51] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:30:58,080 werkzeug 127.0.0.1 - - [29/Mar/2021 13:30:58] "[32mPOST / HTTP/1.1[0m" 302 -
-2021-03-29 13:30:58,121 werkzeug 127.0.0.1 - - [29/Mar/2021 13:30:58] "[37mGET /system HTTP/1.1[0m" 200 -
-2021-03-29 13:31:01,578 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:01] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:31:15,328 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:15] "[32mPOST / HTTP/1.1[0m" 302 -
-2021-03-29 13:31:15,352 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:15] "[37mGET /system HTTP/1.1[0m" 200 -
-2021-03-29 13:31:23,615 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:23] "[35m[1mPOST /system HTTP/1.1[0m" 500 -
-2021-03-29 13:31:23,712 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:23] "[37mGET /system?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-2021-03-29 13:31:23,733 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:23] "[37mGET /system?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-2021-03-29 13:31:23,749 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:23] "[37mGET /system?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-2021-03-29 13:31:23,980 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:23] "[37mGET /system?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-2021-03-29 13:31:24,012 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:24] "[37mGET /system?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-2021-03-29 13:31:24,172 werkzeug 127.0.0.1 - - [29/Mar/2021 13:31:24] "[37mGET /system?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-2021-03-29 13:32:02,077 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
-2021-03-29 13:32:02,779 werkzeug  * Restarting with stat
-2021-03-29 13:32:14,827 apscheduler.scheduler Scheduler started
-2021-03-29 13:32:14,828 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:32:14,828 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:32:15,503 werkzeug  * Restarting with stat
-2021-03-29 13:32:17,550 apscheduler.scheduler Scheduler started
-2021-03-29 13:32:17,551 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:32:17,552 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:32:18,136 werkzeug  * Debugger is active!
-2021-03-29 13:32:18,164 werkzeug  * Debugger PIN: 141-834-372
-2021-03-29 13:32:18,171 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-03-29 13:32:22,910 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:22] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:32:27,015 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:27] "[32mPOST / HTTP/1.1[0m" 302 -
-2021-03-29 13:32:27,051 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:27] "[37mGET /system HTTP/1.1[0m" 200 -
-2021-03-29 13:32:33,120 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:33] "[32mPOST /system HTTP/1.1[0m" 302 -
-2021-03-29 13:32:33,150 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:33] "[37mGET /choice HTTP/1.1[0m" 200 -
-2021-03-29 13:32:36,926 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:36] "[32mPOST /choice HTTP/1.1[0m" 302 -
-2021-03-29 13:32:36,984 werkzeug 127.0.0.1 - - [29/Mar/2021 13:32:36] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
-2021-03-29 13:33:11,097 werkzeug 127.0.0.1 - - [29/Mar/2021 13:33:11] "[37mPOST /erp/myfactory HTTP/1.1[0m" 200 -
-2021-03-29 13:35:21,675 apscheduler.scheduler Scheduler started
-2021-03-29 13:35:21,677 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:35:21,677 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:35:22,576 werkzeug  * Restarting with stat
-2021-03-29 13:35:25,218 apscheduler.scheduler Scheduler started
-2021-03-29 13:35:25,220 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:35:25,220 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:35:25,858 werkzeug  * Debugger is active!
-2021-03-29 13:35:25,879 werkzeug  * Debugger PIN: 141-834-372
-2021-03-29 13:35:25,890 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-03-29 13:35:28,169 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:28] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:35:37,205 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:37] "[32mPOST / HTTP/1.1[0m" 302 -
-2021-03-29 13:35:37,236 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:37] "[37mGET /system HTTP/1.1[0m" 200 -
-2021-03-29 13:35:43,697 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:43] "[32mPOST /system HTTP/1.1[0m" 302 -
-2021-03-29 13:35:43,750 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:43] "[37mGET /choice HTTP/1.1[0m" 200 -
-2021-03-29 13:35:48,530 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:48] "[32mPOST /choice HTTP/1.1[0m" 302 -
-2021-03-29 13:35:48,594 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:48] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
-2021-03-29 13:35:56,757 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
-2021-03-29 13:35:56,758 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:56] "[32mPOST /erp/myfactory HTTP/1.1[0m" 302 -
-2021-03-29 13:35:56,759 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:35:56,759 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:36:26.757445+02:00 (in 29.997982 seconds)
-2021-03-29 13:35:56,782 werkzeug 127.0.0.1 - - [29/Mar/2021 13:35:56] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:36:26,765 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:36:26,768 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:36:26 CEST)" (scheduled at 2021-03-29 13:36:26.757445+02:00)
-2021-03-29 13:36:26,770 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:36:56.757445+02:00 (in 29.990131 seconds)
-2021-03-29 13:36:26,870 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:36:27,153 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:36:27,219 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:36:56 CEST)" raised an exception
+2021-03-29 20:47:45,231 apscheduler.scheduler Scheduler started
+2021-03-29 20:47:45,232 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:47:45,233 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 20:47:46,081 werkzeug  * Restarting with stat
+2021-03-29 20:47:49,057 apscheduler.scheduler Scheduler started
+2021-03-29 20:47:49,059 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:47:49,059 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 20:47:49,680 werkzeug  * Debugger is active!
+2021-03-29 20:47:49,703 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 20:47:49,710 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 20:47:51,547 werkzeug 127.0.0.1 - - [29/Mar/2021 20:47:51] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 20:48:04,603 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-29 20:48:04,638 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:04] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-29 20:48:12,144 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:12] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-29 20:48:12,179 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:12] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-29 20:48:15,859 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:15] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-29 20:48:15,923 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:15] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
+2021-03-29 20:48:23,167 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 20:48:23,168 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:23] "[32mPOST /erp/myfactory HTTP/1.1[0m" 302 -
+2021-03-29 20:48:23,168 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:48:23,169 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:48:53.166424+02:00 (in 29.996997 seconds)
+2021-03-29 20:48:23,190 werkzeug 127.0.0.1 - - [29/Mar/2021 20:48:23] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 20:48:53,172 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:48:53,174 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:48:53 CEST)" (scheduled at 2021-03-29 20:48:53.166424+02:00)
+2021-03-29 20:48:53,175 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:49:23.166424+02:00 (in 29.993122 seconds)
+2021-03-29 20:48:53,277 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:48:53,554 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:48:53,659 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 20:48:53,660 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 20:48:53,660 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:49:23 CEST)" executed successfully
+2021-03-29 20:49:23,174 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:49:23,175 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:49:53.166424+02:00 (in 29.991725 seconds)
+2021-03-29 20:49:23,175 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:49:53 CEST)" (scheduled at 2021-03-29 20:49:23.166424+02:00)
+2021-03-29 20:49:23,278 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:49:23,867 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:49:23,947 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:49:53 CEST)" raised an exception
 Traceback (most recent call last):
   File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
     retval = job.func(*job.args, **job.kwargs)
@@ -80,261 +41,23 @@ Traceback (most recent call last):
     self.init_updates()
   File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
     result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 196, in updates
-    return pdf_created, article_numbers , done
-NameError: name 'article_numbers' is not defined
-2021-03-29 13:36:56,772 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:36:56,772 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:37:26.757445+02:00 (in 29.985193 seconds)
-2021-03-29 13:36:56,772 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:37:26 CEST)" (scheduled at 2021-03-29 13:36:56.757445+02:00)
-2021-03-29 13:36:56,869 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:36:57,530 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:36:57,621 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:37:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:37:26,770 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:37:26,770 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:37:56.757445+02:00 (in 29.986639 seconds)
-2021-03-29 13:37:26,770 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:37:56 CEST)" (scheduled at 2021-03-29 13:37:26.757445+02:00)
-2021-03-29 13:37:26,872 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:37:27,066 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:37:27,158 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:37:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:37:56,768 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:37:56,768 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:38:26.757445+02:00 (in 29.989243 seconds)
-2021-03-29 13:37:56,768 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:38:26 CEST)" (scheduled at 2021-03-29 13:37:56.757445+02:00)
-2021-03-29 13:37:56,867 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:37:57,440 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:37:57,541 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:38:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:38:26,764 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:38:26,765 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:38:56.757445+02:00 (in 29.992010 seconds)
-2021-03-29 13:38:26,766 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:38:56 CEST)" (scheduled at 2021-03-29 13:38:26.757445+02:00)
-2021-03-29 13:38:26,863 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:38:27,054 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:38:27,151 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:38:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:38:56,774 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:38:56,775 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:39:26.757445+02:00 (in 29.981976 seconds)
-2021-03-29 13:38:56,776 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:39:26 CEST)" (scheduled at 2021-03-29 13:38:56.757445+02:00)
-2021-03-29 13:38:56,881 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:38:57,496 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:38:57,597 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:39:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:39:26,759 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:39:26,760 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:39:56.757445+02:00 (in 29.997266 seconds)
-2021-03-29 13:39:26,761 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:39:56 CEST)" (scheduled at 2021-03-29 13:39:26.757445+02:00)
-2021-03-29 13:39:26,862 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:39:27,464 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:39:27,559 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:39:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:39:56,769 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:39:56,770 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:40:26.757445+02:00 (in 29.988210 seconds)
-2021-03-29 13:39:56,770 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:40:26 CEST)" (scheduled at 2021-03-29 13:39:56.757445+02:00)
-2021-03-29 13:39:56,872 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:39:57,078 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:39:57,166 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:40:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:40:26,768 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:40:26,769 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:40:56.757445+02:00 (in 29.987530 seconds)
-2021-03-29 13:40:26,770 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:40:56 CEST)" (scheduled at 2021-03-29 13:40:26.757445+02:00)
-2021-03-29 13:40:26,870 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:40:27,079 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:40:27,152 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:40:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:40:56,767 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:40:56,767 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:41:26.757445+02:00 (in 29.989799 seconds)
-2021-03-29 13:40:56,767 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:41:26 CEST)" (scheduled at 2021-03-29 13:40:56.757445+02:00)
-2021-03-29 13:40:56,887 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:40:57,126 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:40:57,236 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:41:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:41:26,771 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:41:26,771 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:41:56.757445+02:00 (in 29.986310 seconds)
-2021-03-29 13:41:26,771 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:41:56 CEST)" (scheduled at 2021-03-29 13:41:26.757445+02:00)
-2021-03-29 13:41:26,867 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:41:27,108 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:41:27,179 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:41:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:41:56,768 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:41:56,768 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:42:26.757445+02:00 (in 29.988602 seconds)
-2021-03-29 13:41:56,768 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:42:26 CEST)" (scheduled at 2021-03-29 13:41:56.757445+02:00)
-2021-03-29 13:41:56,862 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:41:57,086 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:41:57,176 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:42:26 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:42:26,763 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:42:26,764 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:42:56.757445+02:00 (in 29.993224 seconds)
-2021-03-29 13:42:26,765 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:42:56 CEST)" (scheduled at 2021-03-29 13:42:26.757445+02:00)
-2021-03-29 13:42:26,878 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:42:27,099 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:42:27,169 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:42:56 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
-    pdf_created, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-ValueError: too many values to unpack (expected 2)
-2021-03-29 13:45:22,356 apscheduler.scheduler Scheduler started
-2021-03-29 13:45:22,364 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:45:22,365 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:45:23,167 werkzeug  * Restarting with stat
-2021-03-29 13:45:25,798 apscheduler.scheduler Scheduler started
-2021-03-29 13:45:25,800 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:45:25,801 apscheduler.scheduler No jobs; waiting until a job is added
-2021-03-29 13:45:26,666 werkzeug  * Debugger is active!
-2021-03-29 13:45:26,760 werkzeug  * Debugger PIN: 141-834-372
-2021-03-29 13:45:26,780 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2021-03-29 13:45:26,925 werkzeug 127.0.0.1 - - [29/Mar/2021 13:45:26] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:45:52,815 werkzeug 127.0.0.1 - - [29/Mar/2021 13:45:52] "[32mPOST / HTTP/1.1[0m" 302 -
-2021-03-29 13:45:52,847 werkzeug 127.0.0.1 - - [29/Mar/2021 13:45:52] "[37mGET /system HTTP/1.1[0m" 200 -
-2021-03-29 13:46:02,088 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:02] "[32mPOST /system HTTP/1.1[0m" 302 -
-2021-03-29 13:46:02,120 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:02] "[37mGET /choice HTTP/1.1[0m" 200 -
-2021-03-29 13:46:22,653 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:22] "[32mPOST /choice HTTP/1.1[0m" 302 -
-2021-03-29 13:46:22,717 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:22] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
-2021-03-29 13:46:29,063 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
-2021-03-29 13:46:29,064 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:29] "[32mPOST /erp/myfactory HTTP/1.1[0m" 302 -
-2021-03-29 13:46:29,065 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:46:29,067 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:46:59.062408+02:00 (in 29.995002 seconds)
-2021-03-29 13:46:29,085 werkzeug 127.0.0.1 - - [29/Mar/2021 13:46:29] "[37mGET / HTTP/1.1[0m" 200 -
-2021-03-29 13:46:59,077 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:46:59,078 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:46:59 CEST)" (scheduled at 2021-03-29 13:46:59.062408+02:00)
-2021-03-29 13:46:59,079 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:47:29.062408+02:00 (in 29.984381 seconds)
-2021-03-29 13:46:59,180 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:46:59,778 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:46:59,875 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
-2021-03-29 13:46:59,875 root Update: System: myfactory; Artikel Nummern: A011116
-2021-03-29 13:46:59,875 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:47:29 CEST)" executed successfully
-2021-03-29 13:47:29,080 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:47:29,080 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:47:59.062408+02:00 (in 29.982286 seconds)
-2021-03-29 13:47:29,080 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:47:59 CEST)" (scheduled at 2021-03-29 13:47:29.062408+02:00)
-2021-03-29 13:47:29,181 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:47:29,370 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:47:29,432 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:47:59 CEST)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
-    self.init_updates()
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
-    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
     pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
 ValueError: not enough values to unpack (expected 3, got 2)
-2021-03-29 13:47:59,071 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:47:59,071 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:48:29.062408+02:00 (in 29.991365 seconds)
-2021-03-29 13:47:59,071 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:48:29 CEST)" (scheduled at 2021-03-29 13:47:59.062408+02:00)
-2021-03-29 13:47:59,170 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:47:59,391 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:47:59,491 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
-2021-03-29 13:47:59,492 root Update: System: myfactory; Artikel Nummern: A011116
-2021-03-29 13:47:59,492 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:48:29 CEST)" executed successfully
-2021-03-29 13:48:29,078 apscheduler.scheduler Looking for jobs to run
-2021-03-29 13:48:29,078 apscheduler.scheduler Next wakeup is due at 2021-03-29 13:48:59.062408+02:00 (in 29.983902 seconds)
-2021-03-29 13:48:29,079 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:48:59 CEST)" (scheduled at 2021-03-29 13:48:29.062408+02:00)
-2021-03-29 13:48:29,182 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
-2021-03-29 13:48:29,415 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
-2021-03-29 13:48:29,526 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 13:48:59 CEST)" raised an exception
+2021-03-29 20:49:53,173 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:49:53,173 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:50:23.166424+02:00 (in 29.992668 seconds)
+2021-03-29 20:49:53,174 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:50:23 CEST)" (scheduled at 2021-03-29 20:49:53.166424+02:00)
+2021-03-29 20:49:53,282 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:49:53,854 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:49:53,987 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 20:49:53,987 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 20:49:53,987 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:50:23 CEST)" executed successfully
+2021-03-29 20:50:23,176 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:50:23,177 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:50:53.166424+02:00 (in 29.989282 seconds)
+2021-03-29 20:50:23,178 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:50:53 CEST)" (scheduled at 2021-03-29 20:50:23.166424+02:00)
+2021-03-29 20:50:23,289 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:50:23,500 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:50:23,566 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:50:53 CEST)" raised an exception
 Traceback (most recent call last):
   File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
     retval = job.func(*job.args, **job.kwargs)
@@ -342,8 +65,512 @@ Traceback (most recent call last):
     self.init_updates()
   File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
     result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
-  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 195, in updates
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
     pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
 ValueError: not enough values to unpack (expected 3, got 2)
-2021-03-29 13:48:56,874 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
-2021-03-29 13:48:57,594 werkzeug  * Restarting with stat
+2021-03-29 20:50:53,172 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:50:53,173 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:51:23.166424+02:00 (in 29.994309 seconds)
+2021-03-29 20:50:53,173 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:51:23 CEST)" (scheduled at 2021-03-29 20:50:53.166424+02:00)
+2021-03-29 20:50:53,288 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:50:53,540 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:50:53,651 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 20:50:53,651 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 20:50:53,652 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:51:23 CEST)" executed successfully
+2021-03-29 20:51:23,180 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:51:23,180 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:51:53.166424+02:00 (in 29.985569 seconds)
+2021-03-29 20:51:23,180 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:51:53 CEST)" (scheduled at 2021-03-29 20:51:23.166424+02:00)
+2021-03-29 20:51:23,292 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:51:23,923 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:51:24,022 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:51:53 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 20:51:53,182 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:51:53,184 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:52:23.166424+02:00 (in 29.982453 seconds)
+2021-03-29 20:51:53,184 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:52:23 CEST)" (scheduled at 2021-03-29 20:51:53.166424+02:00)
+2021-03-29 20:51:53,301 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:51:53,500 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:51:53,633 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 20:51:53,633 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 20:51:53,633 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:52:23 CEST)" executed successfully
+2021-03-29 20:52:23,172 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:52:23,174 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:52:53.166424+02:00 (in 29.993106 seconds)
+2021-03-29 20:52:23,174 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:52:53 CEST)" (scheduled at 2021-03-29 20:52:23.166424+02:00)
+2021-03-29 20:52:23,280 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:52:23,908 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:52:23,965 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:52:53 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 20:52:53,171 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:52:53,172 apscheduler.scheduler Next wakeup is due at 2021-03-29 20:53:23.166424+02:00 (in 29.994737 seconds)
+2021-03-29 20:52:53,172 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:53:23 CEST)" (scheduled at 2021-03-29 20:52:53.166424+02:00)
+2021-03-29 20:52:53,272 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 20:52:53,483 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 20:52:53,588 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 20:52:53,588 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 20:52:53,589 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 20:53:23 CEST)" executed successfully
+2021-03-29 20:59:36,049 apscheduler.scheduler Scheduler started
+2021-03-29 20:59:36,056 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:59:36,057 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 20:59:36,823 werkzeug  * Restarting with stat
+2021-03-29 20:59:39,201 apscheduler.scheduler Scheduler started
+2021-03-29 20:59:39,203 apscheduler.scheduler Looking for jobs to run
+2021-03-29 20:59:39,204 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 20:59:39,897 werkzeug  * Debugger is active!
+2021-03-29 20:59:39,939 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 20:59:39,955 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 20:59:41,026 werkzeug 127.0.0.1 - - [29/Mar/2021 20:59:41] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 20:59:48,718 werkzeug 127.0.0.1 - - [29/Mar/2021 20:59:48] "[33mGET /”/your_flask_funtion” HTTP/1.1[0m" 404 -
+2021-03-29 21:19:34,476 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-29 21:19:35,285 werkzeug  * Restarting with stat
+2021-03-29 21:19:49,828 apscheduler.scheduler Scheduler started
+2021-03-29 21:19:49,829 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:19:49,830 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:19:50,587 werkzeug  * Restarting with stat
+2021-03-29 21:19:52,481 apscheduler.scheduler Scheduler started
+2021-03-29 21:19:52,483 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:19:52,483 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:19:53,111 werkzeug  * Debugger is active!
+2021-03-29 21:19:53,136 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:19:53,144 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:19:55,199 werkzeug 127.0.0.1 - - [29/Mar/2021 21:19:55] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:20:01,323 werkzeug 127.0.0.1 - - [29/Mar/2021 21:20:01] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:20:42,619 werkzeug 127.0.0.1 - - [29/Mar/2021 21:20:42] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:22:03,850 werkzeug 127.0.0.1 - - [29/Mar/2021 21:22:03] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:22:05,501 werkzeug 127.0.0.1 - - [29/Mar/2021 21:22:05] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:25:41,654 werkzeug 127.0.0.1 - - [29/Mar/2021 21:25:41] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:26:25,873 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-29 21:26:26,920 werkzeug  * Restarting with stat
+2021-03-29 21:26:31,510 apscheduler.scheduler Scheduler started
+2021-03-29 21:26:31,513 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:26:31,513 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:26:32,299 werkzeug  * Debugger is active!
+2021-03-29 21:26:32,323 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:26:32,334 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:26:32,356 werkzeug 127.0.0.1 - - [29/Mar/2021 21:26:32] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:26:32,813 werkzeug 127.0.0.1 - - [29/Mar/2021 21:26:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-29 21:26:35,638 werkzeug 127.0.0.1 - - [29/Mar/2021 21:26:35] "[35m[1mGET /background_process_test HTTP/1.1[0m" 500 -
+2021-03-29 21:27:12,197 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-29 21:27:12,751 werkzeug  * Restarting with stat
+2021-03-29 21:27:16,506 apscheduler.scheduler Scheduler started
+2021-03-29 21:27:16,507 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:27:16,508 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:27:17,268 werkzeug  * Debugger is active!
+2021-03-29 21:27:17,311 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:27:17,322 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:27:18,767 werkzeug 127.0.0.1 - - [29/Mar/2021 21:27:18] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:27:19,264 werkzeug 127.0.0.1 - - [29/Mar/2021 21:27:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-29 21:27:20,847 werkzeug 127.0.0.1 - - [29/Mar/2021 21:27:20] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:28:39,473 werkzeug 127.0.0.1 - - [29/Mar/2021 21:28:39] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:32:22,640 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\run_middleware.py', reloading
+2021-03-29 21:32:23,545 werkzeug  * Restarting with stat
+2021-03-29 21:32:26,587 apscheduler.scheduler Scheduler started
+2021-03-29 21:32:26,589 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:32:26,590 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:32:27,449 werkzeug  * Debugger is active!
+2021-03-29 21:32:27,479 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:32:27,489 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:32:27,796 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-29 21:32:27,953 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:27] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-29 21:32:27,979 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:27] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-29 21:32:28,016 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:28] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-29 21:32:28,334 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:28] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-29 21:32:28,387 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:28] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:32:28,649 werkzeug 127.0.0.1 - - [29/Mar/2021 21:32:28] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:33:15,471 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-29 21:33:15,574 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:15] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-29 21:33:15,598 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:15] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-29 21:33:15,600 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:15] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-29 21:33:16,055 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:16] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:33:26,165 apscheduler.scheduler Scheduler started
+2021-03-29 21:33:26,166 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:33:26,167 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:33:26,849 werkzeug  * Restarting with stat
+2021-03-29 21:33:28,886 apscheduler.scheduler Scheduler started
+2021-03-29 21:33:28,887 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:33:28,888 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:33:29,521 werkzeug  * Debugger is active!
+2021-03-29 21:33:29,540 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:33:29,548 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:33:36,179 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-29 21:33:36,269 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-29 21:33:36,325 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-29 21:33:36,347 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-29 21:33:36,741 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:33:36,945 werkzeug 127.0.0.1 - - [29/Mar/2021 21:33:36] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:34:19,078 apscheduler.scheduler Scheduler started
+2021-03-29 21:34:19,079 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:34:19,079 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:34:19,693 werkzeug  * Restarting with stat
+2021-03-29 21:34:21,574 apscheduler.scheduler Scheduler started
+2021-03-29 21:34:21,575 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:34:21,576 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:34:22,145 werkzeug  * Debugger is active!
+2021-03-29 21:34:22,171 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:34:22,181 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:34:22,904 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:22] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-29 21:34:23,129 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:23] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-29 21:34:23,198 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:23] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-29 21:34:23,252 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:23] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-29 21:34:23,473 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:23] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-29 21:34:23,597 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:23] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-29 21:34:48,790 apscheduler.scheduler Scheduler started
+2021-03-29 21:34:48,792 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:34:48,792 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:34:49,561 werkzeug  * Restarting with stat
+2021-03-29 21:34:51,646 apscheduler.scheduler Scheduler started
+2021-03-29 21:34:51,648 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:34:51,648 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:34:52,217 werkzeug  * Debugger is active!
+2021-03-29 21:34:52,240 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:34:52,250 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:34:54,063 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:54] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:34:54,536 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-29 21:34:56,875 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:56] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:34:57,339 werkzeug 127.0.0.1 - - [29/Mar/2021 21:34:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-29 21:35:08,616 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:08] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-03-29 21:35:08,655 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:08] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-03-29 21:35:14,389 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:14] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-03-29 21:35:14,414 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:14] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-03-29 21:35:17,175 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:17] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-03-29 21:35:17,231 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:17] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
+2021-03-29 21:35:23,457 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 21:35:23,458 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:23] "[32mPOST /erp/myfactory HTTP/1.1[0m" 302 -
+2021-03-29 21:35:23,458 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:35:23,459 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:35:53.457326+02:00 (in 29.997997 seconds)
+2021-03-29 21:35:23,483 werkzeug 127.0.0.1 - - [29/Mar/2021 21:35:23] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:35:53,463 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:35:53,466 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:35:53 CEST)" (scheduled at 2021-03-29 21:35:53.457326+02:00)
+2021-03-29 21:35:53,466 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:36:23.457326+02:00 (in 29.994084 seconds)
+2021-03-29 21:35:53,567 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:35:53,868 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:35:53,934 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:36:23 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 21:36:23,465 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:36:23,465 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:36:53.457326+02:00 (in 29.991889 seconds)
+2021-03-29 21:36:23,466 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:36:53 CEST)" (scheduled at 2021-03-29 21:36:23.457326+02:00)
+2021-03-29 21:36:23,572 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:36:23,792 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:36:23,901 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:36:23,901 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:36:23,902 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:36:53 CEST)" executed successfully
+2021-03-29 21:36:53,472 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:36:53,473 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:37:23.457326+02:00 (in 29.983745 seconds)
+2021-03-29 21:36:53,474 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:37:23 CEST)" (scheduled at 2021-03-29 21:36:53.457326+02:00)
+2021-03-29 21:36:53,575 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:36:53,779 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:36:53,875 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:37:23 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 21:37:23,465 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:37:23,466 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:37:53.457326+02:00 (in 29.990921 seconds)
+2021-03-29 21:37:23,467 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:37:53 CEST)" (scheduled at 2021-03-29 21:37:23.457326+02:00)
+2021-03-29 21:37:23,590 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:37:23,847 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:37:23,948 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:37:23,949 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:37:23,949 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:37:53 CEST)" executed successfully
+2021-03-29 21:40:45,195 apscheduler.scheduler Scheduler started
+2021-03-29 21:40:45,197 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:40:45,197 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:40:45,918 werkzeug  * Restarting with stat
+2021-03-29 21:40:48,310 apscheduler.scheduler Scheduler started
+2021-03-29 21:40:48,311 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:40:48,312 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:40:49,048 werkzeug  * Debugger is active!
+2021-03-29 21:40:49,099 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:40:49,128 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:40:49,377 werkzeug 127.0.0.1 - - [29/Mar/2021 21:40:49] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:40:50,052 werkzeug 127.0.0.1 - - [29/Mar/2021 21:40:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-29 21:41:04,562 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 21:41:04,563 werkzeug 127.0.0.1 - - [29/Mar/2021 21:41:04] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:41:04,563 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:41:04,564 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:41:34.562989+02:00 (in 29.998993 seconds)
+2021-03-29 21:41:34,577 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:41:34,578 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:41:34 CEST)" (scheduled at 2021-03-29 21:41:34.562989+02:00)
+2021-03-29 21:41:34,579 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:42:04.562989+02:00 (in 29.985792 seconds)
+2021-03-29 21:41:34,680 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:41:34,883 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:41:34,976 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:42:04 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 21:42:04,580 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:42:04,582 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:42:34.562989+02:00 (in 29.980634 seconds)
+2021-03-29 21:42:04,583 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:42:34 CEST)" (scheduled at 2021-03-29 21:42:04.562989+02:00)
+2021-03-29 21:42:04,704 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:42:04,974 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:42:05,070 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:42:05,071 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:42:05,071 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:42:34 CEST)" executed successfully
+2021-03-29 21:43:12,026 apscheduler.scheduler Scheduler started
+2021-03-29 21:43:12,028 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:43:12,029 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:43:12,737 werkzeug  * Restarting with stat
+2021-03-29 21:43:16,160 apscheduler.scheduler Scheduler started
+2021-03-29 21:43:16,162 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:43:16,162 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:43:16,766 werkzeug  * Debugger is active!
+2021-03-29 21:43:16,795 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:43:16,805 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:43:20,252 werkzeug 127.0.0.1 - - [29/Mar/2021 21:43:20] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:43:22,798 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 21:43:22,799 werkzeug 127.0.0.1 - - [29/Mar/2021 21:43:22] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:43:22,800 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:43:22,800 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:43:52.798447+02:00 (in 29.997978 seconds)
+2021-03-29 21:43:52,805 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:43:52,808 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:43:52 CEST)" (scheduled at 2021-03-29 21:43:52.798447+02:00)
+2021-03-29 21:43:52,809 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:44:22.798447+02:00 (in 29.991978 seconds)
+2021-03-29 21:43:52,917 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:43:53,194 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:43:53,267 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:44:22 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 105, in init_updates
+    result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 198, in updates
+    pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+ValueError: not enough values to unpack (expected 3, got 2)
+2021-03-29 21:44:22,821 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:44:22,823 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:44:52.798447+02:00 (in 29.975122 seconds)
+2021-03-29 21:44:22,824 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:44:52 CEST)" (scheduled at 2021-03-29 21:44:22.798447+02:00)
+2021-03-29 21:44:22,936 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:44:23,169 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:44:23,278 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:44:23,279 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:44:23,279 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:44:52 CEST)" executed successfully
+2021-03-29 21:46:11,290 apscheduler.scheduler Scheduler started
+2021-03-29 21:46:11,291 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:46:11,292 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:46:12,071 werkzeug  * Restarting with stat
+2021-03-29 21:46:14,773 apscheduler.scheduler Scheduler started
+2021-03-29 21:46:14,776 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:46:14,777 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:46:15,396 werkzeug  * Debugger is active!
+2021-03-29 21:46:15,418 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:46:15,425 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:46:15,950 werkzeug 127.0.0.1 - - [29/Mar/2021 21:46:15] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-29 21:46:19,034 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 21:46:19,035 werkzeug 127.0.0.1 - - [29/Mar/2021 21:46:19] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:46:19,035 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:46:19,036 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:46:49.034402+02:00 (in 29.998001 seconds)
+2021-03-29 21:46:49,050 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:46:49,078 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:46:49 CEST)" (scheduled at 2021-03-29 21:46:49.034402+02:00)
+2021-03-29 21:46:49,079 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:47:19.034402+02:00 (in 29.982466 seconds)
+2021-03-29 21:46:49,256 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:46:49,543 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:46:49,720 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:47:19 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:47:19,070 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:47:19,071 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:47:49.034402+02:00 (in 29.962743 seconds)
+2021-03-29 21:47:19,071 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:47:49 CEST)" (scheduled at 2021-03-29 21:47:19.034402+02:00)
+2021-03-29 21:47:19,165 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:47:19,370 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:47:19,469 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:47:49 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:47:49,044 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:47:49,045 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:48:19.034402+02:00 (in 29.989078 seconds)
+2021-03-29 21:47:49,046 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:48:19 CEST)" (scheduled at 2021-03-29 21:47:49.034402+02:00)
+2021-03-29 21:47:49,152 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:47:49,362 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:47:49,447 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:48:19 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:48:19,048 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:48:19,049 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:48:49.034402+02:00 (in 29.984971 seconds)
+2021-03-29 21:48:19,050 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:48:49 CEST)" (scheduled at 2021-03-29 21:48:19.034402+02:00)
+2021-03-29 21:48:19,157 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:48:19,385 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:48:19,514 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:48:49 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:48:49,047 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:48:49,050 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:49:19.034402+02:00 (in 29.984623 seconds)
+2021-03-29 21:48:49,052 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:49:19 CEST)" (scheduled at 2021-03-29 21:48:49.034402+02:00)
+2021-03-29 21:48:49,166 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:48:49,400 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:48:49,484 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:49:19 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:49:19,054 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:49:19,054 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:49:49.034402+02:00 (in 29.979567 seconds)
+2021-03-29 21:49:19,055 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:49:49 CEST)" (scheduled at 2021-03-29 21:49:19.034402+02:00)
+2021-03-29 21:49:19,153 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:49:19,715 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:49:19,823 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:49:49 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:49:49,054 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:49:49,054 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:50:19.034402+02:00 (in 29.979596 seconds)
+2021-03-29 21:49:49,055 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:50:19 CEST)" (scheduled at 2021-03-29 21:49:49.034402+02:00)
+2021-03-29 21:49:49,156 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:49:49,382 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:49:49,512 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:50:19 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:50:19,041 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:50:19,042 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:50:49.034402+02:00 (in 29.993370 seconds)
+2021-03-29 21:50:19,042 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:50:49 CEST)" (scheduled at 2021-03-29 21:50:19.034402+02:00)
+2021-03-29 21:50:19,142 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:50:19,374 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:50:19,471 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:50:49 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:50:49,046 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:50:49,047 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:51:19.034402+02:00 (in 29.988016 seconds)
+2021-03-29 21:50:49,047 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:51:19 CEST)" (scheduled at 2021-03-29 21:50:49.034402+02:00)
+2021-03-29 21:50:49,145 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:50:49,377 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:50:49,492 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:51:19 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:51:19,043 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:51:19,044 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:51:49.034402+02:00 (in 29.990580 seconds)
+2021-03-29 21:51:19,044 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:51:49 CEST)" (scheduled at 2021-03-29 21:51:19.034402+02:00)
+2021-03-29 21:51:19,154 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:51:19,395 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:51:19,477 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:51:49 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 79, in job_interval_updates
+    self.init_updates()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 119, in init_updates
+    logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
+IndexError: list index out of range
+2021-03-29 21:51:59,605 apscheduler.scheduler Scheduler started
+2021-03-29 21:51:59,608 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:51:59,608 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:52:00,396 werkzeug  * Restarting with stat
+2021-03-29 21:52:04,833 apscheduler.scheduler Scheduler started
+2021-03-29 21:52:04,834 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:52:04,835 apscheduler.scheduler No jobs; waiting until a job is added
+2021-03-29 21:52:05,610 werkzeug  * Debugger is active!
+2021-03-29 21:52:05,746 werkzeug  * Debugger PIN: 141-834-372
+2021-03-29 21:52:05,760 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-03-29 21:52:09,077 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-03-29 21:52:09,078 werkzeug 127.0.0.1 - - [29/Mar/2021 21:52:09] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-03-29 21:52:09,078 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:52:09,079 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:52:39.077561+02:00 (in 29.998002 seconds)
+2021-03-29 21:52:39,087 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:52:39,090 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:52:39 CEST)" (scheduled at 2021-03-29 21:52:39.077561+02:00)
+2021-03-29 21:52:39,091 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:53:09.077561+02:00 (in 29.988140 seconds)
+2021-03-29 21:52:39,200 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:52:39,404 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:52:39,528 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:52:39,529 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:52:39,529 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:53:09 CEST)" executed successfully
+2021-03-29 21:53:09,088 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:53:09,089 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:53:39.077561+02:00 (in 29.987721 seconds)
+2021-03-29 21:53:09,090 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:53:39 CEST)" (scheduled at 2021-03-29 21:53:09.077561+02:00)
+2021-03-29 21:53:09,199 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:53:09,408 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:53:09,527 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:53:09,528 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:53:09,528 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:53:39 CEST)" executed successfully
+2021-03-29 21:53:39,097 apscheduler.scheduler Looking for jobs to run
+2021-03-29 21:53:39,098 apscheduler.scheduler Next wakeup is due at 2021-03-29 21:54:09.077561+02:00 (in 29.979751 seconds)
+2021-03-29 21:53:39,098 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:54:09 CEST)" (scheduled at 2021-03-29 21:53:39.077561+02:00)
+2021-03-29 21:53:39,205 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-03-29 21:53:39,776 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 110459
+2021-03-29 21:53:39,888 root Exportierte Anlagen: System: myfactory; Artikel Nummern: A011117
+2021-03-29 21:53:39,889 root Update: System: myfactory; Artikel Nummern: A011116
+2021-03-29 21:53:39,889 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-03-29 21:54:09 CEST)" executed successfully

@@ -46,8 +46,9 @@ class UpdateMyFactory():
         
         """
 
-
-        self.last_update_time = last_update_time
+        # TODO Last update time
+        #self.last_update_time = last_update_time
+        self.last_update_time = 0
         
 
         # aktuelle update Zeit speichern
@@ -73,13 +74,14 @@ class UpdateMyFactory():
         if len(self.ids) == 0:
             # TODO. quti testen mit JobScheduler
             # raise Exception("Es gibt keine zu aktualisierenden Artikel")
-            return [], False
+            return [], [], False
 
         # Werte aus Prüfbericht werden als PDF dargestellt und in /output geladen
         info_success = self.map_attributes(
             myfactory_names, inventar)
         
         pdf_created = len(self.ids)
+        
         return  pdf_created, article_number, info_success
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen

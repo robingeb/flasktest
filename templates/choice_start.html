@@ -14,6 +14,29 @@
       
     </p>
 </form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+        $(document).ajaxStop(function(){
+            window.location.reload();
+});
+</script>
+
+<div class='container'>    
+        <form>
+            <a href=# id=test><button class='btn btn-default'>Restart Job</button></a>
+        </form>
+
+</div>
 {% if form.errors %}
     {{ form.errors }}
 {% endif %}

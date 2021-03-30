@@ -60,43 +60,52 @@ class MiddlewareControl():
         if self.time_unit == "seconds":
             self.activ = True
             self.scheduler.add_job(self.job_interval_updates,
-                                "interval", seconds=self.time_intervall)
+                                "interval", seconds=self.time_intervall, id = "job_interval")
         elif self.time_unit == "minutes":
             self.activ = True
             self.scheduler.add_job(self.job_interval_updates,
-                                "interval", minutes=self.time_intervall)
+                                "interval", minutes=self.time_intervall, id = "job_interval")
         elif self.time_unit == "hours":
             self.activ = True
             self.scheduler.add_job(self.job_interval_updates,
-                                "interval", hours=self.time_intervall)
+                                "interval", hours=self.time_intervall, id = "job_interval")
         elif self.time_unit == "days":
             self.activ = True
             self.scheduler.add_job(self.job_interval_updates,
-                                "interval", days=self.time_intervall)
+                                "interval", days=self.time_intervall, id = "job_interval")
+
+    def remove_job(self, name):
+        self.scheduler.remove_job(name)
+    
+    def get_job(self, name):
+        return self.scheduler.get_job(name)
 
     def job_interval_updates(self):
-        print("job1 done")
+        print("job Update initialisiert")
         self.init_updates()
+
+    # def job_interval_updates_pause(self):
+    #     print("job1 done")
+    #     self.scheduler.resume_job()
 
     def init_updates(self):
         """
         Update eines ERP Systems initialisieren
         """
-        # mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
-        # client = MongoClient(mongo_url)
-
-        # Variablen für Update:
-        # get configuration decitions of user saved in MongoDB
         
         # letzten Update Zeitpunkt erhalten
         db = self.client['Keys']
         col = db['Updatefreq']
+        # try:
+        #     last_update_time = list(col.find())[0]
+        # except:
+        #     last_update_time = 0
         try:
-            last_update_time = list(col.find())[0]
+            last_update_time = list(col.find().sort([('_id', -1)]).limit(1))[0]["time"]
         except:
             last_update_time = 0
 
-        col.delete_many({})
+        #col.delete_many({})
         # Zeitpunkt des aktuellen Updates 
         now = datetime.now()
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
@@ -105,15 +114,15 @@ class MiddlewareControl():
         result, ids, done = self.updates(self.erp, self.client, last_update_time, actual_update_time, self.device_export)
         print(result, ids, done )
         
-        col = db['Updatefreq']
+        # col = db['Updatefreq']
         # Update-Zeit speichern in MongoDB
         if done:
             col.insert_one({"time": actual_update_time})
-        else:
-            col.insert_one({"time": last_update_time})
+        # else:
+        #     col.insert_one({"time": last_update_time})
         # print(result)
-        logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
-        logging.info("Update: System: " + self.erp + "; Artikel Nummern: " + str(ids[0]) )
+        logging.info("Exportierte Anlagen: System: " + self.erp + "; Artikel Nummern: " + str(ids[0]) )
+        logging.info("Update: System: " + self.erp + "; Artikel Nummern: " + str(ids[1]) )
 
 
     def init_config(self):
@@ -132,8 +141,10 @@ class MiddlewareControl():
         # Wenn Anlagen-Export von ERP nach Tagid kann Artikel-Nummer Wertebereich eingschrängt werden.
         if self.device_export == "erp_tagid":
             self.article_number_range = settings["ARTICLENUMBERRANGE"]
+            if self.article_number_range == ["",""]:
+                self.article_number_range = [0,0]
         else:
-            self.article_number_range = ["",""]
+            self.article_number_range = [0,0]
 
         # return system["System"], time_intervall, time_unit, export
 
@@ -181,7 +192,7 @@ class MiddlewareControl():
             # update-Methode ausführen
             update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
             update_article_number = updateWeClapp.get_article_number()
-            return [update_result, export_result], [update_article_number, export_article_number], done
+            return [export_result, update_result], [export_article_number, update_article_number], done
 
         elif system == "xentral":
             col = db['Key_Xentral']
@@ -196,7 +207,8 @@ class MiddlewareControl():
             updateMyFactory = UpdateMyFactory(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
             # update-Methode ausführen
             pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
-            return pdf_created, article_numbers , done
+            
+            return pdf_created, article_numbers, done
         else:
             logging.error("Keine ERP-System spezifiziert" )
             print("Error: No such Erp System in Database")

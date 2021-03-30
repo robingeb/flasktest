@@ -48,7 +48,7 @@ class MoveTagidWeclapp():
             # push single articles to weclapp
             r = weClappAPI.post_request(final_json)
             if "error" not in r:
-                self.ids.append(df_article[0]["articleNumber"])
+                self.ids.append(row["articleNumber"])
 
             result.append(r)
         

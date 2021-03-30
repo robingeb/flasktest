@@ -9,7 +9,7 @@
 			{"articel_id_manufacturer": "10001" ,
 			 "description_long": "Standard" ,
 			 "description_short": "Standard" ,
-			 "device_name": "Hebebühne" ,
+			 "device_name": "Hebebuehne" ,
 			 "keywords":  [
 			   { "0": "Heben"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
@@ -35,7 +35,7 @@
 			 "description_short": "Standard" ,
 			 "device_name": "Seilzug" ,
 			 "keywords":  [
-			   { "0": "Schlinge"}  ],
+			   { "0": "Ziehen"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
 		"historical_data":
 			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
@@ -58,7 +58,7 @@
 			 "description_short": "Standard" ,
 			 "device_name": "Presse" ,
 			 "keywords":  [
-			   { "0": "Schlinge"}  ],
+			   { "0": "Stanzen"}  ],
 			 "manufacturer_id": "AR45f11oyyF5jUxC9FfH" },
 		"historical_data":
 			{"created_at": "16. Dezember 2020 um 10:41:33 UTC+1" ,
