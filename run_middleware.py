@@ -107,6 +107,8 @@ def choice():
     if form.validate_on_submit():
         System = str(form.System.data)
 
+        
+
         return redirect(url_for('erp', System=System))
 
     return render_template('choice.html', form=form, name=name)

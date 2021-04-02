@@ -11,29 +11,10 @@ def test():
     auth = {
     'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
     }
-    payload = """{
-        "id": "3814",
-        "active": true,
-        "articleNumber": "012",
-        "applyCashDiscount": true,
-        "availableInSale": true,
-        "availableInShop": false,
-        "batchNumberRequired": false,
-        "billOfMaterialPartDeliveryPossible": false,
-        "productionArticle": false,
-        "serialNumberRequired": false,
-        "showOnDeliveryNote": true,
-        "taxRateType": "STANDARD",
-        "unitId": "2895",
-        "unitName": "Stk.",
-        "useAvailableForSalesChannels": false,
-        "useSalesBillOfMaterialItemPrices": false,
-        "useSalesBillOfMaterialItemPricesForPurchase": false,
-        "name": "Fahrradsitz Neu2"
-    }"""
+    payload = '{\n    "name": "Hebebuehne",\n    "unitId": 2895\n, "articleNumber":1 \n}'
 
     weClappAPI = WeClappAPI(url, auth)
-    print(weClappAPI.get_request())
+    print(weClappAPI.post_request(payload))
 
 
 class WeClappAPI():

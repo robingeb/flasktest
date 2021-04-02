@@ -8,7 +8,9 @@ def test():
     'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
     }
     dynamicsAPI = DynamicsAPI(url, auth)
-    data = dynamicsAPI.get_request()
+    #payload = """{"displayName": "Hebebuehne",    "number": "11116"}"""
+    f = open("api/payload.json", "rb")
+    data = dynamicsAPI.post_request(f)
     print(data)
 
 
@@ -46,10 +48,8 @@ class DynamicsAPI():
         :return: ein Dictionary mit Instanz, welche nach Dynamics geladen wurde.
         """  
         headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'AuthenticationToken': self.auth["AuthenticationToken"],
-        'Cookie': '_sid_=1'
+            'Authorization': self.auth["Authorization"],
+            'Content-Type': 'application/json'
         }
         try:
             response = requests.request("POST", self.url, headers=headers, data=payload)
@@ -67,10 +67,8 @@ class DynamicsAPI():
         :return: ein Dictionary mit Instanz, welche durch den Request verändert wurde.
         """  
         headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'AuthenticationToken': self.auth["AuthenticationToken"],
-        'Cookie': '_sid_=1'
+            'Authorization': self.auth["Authorization"],
+            'Content-Type': 'application/json'
         }
         try:
             response = requests.request("PUT", self.url + "/id/" +str(id), headers=headers, data=payload)

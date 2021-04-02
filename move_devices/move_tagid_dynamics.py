@@ -1,16 +1,16 @@
 import pandas as pd
 import numpy as np
 import json
-from api.weclapp import *
+from api.dynamics import *
 
 #   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert
 
 def test():
-    url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
+    url = "http://10.105.11.42:7048/BC140/api/v1.0/items" 
     auth = {
-        'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
+    'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
     }
-    move = MoveTagidWeclapp(url, auth)
+    move = MoveTagidDynamics(url, auth)
     x,y = move.export()
     print(x,y)
 
@@ -23,33 +23,33 @@ class MoveTagidDynamics():
 
     def export(self):
 
-        # Minimum der benötigten Attribute von WeClapp für einen erfolgreichen POST-Request
+        # Minimum der benötigten Attribute von Dynamics für einen erfolgreichen POST-Request
         # TODO Anpassen an Dynamics
-        weclapp_article_attributes = ["articleNumber", "name", "unitId"]
+        dynamics_article_attributes = ["number", "displayName"]
 
         result = []
 
         # Geräte Instanzen aus TagIdeasy erhalten
         x, y = self.get_tagideasy()
 
-        # Geräte zum API Input-Schema von WeClapp mappen
-        devices_mapped = self.map_attributes(x, y, weclapp_article_attributes)
+        # Geräte zum API Input-Schema von Dynamics mappen
+        devices_mapped = self.map_attributes(x, y, dynamics_article_attributes)
 
         # initialice WeClappAPI
-        weClappAPI = WeClappAPI(self.url, self.auth)
+        dynamicsAPI = DynamicsAPI(self.url, self.auth)
 
         # Iterate throug articles and push them to weclapp
         for index, row in devices_mapped.iterrows():
-            df_article = pd.DataFrame([row], columns=weclapp_article_attributes)
+            df_article = pd.DataFrame([row], columns=dynamics_article_attributes)
             # transform to json
             result_json = df_article.to_json(orient="records")
             parsed = json.loads(result_json)[0]
             final_json = json.dumps(parsed, indent=4)
             
             # push single articles to weclapp
-            r = weClappAPI.post_request(final_json)
+            r = dynamicsAPI.post_request(final_json)
             if "error" not in r:
-                self.ids.append(df_article[0]["articleNumber"])
+                self.ids.append(row["number"])
 
             result.append(r)
         
@@ -83,10 +83,10 @@ class MoveTagidDynamics():
 
 
         # generate unit_id (2895 for Stk. )
-        id = 2895
-        unit_id = [id] * len(article_id)
+        # id = 2895
+        # unit_id = [id] * len(article_id)
 
-        articles = np.array([article_number, device_name, unit_id])
+        articles = np.array([article_number, device_name])
         articles = articles.transpose()
         df_articles = pd.DataFrame(articles, columns=weclapp_article_attributes)
         #result_json = df_articles.to_json(orient="records")

@@ -38,6 +38,7 @@ class UpdateMyFactory():
         self.url = url
         self.auth = auth
         self.ids = []
+        self.update_time = 0
 
 #TODO: aktuelle Update zeit einbauen
     def update(self, last_update_time = 0, actual_update_time = 0):
@@ -45,23 +46,18 @@ class UpdateMyFactory():
         :return: pdf mit Prüfberichten
         
         """
-
-        # TODO Last update time
-        #self.last_update_time = last_update_time
-        self.last_update_time = 0
         
 
         # aktuelle update Zeit speichern
-        now = datetime.now()
+        # now = datetime.now()
         # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
-        self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
+        self.update_time = actual_update_time
           
         # Instatiate MyFactory-API
         myFactoryAPI = MyFactoryAPI(self.url, self.auth)
 
         # Inventar und Device Liste von TagIdeasy erhalten
-        # inventar, device = get_tagideasy()
-        inventar = self.get_tagideasy()
+        inventar = self.get_tagideasy(last_update_time)
 
         # Erstellen einer Liste aus Artikelnummer und Index für alle Prüfberichte in TagIdeasy
         tagid_ids = [[instance["Artikelnummer"],
@@ -85,12 +81,12 @@ class UpdateMyFactory():
         return  pdf_created, article_number, info_success
 
     # 1) Get Artikel von TagIdeasy, welche geändert werden sollen
-    def get_tagideasy(self):
+    def get_tagideasy(self, last_update_time):
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
         data = []
         db = self.client['Prüfberichte']
         col = db['Prüfberichte']
-        for doc in col.find({"Datum": {"$gt": self.last_update_time}}):
+        for doc in col.find({"Datum": {"$gt": last_update_time}}):
         #for doc in col.find({"Datum": {"$gt": 0}}):
             data.append(doc)
         return data
@@ -113,7 +109,7 @@ class UpdateMyFactory():
                     id = tagid_ids[i]
                     instance_id = instance_attributes['d:PK_ArtikelID']["#text"]
                     instance_article_number = "A0" + id[0]
-                    instance_name = instance_attributes['d:Bezeichnung']
+                    instance_name = instance_attributes['d:Kurzbezeichnung']
                     id = id + [instance_id, instance_article_number]
                     # id: [Artikelnummer, index in Inventar-Liste, id MyFactory , Artikelnummer-MyFactory]
                     article_number.append(instance_article_number)
@@ -139,9 +135,8 @@ class UpdateMyFactory():
             Artikelnummer = str(self.ids[i][0])
             Artikelnummer_MyFactory = str(self.ids[i][3])
             artikel_name = instance_myfactory[i]
-            # Prüftext = "Prüfbericht: \n Prüfdatum: " + Prüfdatum + "\n Mängel: " + maengel + \
-            #     " \n Prüfung bestanden: " + accept + "\n Nächster Prüftermin: " + next_inspection
-        
+
+            # Erstellen einer PDF-Seite         
             pdf.add_page()
             pdf.set_font("Arial", size=15)
             pdf.cell(200, 10, txt="Pdf erstellt am:  " + str(datetime.fromtimestamp(self.update_time / 1e3)),
@@ -169,6 +164,7 @@ class UpdateMyFactory():
             pdf.cell(200, 10, txt="Nächster Prüftermin: " + str(datetime.fromtimestamp(int(next_inspection) / 1e3)),
                     ln=2, align='C')
 
+            # Speichern des PDFs in dem Directory: "update/output/"
             pdf.output("update/output/" + str(Prüfdatum) + "_" + Artikelnummer_MyFactory  + "_myFactory_Prüfbericht.pdf")
 
         return True
