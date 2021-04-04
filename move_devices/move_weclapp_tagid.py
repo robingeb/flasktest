@@ -3,7 +3,7 @@ import numpy as np
 import json
 from api.weclapp import *
 
-def test():
+def test_move_weclapp_tagid():
     # information for Request
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {
@@ -24,7 +24,17 @@ class MoveWeclappTagid():
 
     
     def export(self, article_number_range = [0,0]):
+        '''
+        Exportiert Anlagen von Weclapp nach TagIdeasy
 
+        :param article_number_range: Wertebereich der Artikel-Nummer zum Einschränken des Exports auf Anlagen. 
+        Wenn [0,0] wird dieser nicht eingschränkt.
+
+        :return ids: Artikel-Nummern der exportierten Anlagen
+        :return result: json-Form der exportierten Anlagen
+        '''
+        # reset
+        self.export_article_number = []
         
         # initialice WeClappAPI und Geräte-Instanzen als Liste ausgeben
         weClappAPI = WeClappAPI(self.url, self.auth)
@@ -50,8 +60,8 @@ class MoveWeclappTagid():
         parsed = json.loads(result_json)
         device_json = json.dumps(parsed, indent=4)
 
-        print(inventar_json)
-        print(device_json)
+        # print(inventar_json)
+        # print(device_json)
         return self.export_article_number, [mapped_inventar, mapped_device]
 
 
@@ -106,4 +116,4 @@ class MoveWeclappTagid():
 
 
 if __name__ == "__main__":
-    test()
+    test_move_weclapp_tagid()

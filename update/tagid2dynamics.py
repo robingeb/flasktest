@@ -7,7 +7,7 @@ from datetime import datetime
 from pymongo import MongoClient
 from api.dynamics import *
 
-def test():
+def test_tagid2dynamics():
     url = "http://10.105.11.42:7048/BC140/api/v1.0/items"
     auth = {
             'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
@@ -47,6 +47,10 @@ class UpdateDynamics():
 
         :return: gibt json mit den (theoretisch) aktualisierten Instanzen zurück
         """
+
+        # reset
+        self.update_article_number = []
+        self.ids = []
 
         # Instantiate Dynamics-API
         dynamicsAPI = DynamicsAPI(self.url, self.auth)
@@ -185,4 +189,4 @@ class UpdateDynamics():
 
 
 if __name__ == "__main__":
-    test()
+    test_tagid2dynamics()

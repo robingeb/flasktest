@@ -15,7 +15,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, date, timezone
 import logging
 
-def test():
+def test_middleware():
     middlewareControl = MiddlewareControl()
     middlewareControl.init_execution()
 
@@ -61,6 +61,7 @@ class MiddlewareControl():
         '''
         Job initialisieren, welcher in festen Intervallen durchgeführt wird
         '''
+        print("job initialisiert")
         if self.time_unit == "seconds":
             self.activ = True
             self.scheduler.add_job(self.job_interval_updates,
@@ -111,7 +112,7 @@ class MiddlewareControl():
 
         # durchführen eines Job-interfalls
         result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.update_class, self.export_class)
-        print(result, ids, done )
+        print(result, ids)
         
         
         # Update-Zeit speichern in MongoDB
@@ -333,7 +334,6 @@ class MiddlewareControl():
     #     return result, ids
 
     def device_export_dynamics(self, device_export):
-        print("dynamics")
         if device_export != None: 
             if self.device_export == "erp_tagid":           
                 ids, result = device_export.export(self.article_number_range)
@@ -358,4 +358,4 @@ class MiddlewareControl():
 
 
 if __name__ == "__main__":
-    test()
+    test_middleware()

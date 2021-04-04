@@ -11,7 +11,7 @@ from datetime import date, datetime
 from api.myfactory import *
 from datetime import datetime, date, timezone
 
-def test():
+def test_tagid2myfactory():
     mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
     url = "https://cloud.myfactory.com/myfactory/odata_lusajejalimimajoyuso52/Artikel"
     auth = {
@@ -43,14 +43,16 @@ class UpdateMyFactory():
 #TODO: aktuelle Update zeit einbauen
     def update(self, last_update_time = 0, actual_update_time = 0):
         """
-        :return: pdf mit Prüfberichten
+        :return: alle Prüfberichte für Instanzen in MyFactory als pdf
+        :return pdf_created: Zahl der erstellten pdfs
+        :return ids: Artikel-Nummbern der Anlagen
+        :return info_success: Boolscher Wert, ob das erstellen aller pdfs erfolgreich war
         
         """
-        
+        # reset
+        self.ids = []
 
         # aktuelle update Zeit speichern
-        # now = datetime.now()
-        # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
         self.update_time = actual_update_time
           
         # Instatiate MyFactory-API
@@ -171,7 +173,7 @@ class UpdateMyFactory():
 
 
 if __name__ == "__main__":
-    test()
+    test_tagid2myfactory()
 
 
     #requests.request("POST", uploadurl, auth=(auth['username'], auth['password']))

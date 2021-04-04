@@ -1788,3 +1788,772 @@ TypeError: execute_job() missing 1 required positional argument: 'updateClass'
 2021-04-04 22:28:43,830 root Exportierte Anlagen: System: weclapp; Richtung: no; Artikel Nummern: ['Kein Export']
 2021-04-04 22:28:43,831 root Update: System: weclapp; Artikel Nummern: ['11117']
 2021-04-04 22:28:43,831 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 22:29:13 CEST)" executed successfully
+2021-04-04 23:53:00,292 apscheduler.scheduler Scheduler started
+2021-04-04 23:53:00,295 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:53:00,296 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-04 23:53:01,237 werkzeug  * Restarting with stat
+2021-04-04 23:53:04,486 apscheduler.scheduler Scheduler started
+2021-04-04 23:53:04,488 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:53:04,489 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-04 23:53:05,160 werkzeug  * Debugger is active!
+2021-04-04 23:53:05,188 werkzeug  * Debugger PIN: 141-834-372
+2021-04-04 23:53:05,215 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-04 23:53:07,310 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:07] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-04 23:53:19,851 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:19] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-04 23:53:19,924 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:19] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-04 23:53:27,043 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:27] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-04 23:53:27,071 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:27] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-04 23:53:33,682 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:33] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-04 23:53:33,749 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:33] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-04 23:53:49,756 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-04 23:53:49,757 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:49] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-04 23:53:49,757 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:53:49,758 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:23:49.756277+02:00 (in 1799.998002 seconds)
+2021-04-04 23:53:49,791 werkzeug 127.0.0.1 - - [04/Apr/2021 23:53:49] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-04 23:54:31,950 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\middleware.py', reloading
+2021-04-04 23:54:32,667 werkzeug  * Restarting with stat
+2021-04-04 23:54:37,880 apscheduler.scheduler Scheduler started
+2021-04-04 23:54:37,881 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:54:37,882 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-04 23:54:39,114 werkzeug  * Debugger is active!
+2021-04-04 23:54:39,187 werkzeug  * Debugger PIN: 141-834-372
+2021-04-04 23:54:39,238 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-04 23:55:11,977 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-04 23:55:12,018 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:12] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-04 23:55:22,964 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:22] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-04 23:55:22,995 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:22] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-04 23:55:27,025 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:27] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-04 23:55:27,092 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:27] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-04 23:55:33,877 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-04 23:55:33,881 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:33] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-04 23:55:33,881 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:55:33,883 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:55:33.876068+02:00 (in 3599.993003 seconds)
+2021-04-04 23:55:33,910 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:33] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-04 23:55:49,944 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:49] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-04 23:55:49,968 apscheduler.scheduler Removed job job_interval
+2021-04-04 23:55:49,970 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:49] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-04 23:55:59,802 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:59] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-04 23:55:59,825 werkzeug 127.0.0.1 - - [04/Apr/2021 23:55:59] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-04 23:56:04,726 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:04] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-04 23:56:04,787 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:04] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-04 23:56:10,418 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-04 23:56:10,419 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:10] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-04 23:56:10,420 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:56:10,420 apscheduler.scheduler Next wakeup is due at 2021-04-05 23:56:10.418867+02:00 (in 86399.997993 seconds)
+2021-04-04 23:56:10,454 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:10] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-04 23:56:22,223 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:22] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-04 23:56:22,262 apscheduler.scheduler Removed job job_interval
+2021-04-04 23:56:22,263 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:22] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-04 23:56:40,068 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:40] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-04 23:56:40,090 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:40] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-04 23:56:43,008 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:43] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-04 23:56:43,064 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:43] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-04 23:56:48,479 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-04 23:56:48,481 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:48] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-04 23:56:48,481 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:56:48,481 apscheduler.scheduler Next wakeup is due at 2021-04-04 23:57:18.479502+02:00 (in 29.998000 seconds)
+2021-04-04 23:56:48,521 werkzeug 127.0.0.1 - - [04/Apr/2021 23:56:48] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-04 23:57:18,485 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:57:18,486 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:57:18 CEST)" (scheduled at 2021-04-04 23:57:18.479502+02:00)
+2021-04-04 23:57:18,486 apscheduler.scheduler Next wakeup is due at 2021-04-04 23:57:48.479502+02:00 (in 29.994238 seconds)
+2021-04-04 23:57:18,555 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:18,747 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:18,768 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:18,917 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:18,928 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:19,051 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:19,069 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:19,199 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:19,217 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:19,384 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:19,421 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:19,567 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-04 23:57:19,596 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:19,759 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "PUT /webapp/api/v1/article/id/5094 HTTP/1.1" 200 None
+2021-04-04 23:57:19,809 root Exportierte Anlagen: System: weclapp; Richtung: tagid_erp; Artikel Nummern: []
+2021-04-04 23:57:19,809 root Update: System: weclapp; Artikel Nummern: ['11117']
+2021-04-04 23:57:19,809 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:57:48 CEST)" executed successfully
+2021-04-04 23:57:48,486 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:57:48,486 apscheduler.scheduler Next wakeup is due at 2021-04-04 23:58:18.479502+02:00 (in 29.992833 seconds)
+2021-04-04 23:57:48,486 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:58:18 CEST)" (scheduled at 2021-04-04 23:57:48.479502+02:00)
+2021-04-04 23:57:48,520 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:48,647 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:48,658 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:48,785 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:48,800 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:48,928 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:48,942 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:49,051 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:49,059 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:49,181 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:57:49,220 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:57:49,424 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-04 23:57:49,430 root Exportierte Anlagen: System: weclapp; Richtung: tagid_erp; Artikel Nummern: []
+2021-04-04 23:57:49,430 root Update: System: weclapp; Artikel Nummern: ['11117']
+2021-04-04 23:57:49,431 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:58:18 CEST)" executed successfully
+2021-04-04 23:58:18,495 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:58:18,496 apscheduler.scheduler Next wakeup is due at 2021-04-04 23:58:48.479502+02:00 (in 29.983266 seconds)
+2021-04-04 23:58:18,497 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:58:48 CEST)" (scheduled at 2021-04-04 23:58:18.479502+02:00)
+2021-04-04 23:58:18,534 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:18,668 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:58:18,674 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:18,864 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:58:18,879 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:19,027 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 400 43
+2021-04-04 23:58:19,058 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:19,251 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-04-04 23:58:19,264 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:19,419 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "POST /webapp/api/v1/article HTTP/1.1" 201 None
+2021-04-04 23:58:19,464 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-04 23:58:19,600 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-04 23:58:19,619 root Exportierte Anlagen: System: weclapp; Richtung: tagid_erp; Artikel Nummern: ['11118', '11119']
+2021-04-04 23:58:19,620 root Update: System: weclapp; Artikel Nummern: ['11117']
+2021-04-04 23:58:19,621 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-04 23:58:48 CEST)" executed successfully
+2021-04-04 23:59:42,720 apscheduler.scheduler Scheduler started
+2021-04-04 23:59:42,721 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:59:42,722 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-04 23:59:43,521 werkzeug  * Restarting with stat
+2021-04-04 23:59:46,343 apscheduler.scheduler Scheduler started
+2021-04-04 23:59:46,344 apscheduler.scheduler Looking for jobs to run
+2021-04-04 23:59:46,344 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-04 23:59:46,959 werkzeug  * Debugger is active!
+2021-04-04 23:59:46,989 werkzeug  * Debugger PIN: 141-834-372
+2021-04-04 23:59:46,999 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-04 23:59:48,121 werkzeug 127.0.0.1 - - [04/Apr/2021 23:59:48] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-04 23:59:48,173 werkzeug 127.0.0.1 - - [04/Apr/2021 23:59:48] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-04 23:59:58,623 werkzeug 127.0.0.1 - - [04/Apr/2021 23:59:58] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-04 23:59:58,652 werkzeug 127.0.0.1 - - [04/Apr/2021 23:59:58] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:00:02,490 werkzeug 127.0.0.1 - - [05/Apr/2021 00:00:02] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:00:02,563 werkzeug 127.0.0.1 - - [05/Apr/2021 00:00:02] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-05 00:00:10,507 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:00:10,511 werkzeug 127.0.0.1 - - [05/Apr/2021 00:00:10] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-05 00:00:10,511 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:00:10,513 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:00:40.506722+02:00 (in 29.993004 seconds)
+2021-04-05 00:00:10,545 werkzeug 127.0.0.1 - - [05/Apr/2021 00:00:10] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:00:40,513 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:00:40,516 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:00:40 CEST)" (scheduled at 2021-04-05 00:00:40.506722+02:00)
+2021-04-05 00:00:40,517 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:01:10.506722+02:00 (in 29.992231 seconds)
+2021-04-05 00:00:40,570 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:00:40,731 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:00:40,896 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:00:41,045 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:00:41,064 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117', '1', '11118', '11119']
+2021-04-05 00:00:41,064 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:00:41,064 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:01:10 CEST)" executed successfully
+2021-04-05 00:01:10,528 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:01:10,528 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:01:40.506722+02:00 (in 29.978545 seconds)
+2021-04-05 00:01:10,529 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:01:40 CEST)" (scheduled at 2021-04-05 00:01:10.506722+02:00)
+2021-04-05 00:01:10,559 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:01:10,743 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:01:11,114 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:01:11,256 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:01:11,293 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117', '1', '11118', '11119', '11115', '11116', '11117', '1', '11118', '11119']
+2021-04-05 00:01:11,293 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:01:11,293 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:01:40 CEST)" executed successfully
+2021-04-05 00:01:18,430 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:18] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:01:18,455 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:01:18,459 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:18] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:01:37,668 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:37] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:01:37,690 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:37] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:01:40,514 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:01:40,517 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:01:42,132 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:42] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:01:42,185 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:42] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-05 00:01:53,713 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:01:53,714 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:53] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-05 00:01:53,714 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:01:53,716 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:02:23.713859+02:00 (in 29.997021 seconds)
+2021-04-05 00:01:53,751 werkzeug 127.0.0.1 - - [05/Apr/2021 00:01:53] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:02:23,726 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:02:23,727 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:02:53.713859+02:00 (in 29.986753 seconds)
+2021-04-05 00:02:23,728 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:02:53 CEST)" (scheduled at 2021-04-05 00:02:23.713859+02:00)
+2021-04-05 00:02:23,767 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:02:23,937 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:02:23,989 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:02:24,126 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:02:24,134 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: []
+2021-04-05 00:02:24,135 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:02:24,135 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:02:53 CEST)" executed successfully
+2021-04-05 00:02:53,730 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:02:53,730 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:03:23.713859+02:00 (in 29.983858 seconds)
+2021-04-05 00:02:53,730 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:03:23 CEST)" (scheduled at 2021-04-05 00:02:53.713859+02:00)
+2021-04-05 00:02:53,765 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:02:53,913 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:02:53,949 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:02:54,097 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:02:54,106 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: []
+2021-04-05 00:02:54,106 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:02:54,107 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:03:23 CEST)" executed successfully
+2021-04-05 00:03:23,730 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:03:23,730 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:03:53.713859+02:00 (in 29.983496 seconds)
+2021-04-05 00:03:23,731 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:03:53 CEST)" (scheduled at 2021-04-05 00:03:23.713859+02:00)
+2021-04-05 00:03:23,764 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:03:23,952 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:03:23,996 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:03:24,157 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:03:24,163 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: []
+2021-04-05 00:03:24,164 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:03:24,164 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:03:53 CEST)" executed successfully
+2021-04-05 00:04:27,858 apscheduler.scheduler Scheduler started
+2021-04-05 00:04:27,859 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:04:27,860 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:04:28,566 werkzeug  * Restarting with stat
+2021-04-05 00:04:30,819 apscheduler.scheduler Scheduler started
+2021-04-05 00:04:30,820 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:04:30,821 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:04:31,492 werkzeug  * Debugger is active!
+2021-04-05 00:04:31,518 werkzeug  * Debugger PIN: 141-834-372
+2021-04-05 00:04:31,526 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-05 00:04:31,551 werkzeug 127.0.0.1 - - [05/Apr/2021 00:04:31] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:04:31,620 werkzeug 127.0.0.1 - - [05/Apr/2021 00:04:31] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:04:57,073 werkzeug 127.0.0.1 - - [05/Apr/2021 00:04:57] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:04:57,104 werkzeug 127.0.0.1 - - [05/Apr/2021 00:04:57] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:05:00,197 werkzeug 127.0.0.1 - - [05/Apr/2021 00:05:00] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:05:00,262 werkzeug 127.0.0.1 - - [05/Apr/2021 00:05:00] "[37mGET /erp/weclapp HTTP/1.1[0m" 200 -
+2021-04-05 00:05:06,343 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:05:06,344 werkzeug 127.0.0.1 - - [05/Apr/2021 00:05:06] "[32mPOST /erp/weclapp HTTP/1.1[0m" 302 -
+2021-04-05 00:05:06,345 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:05:06,346 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:05:36.343268+02:00 (in 29.998001 seconds)
+2021-04-05 00:05:06,381 werkzeug 127.0.0.1 - - [05/Apr/2021 00:05:06] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:05:36,354 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:05:36,355 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:05:36 CEST)" (scheduled at 2021-04-05 00:05:36.343268+02:00)
+2021-04-05 00:05:36,356 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:06:06.343268+02:00 (in 29.988935 seconds)
+2021-04-05 00:05:36,400 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:05:36,630 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:05:36,733 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:05:36,915 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:05:36,926 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117']
+2021-04-05 00:05:36,927 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:05:36,927 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:06:06 CEST)" executed successfully
+2021-04-05 00:06:06,359 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:06:06,361 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:06:36.343268+02:00 (in 29.982607 seconds)
+2021-04-05 00:06:06,361 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:06:36 CEST)" (scheduled at 2021-04-05 00:06:06.343268+02:00)
+2021-04-05 00:06:06,395 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:06:06,546 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:06:06,641 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:06:06,808 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:06:06,817 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117', '11115', '11116', '11117']
+2021-04-05 00:06:06,817 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:06:06,817 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:06:36 CEST)" executed successfully
+2021-04-05 00:06:36,350 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:06:36,351 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:07:06.343268+02:00 (in 29.993176 seconds)
+2021-04-05 00:06:36,351 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:07:06 CEST)" (scheduled at 2021-04-05 00:06:36.343268+02:00)
+2021-04-05 00:06:36,388 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:06:36,600 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:06:36,698 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:06:36,866 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:06:36,877 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117', '11115', '11116', '11117', '11115', '11116', '11117']
+2021-04-05 00:06:36,877 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:06:36,877 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:07:06 CEST)" executed successfully
+2021-04-05 00:07:06,353 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:07:06,354 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:07:36.343268+02:00 (in 29.990262 seconds)
+2021-04-05 00:07:06,354 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:07:36 CEST)" (scheduled at 2021-04-05 00:07:06.343268+02:00)
+2021-04-05 00:07:06,392 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:07:06,586 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:07:06,663 urllib3.connectionpool Starting new HTTPS connection (1): wwmeqaovgkvqrzk.weclapp.com:443
+2021-04-05 00:07:06,795 urllib3.connectionpool https://wwmeqaovgkvqrzk.weclapp.com:443 "GET /webapp/api/v1/article HTTP/1.1" 200 None
+2021-04-05 00:07:06,803 root Exportierte Anlagen: System: weclapp; Richtung: erp_tagid; Artikel Nummern: ['11115', '11116', '11117', '11115', '11116', '11117', '11115', '11116', '11117', '11115', '11116', '11117']
+2021-04-05 00:07:06,804 root Update: System: weclapp; Artikel Nummern: []
+2021-04-05 00:07:06,804 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:07:36 CEST)" executed successfully
+2021-04-05 00:07:26,970 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:26] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:07:26,995 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:07:26,998 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:26] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:07:34,119 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:34] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:07:34,143 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:34] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:07:36,358 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:07:36,358 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:07:36,881 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:36] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:07:36,941 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:36] "[37mGET /erp/dynamics HTTP/1.1[0m" 200 -
+2021-04-05 00:07:55,410 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:07:55,412 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:55] "[32mPOST /erp/dynamics HTTP/1.1[0m" 302 -
+2021-04-05 00:07:55,415 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:07:55,416 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:08:25.410098+02:00 (in 29.995002 seconds)
+2021-04-05 00:07:55,443 werkzeug 127.0.0.1 - - [05/Apr/2021 00:07:55] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:08:25,413 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:08:25,414 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:08:55.410098+02:00 (in 29.995611 seconds)
+2021-04-05 00:08:25,414 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:08:55 CEST)" (scheduled at 2021-04-05 00:08:25.410098+02:00)
+2021-04-05 00:08:25,457 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:08:46,495 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:08:55 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000180F5A5FC10>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.105.11.42', port=7048): Max retries exceeded with url: /BC140/api/v1.0/items (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000180F5A5FC10>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\api\dynamics.py", line 55, in post_request
+    response = requests.request("POST", self.url, headers=headers, data=payload)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.105.11.42', port=7048): Max retries exceeded with url: /BC140/api/v1.0/items (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000180F5A5FC10>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 90, in job_interval_updates
+    self.init_execution()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 114, in init_execution
+    result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.update_class, self.export_class)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 242, in execute_job
+    export_result, export_article_number = self.device_export_dynamics(exportClass)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 342, in device_export_dynamics
+    ids, result = device_export.export()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\move_devices\move_tagid_dynamics.py", line 50, in export
+    r = dynamicsAPI.post_request(final_json)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\api\dynamics.py", line 57, in post_request
+    raise Exception(
+Exception: Connection Failed 
+ Überprüfe: 
+ fehlerhafte URL oder Authentifizerungsdaten
+2021-04-05 00:08:55,414 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:08:55,414 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:09:25.410098+02:00 (in 29.995424 seconds)
+2021-04-05 00:08:55,414 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:09:25 CEST)" (scheduled at 2021-04-05 00:08:55.410098+02:00)
+2021-04-05 00:08:55,449 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:09:16,490 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:09:25 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000180F5A6FBE0>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.105.11.42', port=7048): Max retries exceeded with url: /BC140/api/v1.0/items (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000180F5A6FBE0>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\api\dynamics.py", line 55, in post_request
+    response = requests.request("POST", self.url, headers=headers, data=payload)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.105.11.42', port=7048): Max retries exceeded with url: /BC140/api/v1.0/items (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000180F5A6FBE0>: Failed to establish a new connection: [WinError 10060] Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer bestimmten Zeitspanne nicht richtig reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host nicht reagiert hat'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 90, in job_interval_updates
+    self.init_execution()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 114, in init_execution
+    result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.update_class, self.export_class)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 242, in execute_job
+    export_result, export_article_number = self.device_export_dynamics(exportClass)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 342, in device_export_dynamics
+    ids, result = device_export.export()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\move_devices\move_tagid_dynamics.py", line 50, in export
+    r = dynamicsAPI.post_request(final_json)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\api\dynamics.py", line 57, in post_request
+    raise Exception(
+Exception: Connection Failed 
+ Überprüfe: 
+ fehlerhafte URL oder Authentifizerungsdaten
+2021-04-05 00:21:33,990 apscheduler.scheduler Scheduler started
+2021-04-05 00:21:34,077 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:21:34,078 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:21:35,512 werkzeug  * Restarting with stat
+2021-04-05 00:21:41,106 apscheduler.scheduler Scheduler started
+2021-04-05 00:21:41,107 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:21:41,108 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:21:41,819 werkzeug  * Debugger is active!
+2021-04-05 00:21:41,850 werkzeug  * Debugger PIN: 141-834-372
+2021-04-05 00:21:41,871 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-05 00:21:42,004 werkzeug 127.0.0.1 - - [05/Apr/2021 00:21:42] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:21:42,060 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:21:42,061 werkzeug 127.0.0.1 - - [05/Apr/2021 00:21:42] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-04-05 00:21:42,061 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:21:42,062 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:22:12.059923+02:00 (in 29.997002 seconds)
+2021-04-05 00:21:42,134 werkzeug 127.0.0.1 - - [05/Apr/2021 00:21:42] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:22:12,068 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:22:12,070 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:22:12 CEST)" (scheduled at 2021-04-05 00:22:12.059923+02:00)
+2021-04-05 00:22:12,071 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:22:42.059923+02:00 (in 29.990194 seconds)
+2021-04-05 00:22:12,132 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:12,353 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:12,362 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:12,489 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:12,495 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:12,584 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:12,589 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:12,686 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:12,691 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:12,769 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:12,797 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:13,000 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:22:13,184 root Exportierte Anlagen: System: dynamics; Richtung: tagid_erp; Artikel Nummern: []
+2021-04-05 00:22:13,185 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:22:13,185 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:22:42 CEST)" executed successfully
+2021-04-05 00:22:42,068 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:22:42,070 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:23:12.059923+02:00 (in 29.990435 seconds)
+2021-04-05 00:22:42,070 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:23:12 CEST)" (scheduled at 2021-04-05 00:22:42.059923+02:00)
+2021-04-05 00:22:42,120 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,239 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:42,246 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,328 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:42,332 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,415 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:42,420 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,509 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:42,527 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,609 urllib3.connectionpool http://10.105.11.42:7048 "POST /BC140/api/v1.0/items HTTP/1.1" 400 None
+2021-04-05 00:22:42,650 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:22:42,922 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:22:43,104 root Exportierte Anlagen: System: dynamics; Richtung: tagid_erp; Artikel Nummern: []
+2021-04-05 00:22:43,104 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:22:43,106 werkzeug 127.0.0.1 - - [05/Apr/2021 00:22:43] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:22:43,107 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:23:12 CEST)" executed successfully
+2021-04-05 00:22:43,143 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:22:43,162 werkzeug 127.0.0.1 - - [05/Apr/2021 00:22:43] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:23:09,438 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:09] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:23:09,473 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:09] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:23:12,067 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:23:12,067 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:23:14,372 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:14] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:23:14,465 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:14] "[37mGET /erp/dynamics HTTP/1.1[0m" 200 -
+2021-04-05 00:23:28,091 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:23:28,093 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:28] "[32mPOST /erp/dynamics HTTP/1.1[0m" 302 -
+2021-04-05 00:23:28,093 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:23:28,093 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:23:58.091929+02:00 (in 29.997995 seconds)
+2021-04-05 00:23:28,123 werkzeug 127.0.0.1 - - [05/Apr/2021 00:23:28] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:23:58,096 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:23:58,097 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:24:28.091929+02:00 (in 29.994840 seconds)
+2021-04-05 00:23:58,098 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:24:28 CEST)" (scheduled at 2021-04-05 00:23:58.091929+02:00)
+2021-04-05 00:23:58,147 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:23:58,416 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:23:58,705 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:23:58,977 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:24:00,486 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['1400', '1100', '80013', '1600', '80217', '1160', '70091', '80208', '80103', '1155', '1310', '70041', '1250', '80211', '70066', '80212', '80210', '80005', '80203', '1330', '1110', '80205', '1900', '80216', '80220', '11115', '80025', '1251', '80104', '70010', '1700', '2000', '1500', '70003', '70060', '1710', '1200', '70200', '70102', '1300', '70002', '80023', '80204', '80024', '80105', '1320', '1170', '70000', '1850', '80209', '70061', '80014', '80002', '1800', '70100', '11117', '80101', '80021', '1450', '80012', '80027', '70097', '80007', '70082', '80004', '80102', '80003', '70001', '80022', '80006', '1151', '80011', '80100', '80218', '70040', '1720', '70069', '80219', '1150', '80001', '11119', '70098', '70104', '70068', '80026', '80010', '80201', '80202', '70101', '80207', '1120', '1001', '80206', '70011', '1000', '80214', '11118', '1255', '70201', '11116', '80215', '70103', '80213']
+2021-04-05 00:24:00,487 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:24:00,487 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:24:28 CEST)" executed successfully
+2021-04-05 00:24:10,016 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:10] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:24:10,042 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:24:10,044 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:10] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:24:24,013 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:24] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:24:24,036 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:24] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:24:27,134 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:27] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:24:27,193 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:27] "[37mGET /erp/dynamics HTTP/1.1[0m" 200 -
+2021-04-05 00:24:28,095 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:24:28,095 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:24:41,486 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:24:41,487 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:41] "[32mPOST /erp/dynamics HTTP/1.1[0m" 302 -
+2021-04-05 00:24:41,488 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:24:41,488 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:25:11.486706+02:00 (in 29.998002 seconds)
+2021-04-05 00:24:41,512 werkzeug 127.0.0.1 - - [05/Apr/2021 00:24:41] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:25:11,495 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:25:11,496 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:25:41.486706+02:00 (in 29.991453 seconds)
+2021-04-05 00:25:11,497 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:25:41 CEST)" (scheduled at 2021-04-05 00:25:11.486706+02:00)
+2021-04-05 00:25:11,535 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:25:11,824 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:25:12,078 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:25:12,360 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:25:12,582 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116']
+2021-04-05 00:25:12,582 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:25:12,583 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:25:41 CEST)" executed successfully
+2021-04-05 00:25:41,508 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:25:41,510 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:26:11.486706+02:00 (in 29.977504 seconds)
+2021-04-05 00:25:41,510 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:26:11 CEST)" (scheduled at 2021-04-05 00:25:41.486706+02:00)
+2021-04-05 00:25:41,546 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:25:41,831 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:25:42,062 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:25:42,247 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:25:42,455 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116', '11115', '11117', '11116']
+2021-04-05 00:25:42,455 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:25:42,456 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:26:11 CEST)" executed successfully
+2021-04-05 00:26:11,501 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:26:11,502 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:26:41.486706+02:00 (in 29.985623 seconds)
+2021-04-05 00:26:11,502 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:26:41 CEST)" (scheduled at 2021-04-05 00:26:11.486706+02:00)
+2021-04-05 00:26:11,545 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:26:11,857 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:26:12,096 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:26:12,424 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:26:12,672 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116', '11115', '11117', '11116', '11115', '11117', '11116']
+2021-04-05 00:26:12,672 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:26:12,673 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:26:41 CEST)" executed successfully
+2021-04-05 00:26:41,510 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:26:41,511 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:27:11.486706+02:00 (in 29.975551 seconds)
+2021-04-05 00:26:41,512 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:27:11 CEST)" (scheduled at 2021-04-05 00:26:41.486706+02:00)
+2021-04-05 00:26:41,565 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:26:41,819 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:26:42,061 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:26:42,326 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:26:42,524 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116', '11115', '11117', '11116', '11115', '11117', '11116', '11115', '11117', '11116']
+2021-04-05 00:26:42,524 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:26:42,524 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:27:11 CEST)" executed successfully
+2021-04-05 00:32:52,232 apscheduler.scheduler Scheduler started
+2021-04-05 00:32:52,235 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:32:52,240 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:33:09,835 werkzeug  * Restarting with stat
+2021-04-05 00:33:12,595 apscheduler.scheduler Scheduler started
+2021-04-05 00:33:12,597 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:33:12,598 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:33:29,561 werkzeug  * Debugger is active!
+2021-04-05 00:33:29,583 werkzeug  * Debugger PIN: 141-834-372
+2021-04-05 00:33:29,591 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-05 00:33:43,044 werkzeug 127.0.0.1 - - [05/Apr/2021 00:33:43] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:33:46,032 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:33:46,033 werkzeug 127.0.0.1 - - [05/Apr/2021 00:33:46] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-04-05 00:33:46,033 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:33:46,034 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:34:16.031068+02:00 (in 29.996999 seconds)
+2021-04-05 00:33:46,060 werkzeug 127.0.0.1 - - [05/Apr/2021 00:33:46] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:34:16,043 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:34:16,045 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:34:16 CEST)" (scheduled at 2021-04-05 00:34:16.031068+02:00)
+2021-04-05 00:34:16,046 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:34:46.031068+02:00 (in 29.986521 seconds)
+2021-04-05 00:34:16,099 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:34:16,368 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:34:16,612 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:34:16,882 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:34:17,083 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116']
+2021-04-05 00:34:17,084 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:34:17,084 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:34:46 CEST)" executed successfully
+2021-04-05 00:34:46,053 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:34:46,054 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:35:16.031068+02:00 (in 29.977588 seconds)
+2021-04-05 00:34:46,054 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:35:16 CEST)" (scheduled at 2021-04-05 00:34:46.031068+02:00)
+2021-04-05 00:34:46,090 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:34:46,326 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:34:46,587 urllib3.connectionpool Starting new HTTP connection (1): 10.105.11.42:7048
+2021-04-05 00:34:46,823 urllib3.connectionpool http://10.105.11.42:7048 "GET /BC140/api/v1.0/items HTTP/1.1" 200 None
+2021-04-05 00:34:47,019 root Exportierte Anlagen: System: dynamics; Richtung: erp_tagid; Artikel Nummern: ['11115', '11117', '11116']
+2021-04-05 00:34:47,019 root Update: System: dynamics; Artikel Nummern: []
+2021-04-05 00:34:47,019 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:35:16 CEST)" executed successfully
+2021-04-05 00:35:03,443 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:03] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:35:03,472 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:35:03,485 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:03] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:35:15,922 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:15] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:35:15,955 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:15] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:35:16,046 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:35:16,047 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:35:18,597 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:18] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:35:18,676 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:18] "[37mGET /erp/xentral HTTP/1.1[0m" 200 -
+2021-04-05 00:35:33,815 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:35:33,816 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:33] "[32mPOST /erp/xentral HTTP/1.1[0m" 302 -
+2021-04-05 00:35:33,816 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:35:33,817 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:36:03.815307+02:00 (in 29.997995 seconds)
+2021-04-05 00:35:33,844 werkzeug 127.0.0.1 - - [05/Apr/2021 00:35:33] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:36:03,822 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:36:03,823 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:36:33.815307+02:00 (in 29.991580 seconds)
+2021-04-05 00:36:03,824 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:36:33 CEST)" (scheduled at 2021-04-05 00:36:03.815307+02:00)
+2021-04-05 00:36:03,891 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:36:03,891 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:36:03,891 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:36:33 CEST)" executed successfully
+2021-04-05 00:36:33,822 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:36:33,824 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:37:03.815307+02:00 (in 29.992134 seconds)
+2021-04-05 00:36:33,824 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:37:03 CEST)" (scheduled at 2021-04-05 00:36:33.815307+02:00)
+2021-04-05 00:36:33,886 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:36:33,887 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:36:33,887 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:37:03 CEST)" executed successfully
+2021-04-05 00:37:03,829 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:37:03,829 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:37:33.815307+02:00 (in 29.985942 seconds)
+2021-04-05 00:37:03,830 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:37:33 CEST)" (scheduled at 2021-04-05 00:37:03.815307+02:00)
+2021-04-05 00:37:03,899 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:37:03,899 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:37:03,899 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:37:33 CEST)" executed successfully
+2021-04-05 00:37:33,836 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:37:33,838 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:38:03.815307+02:00 (in 29.979110 seconds)
+2021-04-05 00:37:33,839 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:38:03 CEST)" (scheduled at 2021-04-05 00:37:33.815307+02:00)
+2021-04-05 00:37:33,901 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:37:33,901 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:37:33,902 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:38:03 CEST)" executed successfully
+2021-04-05 00:38:03,825 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:38:03,827 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:38:33.815307+02:00 (in 29.988507 seconds)
+2021-04-05 00:38:03,827 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:38:33 CEST)" (scheduled at 2021-04-05 00:38:03.815307+02:00)
+2021-04-05 00:38:03,891 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:38:03,891 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:38:03,891 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:38:33 CEST)" executed successfully
+2021-04-05 00:38:33,834 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:38:33,834 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:39:03.815307+02:00 (in 29.980684 seconds)
+2021-04-05 00:38:33,834 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:39:03 CEST)" (scheduled at 2021-04-05 00:38:33.815307+02:00)
+2021-04-05 00:38:33,898 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:38:33,898 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:38:33,898 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:39:03 CEST)" executed successfully
+2021-04-05 00:39:03,822 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:39:03,824 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:39:33.815307+02:00 (in 29.991393 seconds)
+2021-04-05 00:39:03,825 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:39:33 CEST)" (scheduled at 2021-04-05 00:39:03.815307+02:00)
+2021-04-05 00:39:03,887 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:39:03,887 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:39:03,887 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:39:33 CEST)" executed successfully
+2021-04-05 00:39:33,834 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:39:33,835 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:40:03.815307+02:00 (in 29.980961 seconds)
+2021-04-05 00:39:33,836 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:40:03 CEST)" (scheduled at 2021-04-05 00:39:33.815307+02:00)
+2021-04-05 00:39:33,903 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:39:33,903 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:39:33,903 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:40:03 CEST)" executed successfully
+2021-04-05 00:40:03,828 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:40:03,828 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:40:33.815307+02:00 (in 29.986597 seconds)
+2021-04-05 00:40:03,829 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:40:33 CEST)" (scheduled at 2021-04-05 00:40:03.815307+02:00)
+2021-04-05 00:40:03,893 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:40:03,893 root Update: System: xentral; Artikel Nummern: []
+2021-04-05 00:40:03,893 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:40:33 CEST)" executed successfully
+2021-04-05 00:43:25,036 apscheduler.scheduler Scheduler started
+2021-04-05 00:43:25,039 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:43:25,039 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:43:26,401 werkzeug  * Restarting with stat
+2021-04-05 00:43:30,239 apscheduler.scheduler Scheduler started
+2021-04-05 00:43:30,240 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:43:30,240 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:43:31,039 werkzeug  * Debugger is active!
+2021-04-05 00:43:31,078 werkzeug  * Debugger PIN: 141-834-372
+2021-04-05 00:43:31,095 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-05 00:43:31,393 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:43:31,395 werkzeug 127.0.0.1 - - [05/Apr/2021 00:43:31] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-04-05 00:43:31,396 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:43:31,397 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:44:01.389247+02:00 (in 29.992006 seconds)
+2021-04-05 00:43:31,473 werkzeug 127.0.0.1 - - [05/Apr/2021 00:43:31] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:44:01,399 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:44:01,403 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:44:01 CEST)" (scheduled at 2021-04-05 00:44:01.389247+02:00)
+2021-04-05 00:44:01,404 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:44:31.389247+02:00 (in 29.986863 seconds)
+2021-04-05 00:44:01,439 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:44:31 CEST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Benedikt\AppData\Local\Programs\Python\Python38\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 90, in job_interval_updates
+    self.init_execution()
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 114, in init_execution
+    result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.update_class, self.export_class)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\middleware.py", line 252, in execute_job
+    pdf_created, article_numbers, done = updateClass.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+  File "c:\Users\Benedikt\OneDrive\Universität\Master\03_2Semester\Projektseminar\PJS_Code_v2\flasktest\update\tagid2xentral.py", line 57, in update
+    inventar = self.get_tagideasy(self.last_update_time)
+AttributeError: 'UpdateXentral' object has no attribute 'last_update_time'
+2021-04-05 00:44:29,439 werkzeug  * Detected change in 'c:\\Users\\Benedikt\\OneDrive\\Universität\\Master\\03_2Semester\\Projektseminar\\PJS_Code_v2\\flasktest\\update\\tagid2xentral.py', reloading
+2021-04-05 00:44:30,238 werkzeug  * Restarting with stat
+2021-04-05 00:44:35,213 apscheduler.scheduler Scheduler started
+2021-04-05 00:44:35,215 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:44:35,221 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:44:36,314 werkzeug  * Debugger is active!
+2021-04-05 00:44:36,395 werkzeug  * Debugger PIN: 141-834-372
+2021-04-05 00:44:36,424 werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-04-05 00:44:45,453 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:44:45,456 werkzeug 127.0.0.1 - - [05/Apr/2021 00:44:45] "[37mGET /background_process_test HTTP/1.1[0m" 200 -
+2021-04-05 00:44:45,456 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:44:45,457 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:45:15.453361+02:00 (in 29.996002 seconds)
+2021-04-05 00:44:45,512 werkzeug 127.0.0.1 - - [05/Apr/2021 00:44:45] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:45:15,467 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:45:15,469 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:45:15 CEST)" (scheduled at 2021-04-05 00:45:15.453361+02:00)
+2021-04-05 00:45:15,470 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:45:45.453361+02:00 (in 29.984983 seconds)
+2021-04-05 00:45:15,578 root Exportierte Anlagen: System: xentral; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:45:15,578 root Update: System: xentral; Artikel Nummern: ['11117']
+2021-04-05 00:45:15,579 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:45:45 CEST)" executed successfully
+2021-04-05 00:45:24,550 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:24] "[32mPOST / HTTP/1.1[0m" 302 -
+2021-04-05 00:45:24,577 apscheduler.scheduler Removed job job_interval
+2021-04-05 00:45:24,584 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:24] "[37mGET /system HTTP/1.1[0m" 200 -
+2021-04-05 00:45:37,726 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:37] "[32mPOST /system HTTP/1.1[0m" 302 -
+2021-04-05 00:45:37,764 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:37] "[37mGET /choice HTTP/1.1[0m" 200 -
+2021-04-05 00:45:41,827 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:41] "[32mPOST /choice HTTP/1.1[0m" 302 -
+2021-04-05 00:45:41,906 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:41] "[37mGET /erp/myfactory HTTP/1.1[0m" 200 -
+2021-04-05 00:45:45,472 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:45:45,472 apscheduler.scheduler No jobs; waiting until a job is added
+2021-04-05 00:45:54,340 apscheduler.scheduler Added job "MiddlewareControl.job_interval_updates" to job store "default"
+2021-04-05 00:45:54,342 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:54] "[32mPOST /erp/myfactory HTTP/1.1[0m" 302 -
+2021-04-05 00:45:54,342 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:45:54,343 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:46:24.339707+02:00 (in 29.996017 seconds)
+2021-04-05 00:45:54,374 werkzeug 127.0.0.1 - - [05/Apr/2021 00:45:54] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-05 00:46:24,342 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:46:24,342 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:46:54.339707+02:00 (in 29.997558 seconds)
+2021-04-05 00:46:24,342 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:46:54 CEST)" (scheduled at 2021-04-05 00:46:24.339707+02:00)
+2021-04-05 00:46:24,410 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-04-05 00:46:25,051 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 120954
+2021-04-05 00:46:25,169 root Exportierte Anlagen: System: myfactory; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:46:25,169 root Update: System: myfactory; Artikel Nummern: []
+2021-04-05 00:46:25,169 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:46:54 CEST)" executed successfully
+2021-04-05 00:46:54,341 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:46:54,341 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:47:24.339707+02:00 (in 29.997936 seconds)
+2021-04-05 00:46:54,342 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:47:24 CEST)" (scheduled at 2021-04-05 00:46:54.339707+02:00)
+2021-04-05 00:46:54,405 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-04-05 00:46:54,999 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 120954
+2021-04-05 00:46:55,128 root Exportierte Anlagen: System: myfactory; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:46:55,128 root Update: System: myfactory; Artikel Nummern: ['A011117']
+2021-04-05 00:46:55,128 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:47:24 CEST)" executed successfully
+2021-04-05 00:47:24,346 apscheduler.scheduler Looking for jobs to run
+2021-04-05 00:47:24,348 apscheduler.scheduler Next wakeup is due at 2021-04-05 00:47:54.339707+02:00 (in 29.992222 seconds)
+2021-04-05 00:47:24,348 apscheduler.executors.default Running job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:47:54 CEST)" (scheduled at 2021-04-05 00:47:24.339707+02:00)
+2021-04-05 00:47:24,416 urllib3.connectionpool Starting new HTTPS connection (1): cloud.myfactory.com:443
+2021-04-05 00:47:25,021 urllib3.connectionpool https://cloud.myfactory.com:443 "GET /myfactory/odata_lusajejalimimajoyuso52/Artikel HTTP/1.1" 200 120954
+2021-04-05 00:47:25,111 root Exportierte Anlagen: System: myfactory; Richtung: no; Artikel Nummern: kein Export
+2021-04-05 00:47:25,112 root Update: System: myfactory; Artikel Nummern: []
+2021-04-05 00:47:25,112 apscheduler.executors.default Job "MiddlewareControl.job_interval_updates (trigger: interval[0:00:30], next run at: 2021-04-05 00:47:54 CEST)" executed successfully

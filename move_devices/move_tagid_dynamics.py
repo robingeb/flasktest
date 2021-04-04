@@ -3,9 +3,7 @@ import numpy as np
 import json
 from api.dynamics import *
 
-#   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert
-
-def test():
+def test_move_tagid_dynamics():
     url = "http://10.105.11.42:7048/BC140/api/v1.0/items" 
     auth = {
     'Authorization': 'Basic V0lJTkZccm9iaW4uZ2ViaGFyZHQ6a2lCVEVLTnFaVzYyN24zQXl1TkQ0YzJFdVpwQkZJM3dLZE9OcXlaa2JXbz0='
@@ -22,9 +20,17 @@ class MoveTagidDynamics():
         self.ids = []
 
     def export(self):
+        '''
+        Exportiert Anlagen, welche nicht in Dynamics hinterlegt sind, von TagIdeasy nach Dynamics
+
+        :return ids: Artikel-Nummern der exportierten Anlagen
+        :return result: json-Form der exportierten Anlagen
+        '''
+
+        # reset
+        self.ids = []
 
         # Minimum der benötigten Attribute von Dynamics für einen erfolgreichen POST-Request
-        # TODO Anpassen an Dynamics
         dynamics_article_attributes = ["number", "displayName"]
 
         result = []
@@ -38,7 +44,7 @@ class MoveTagidDynamics():
         # initialice WeClappAPI
         dynamicsAPI = DynamicsAPI(self.url, self.auth)
 
-        # Iterate throug articles and push them to weclapp
+        # Durch Anlagen Iterieren und nach Dynamics pushen
         for index, row in devices_mapped.iterrows():
             df_article = pd.DataFrame([row], columns=dynamics_article_attributes)
             # transform to json
@@ -81,17 +87,11 @@ class MoveTagidDynamics():
                 if device["results"][y]["core"]["articel_id_manufacturer"] == article_id[x]:
                     device_name.append(device["results"][y]["core"]["device_name"])
 
-
-        # generate unit_id (2895 for Stk. )
-        # id = 2895
-        # unit_id = [id] * len(article_id)
-
         articles = np.array([article_number, device_name])
         articles = articles.transpose()
         df_articles = pd.DataFrame(articles, columns=weclapp_article_attributes)
-        #result_json = df_articles.to_json(orient="records")
         return df_articles
 
 
 if __name__ == "__main__":
-    test()
+    test_move_tagid_dynamics()

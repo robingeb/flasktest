@@ -5,7 +5,7 @@ from api.weclapp import *
 
 #   Items müssen vor Testem aus Weclapp wieder gelöscht werden, damit der Import funktioniert
 
-def test():
+def test_move_tagid_weclapp():
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {
         'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43'
@@ -22,6 +22,15 @@ class MoveTagidWeclapp():
         self.ids = []
 
     def export(self):
+        '''
+        Exportiert Anlagen, welche nicht in Weclapp hinterlegt sind, von TagIdeasy nach Dynamics
+
+        :return ids: Artikel-Nummern der exportierten Anlagen
+        :return result: json-Form der exportierten Anlagen
+        '''
+
+        #reset
+        self.ids = []
 
         # Minimum der benötigten Attribute von WeClapp für einen erfolgreichen POST-Request
         weclapp_article_attributes = ["articleNumber", "name", "unitId"]
@@ -93,4 +102,4 @@ class MoveTagidWeclapp():
 
 
 if __name__ == "__main__":
-    test()
+    test_move_tagid_weclapp()

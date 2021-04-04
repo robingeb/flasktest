@@ -8,16 +8,14 @@ from datetime import datetime, date, timezone
 from api.weclapp import *
 
 
-
-def test():
+def test_tagid2weclapp():
     # Authentifizierungsdaten für Weclapp-Request
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {'AuthenticationToken': '837196b1-b252-4bc2-98e4-d7a4f9250a43' }
     mongodb_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
     client = MongoClient(mongodb_url)
-    updateWeClapp = UpdateWeClapp(url, auth, client)
-    update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
-    print(updateWeClapp.update(actual_update_time=update_time))
+    updateWeClapp = UpdateWeClapp(url, auth, client) 
+    print(updateWeClapp.update())
 
 class UpdateWeClapp():
     """
@@ -51,6 +49,9 @@ class UpdateWeClapp():
 
         :return: gibt dict mit den aktualisierten Instanzen zurück
         """
+        # reset
+        self.update_article_number = []
+        self.ids = []
 
         self.last_update_time = last_update_time
 
@@ -178,4 +179,4 @@ class UpdateWeClapp():
 
 
 if __name__ == "__main__":
-    test()
+    test_tagid2weclapp()

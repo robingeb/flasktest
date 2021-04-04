@@ -3,7 +3,7 @@ import numpy as np
 import json
 from api.dynamics import *
 
-def test():
+def test_move_dynamics_tagid():
     # information for Request
     url = "http://10.105.11.42:7048/BC140/api/v1.0/items" 
     auth = {
@@ -25,13 +25,18 @@ class MoveDynamicsTagid():
     
     def export(self, article_number_range = [0,0]):
         '''
-        Export von Anlagen von Dynamics zu tagIdeasy
+        Exportiert Anlagen von Dynamics zu TagIdeasy
 
         :param article_number_range: Wertebereich der Artikel-Nummer zum Einschränken des Exports auf Anlagen.
+        Wenn [0,0] wird dieser nicht eingschränkt.
 
         :return export_article_number: Artikel_Nummer der exportierten Anlagen
         :retrun result: 2 dim Array mit Inventar und Device Instanzen
-        '''        
+        '''      
+
+        # reset
+        self.export_article_number = []
+        
         # initialice DynamicsAPI und Geräte-Instanzen als Liste ausgeben
         dynamicsAPI = DynamicsAPI(self.url, self.auth)
         machine_instances = self.get_dynamics(dynamicsAPI, article_number_range)
@@ -118,5 +123,5 @@ class MoveDynamicsTagid():
 
 
 if __name__ == "__main__":
-    test()
+    test_move_dynamics_tagid()
 

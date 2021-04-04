@@ -8,13 +8,11 @@ import requests
 import xmltodict
 from fpdf import FPDF
 from datetime import date, datetime
-from api.myfactory import *
 from datetime import datetime, date, timezone
-from api.xentral import *
+# from api.xentral import *
 
-#TODO: Xentral nicht zugreifbar
 
-def test():
+def test_tagid2xentral():
     url = "http://132.187.226.135/www/api//index.php/v1/artikel"
     auth = {
         'username': 'Alpi',
@@ -36,24 +34,23 @@ class UpdateXentral():
 
     def __init__(self, url, auth, client):             
         self.client = client
-        # self.url = url
-        # self.auth = auth
+        self.update_time = 0
         self.ids = []
         
 
     def update(self, last_update_time = 0, actual_update_time = 0):
         """
-        :return: alle Prüfberichte als pdf exportiert
+        Erstellen eines pdfs für alle neuen Prüfberichte
+
+        :return: alle Prüfberichte als pdf
+        :return pdf_created: Zahl der erstellten pdfs
+        :return ids: Artikel-Nummbern der Anlagen
+        :return info_success: Boolscher Wert, ob das erstellen aller pdfs erfolgreich war
         
         """
+        # reset
+        self.ids = []
         
-        # xentralApi = XentralAPI(self.url, self.auth)
-        # article_all = xentralApi.get_request()
-
-        # aktuelle update Zeit speichern
-        # now = datetime.now()
-        # self.update_time = now.strftime("%Y%m%d_%H:%M:%S")
-        # self.update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
         self.update_time = actual_update_time
 
         # Inventar und Device Liste von TagIdeasy erhalten
@@ -125,4 +122,4 @@ class UpdateXentral():
         return True
 
 if __name__ == "__main__":
-    test()
+    test_tagid2xentral()
