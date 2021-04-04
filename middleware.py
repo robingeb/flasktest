@@ -28,6 +28,9 @@ class MiddlewareControl():
         self.scheduler = BackgroundScheduler()
         self.scheduler.start()
 
+        self.export_class = None
+        self.update_class = None
+
         # init Database
         mongo_url = "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test"
         try:
@@ -107,7 +110,7 @@ class MiddlewareControl():
         actual_update_time = int(now.replace(tzinfo=timezone.utc).timestamp()) * 1000 
 
         # durchführen eines Job-interfalls
-        result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.device_export)
+        result, ids, done = self.execute_job(self.erp, last_update_time, actual_update_time, self.update_class, self.export_class)
         print(result, ids, done )
         
         
@@ -141,25 +144,8 @@ class MiddlewareControl():
         else:
             self.article_number_range = [0,0]
 
-
-        # return system["System"], time_intervall, time_unit, export
-
-    def execute_job(self, system, last_update_time, actual_update_time, device_export):
-        """
-        Update eines ERP-Systems
-
-        :param system: gewähltes ERP-System durch den Nutzer
-        :param last_update_time: letztes Update Datum
-        :param actual_update_time: aktuelles Update Datum
-        :param device_export: ob ein Anlagen-Export durchgeführt wird und in welche Richttung
-
-        :return result: 2 Dim. Matrix mit Dictionary der Update und Export Funktion
-        :return ids: 2 Dim. Matrix mit Liste der Artikelnummern welche upgedatet und exportiert worden sind
-        :return done: Boolean, ob Update funktioniert hat
-        """
-        # TODO: update Funktion für andere ERP Systeme
-        db = self.client['Keys']
-        if system == "dynamics":
+        # Init notwendige Klassen für Export und Update in Abhängigkeit zu Nutzer-Konfiguration
+        if self.erp == "dynamics":
             # Authentifizierungsdaten abrufen
             col = db["Key_Dynamics"]
             try:
@@ -169,19 +155,22 @@ class MiddlewareControl():
                 raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
             url = system_auth["URL"]
             auth = {"Authorization": system_auth["BasicAuth"]}
-            # export
-            export_result, export_article_number = self.device_export_dynamics(url, auth , device_export)          
-            # init weclapp-Update Klasse
-            updateDynamics = UpdateDynamics(
+            # init Dynamics-Update Klasse
+            update_class = UpdateDynamics(
                 url,auth , self.client)
-            # update-Methode ausführen
-            update_result, done = updateDynamics.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
-            update_article_number = updateDynamics.get_article_number()
-            return [export_result, update_result], [export_article_number, update_article_number], done
+            # init Dynamics-Export Klasse falls benötigt
+            if self.device_export == "tagid_erp":
+                export_class = MoveTagidDynamics(url,auth)
+            elif self.device_export == "erp_tagid":
+                export_class = MoveDynamicsTagid(url, auth)            
+            else:
+                export_class = None        
 
-        elif system == "weclapp":
+            self.update_class = update_class
+            self.export_class = export_class
+        elif self.erp == "weclapp":
             # Authentifizierungsdaten abrufen
-            col = db['Key_Weclapp']
+            col = db["Key_Weclapp"]
             try:
                 system_auth = list(col.find().sort(
                     [('_id', -1)]).limit(1))[0]
@@ -189,75 +178,183 @@ class MiddlewareControl():
                 raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
             url = system_auth["URL"]
             auth = {"AuthenticationToken": system_auth["Password"]}
-            # device-export 
-            export_result, export_article_number = self.device_export_weclapp(url, auth , device_export)
-            # init weclapp-Update Klasse
-            updateWeClapp = UpdateWeClapp(url, auth, self.client)
+            # init Dynamics-Update Klasse
+            update_class = UpdateWeClapp(url, auth, self.client)
+            # init Dynamics-Export Klasse falls benötigt
+            if self.device_export == "tagid_erp":
+                export_class = MoveTagidWeclapp(url,auth)
+            elif self.device_export == "erp_tagid":
+                export_class = MoveWeclappTagid(url, auth)            
+            else:
+                export_class = None        
+
+            self.update_class = update_class
+            self.export_class = export_class
+        elif self.erp == "xentral":
+            # Authentifizierungsdaten abrufen
+            col = db["Key_Xentral"]
+            try:
+                system_auth = list(col.find().sort(
+                    [('_id', -1)]).limit(1))[0]
+            except:
+                raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+            url = system_auth["URL"]
+            auth = {"username": system_auth["Username"], "password": system_auth["Password"]}
+            # init Dynamics-Update Klasse
+            update_class = UpdateXentral(url, auth, self.client)                
+            self.update_class = update_class
+        elif self.erp == "myfactory":
+            # Authentifizierungsdaten abrufen
+            col = db["Key_MyFactory"]
+            try:
+                system_auth = list(col.find().sort(
+                    [('_id', -1)]).limit(1))[0]
+            except:
+                raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+            url = system_auth["URL"]
+            auth = {"username": system_auth["Username"], "password": system_auth["Password"]}
+            # init Dynamics-Update Klasse
+            update_class = UpdateMyFactory(url, auth, self.client)                
+            self.update_class = update_class
+
+            
+
+
+        # return system["System"], time_intervall, time_unit, export
+
+    def execute_job(self, system, last_update_time, actual_update_time, updateClass, exportClass = None):
+        """
+        Update eines ERP-Systems
+
+        :param system: gewähltes ERP-System durch den Nutzer
+        :param last_update_time: letztes Update Datum
+        :param actual_update_time: aktuelles Update Datum
+        :param updateClass: Klasse des zu updatenden Systems
+        :param exportClass: Klasse zum Exportieren der Anlagen
+
+        :return result: 2 Dim. Matrix mit Dictionary der Update und Export Funktion
+        :return ids: 2 Dim. Matrix mit Liste der Artikelnummern welche upgedatet und exportiert worden sind
+        :return done: Boolean, ob Update funktioniert hat
+        """
+        if system == "dynamics" or system == "weclapp":
+            # export
+            export_result, export_article_number = self.device_export_dynamics(exportClass)        
+                
             # update-Methode ausführen
-            update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
-            update_article_number = updateWeClapp.get_article_number()
+            update_result, done = updateClass.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
+            update_article_number = updateClass.get_article_number()
             return [export_result, update_result], [export_article_number, update_article_number], done
-
-        elif system == "xentral":
-            # kein Export implementiert, da kein PUSH-Request möglich
-            # Authentifizierungsdaten abrufen
-            col = db['Key_Xentral']
-            try:
-                system_auth = list(col.find().sort(
-                    [('_id', -1)]).limit(1))[0]
-            except:
-                raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+        if system == "xentral" or system == "myfactory":
             # init MyFactory-Update Klasse
-            updateXentral = UpdateXentral(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
+            # updateXentral = UpdateXentral(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
             # update-Methode ausführen
-            pdf_created, article_numbers, done = updateXentral.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+            pdf_created, article_numbers, done = updateClass.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
             
             return [ "kein Export", pdf_created], ["kein Export", article_numbers], done
 
-        elif system == "myfactory":
-            # kein Export implementiert, da kein PUSH-Request möglich
-            # Authentifizierungsdaten abrufen
-            col = db['Key_MyFactory']
-            try:
-                system_auth = list(col.find().sort(
-                    [('_id', -1)]).limit(1))[0]
-            except:
-                raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
-            # init MyFactory-Update Klasse
-            updateMyFactory = UpdateMyFactory(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
-            # update-Methode ausführen
-            pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+
+
+    #     # TODO: update Funktion für andere ERP Systeme
+    #     db = self.client['Keys']
+    #     if system == "dynamics":
+    #         # export
+    #         export_result, export_article_number = self.device_export_dynamics(exportClass)        
             
-            return [ "kein Export", pdf_created], ["kein Export", article_numbers], done
-        else:
-            logging.error("Keine ERP-System spezifiziert" )
-            print("Error: No such Erp System in Database")
+    #         # update-Methode ausführen
+    #         update_result, done = updateClass.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
+    #         update_article_number = updateClass.get_article_number()
+    #         return [export_result, update_result], [export_article_number, update_article_number], done
+
+    #     elif system == "weclapp":
+    #         # Authentifizierungsdaten abrufen
+    #         # col = db['Key_Weclapp']
+    #         # try:
+    #         #     system_auth = list(col.find().sort(
+    #         #         [('_id', -1)]).limit(1))[0]
+    #         # except:
+    #         #     raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+    #         # url = system_auth["URL"]
+    #         # auth = {"AuthenticationToken": system_auth["Password"]}
+    #         # device-export 
+    #         export_result, export_article_number = self.device_export_weclapp(device_export)
+    #         # init weclapp-Update Klasse
+    #         updateWeClapp = UpdateWeClapp(url, auth, self.client)
+    #         # update-Methode ausführen
+    #         update_result, done = updateWeClapp.update(last_update_time=last_update_time, actual_update_time = actual_update_time)
+    #         update_article_number = updateWeClapp.get_article_number()
+    #         return [export_result, update_result], [export_article_number, update_article_number], done
+
+    #     elif system == "xentral":
+    #         # kein Export implementiert, da kein PUSH-Request möglich
+    #         # Authentifizierungsdaten abrufen
+    #         col = db['Key_Xentral']
+    #         try:
+    #             system_auth = list(col.find().sort(
+    #                 [('_id', -1)]).limit(1))[0]
+    #         except:
+    #             raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+    #         # init MyFactory-Update Klasse
+    #         updateXentral = UpdateXentral(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
+    #         # update-Methode ausführen
+    #         pdf_created, article_numbers, done = updateXentral.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+            
+    #         return [ "kein Export", pdf_created], ["kein Export", article_numbers], done
+
+    #     elif system == "myfactory":
+    #         # kein Export implementiert, da kein PUSH-Request möglich
+    #         # Authentifizierungsdaten abrufen
+    #         col = db['Key_MyFactory']
+    #         try:
+    #             system_auth = list(col.find().sort(
+    #                 [('_id', -1)]).limit(1))[0]
+    #         except:
+    #             raise Exception("Error: Kein Eintrag der Authentifizierungsdaten für weclapp in MongoDB" )
+    #         # init MyFactory-Update Klasse
+    #         updateMyFactory = UpdateMyFactory(system_auth["URL"], {"username": system_auth["Username"], "password": system_auth["Password"]}, self.client)
+    #         # update-Methode ausführen
+    #         pdf_created, article_numbers, done = updateMyFactory.update(last_update_time=last_update_time, actual_update_time=actual_update_time)
+            
+    #         return [ "kein Export", pdf_created], ["kein Export", article_numbers], done
+    #     else:
+    #         logging.error("Keine ERP-System spezifiziert" )
+    #         print("Error: No such Erp System in Database")
 
         
-    def device_export_weclapp(self, url, auth, device_export):
-        print("weclapp")
-        if device_export == "tagid_erp":
-            moveTagidWeclapp = MoveTagidWeclapp(url,auth)
-            ids, result = moveTagidWeclapp.export()
-        elif device_export == "erp_tagid":
-            moveWeclappTagid = MoveWeclappTagid(url, auth)
-            ids, result = moveWeclappTagid.export(self.article_number_range)
+    # def device_export_weclapp(self, url, auth, device_export):
+    #     print("weclapp")
+    #     if device_export == "tagid_erp":
+    #         moveTagidWeclapp = MoveTagidWeclapp(url,auth)
+    #         ids, result = moveTagidWeclapp.export()
+    #     elif device_export == "erp_tagid":
+    #         moveWeclappTagid = MoveWeclappTagid(url, auth)
+    #         ids, result = moveWeclappTagid.export(self.article_number_range)
+    #     else:
+    #         return ["Kein Export"], ["Kein Export"]
+    #     return result, ids
+
+    def device_export_dynamics(self, device_export):
+        print("dynamics")
+        if device_export != None: 
+            if self.device_export == "erp_tagid":           
+                ids, result = device_export.export(self.article_number_range)
+            else:
+                ids, result = device_export.export()
         else:
             return ["Kein Export"], ["Kein Export"]
         return result, ids
 
-    def device_export_dynamics(self, url, auth, device_export):
-        print("dynamics")
-        if device_export == "tagid_erp":
-            moveTagidDynamics = MoveTagidDynamics(url,auth)
-            ids, result = moveTagidDynamics.export()
-            pass
-        elif device_export == "erp_tagid":
-            moveDynamicsTagid = MoveDynamicsTagid(url,auth)
-            ids, result = moveDynamicsTagid.export(self.article_number_range)
-        else:
-            return ["Kein Export"], ["Kein Export"]
-        return result, ids
+    # def device_export_dynamicst(self, url, auth, device_export):
+    #     print("dynamics")
+    #     if device_export == "tagid_erp":
+    #         moveTagidDynamics = MoveTagidDynamics(url,auth)
+    #         ids, result = moveTagidDynamics.export()
+    #         pass
+    #     elif device_export == "erp_tagid":
+    #         moveDynamicsTagid = MoveDynamicsTagid(url,auth)
+    #         ids, result = moveDynamicsTagid.export(self.article_number_range)
+    #     else:
+    #         return ["Kein Export"], ["Kein Export"]
+    #     return result, ids
 
 
 if __name__ == "__main__":
