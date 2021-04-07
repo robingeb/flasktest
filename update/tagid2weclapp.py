@@ -91,8 +91,6 @@ class UpdateWeClapp():
 
         # Alle Prüfberichte erhalten, welche Zeit dem letzten Update im Prüfmanagement erstellt wurden.
         data = []
-        #TODO: last update auslesen und einlesen in mongodb
-        # last_update = 0
 
         db = self.client['Prüfberichte']
         col = db['Prüfberichte']

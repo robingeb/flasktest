@@ -61,7 +61,6 @@ class XentralAPI():
 
     def put_request(self):
         pass
-        # TODO: Put Request testen
 
 payload = """
 {        

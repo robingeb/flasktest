@@ -71,8 +71,6 @@ class UpdateDynamics():
             self.url, self.auth, tagIdeasy_ids, dynamicsAPI)
         
         if len(self.ids) == 0:
-            # TODO. quti testen mit JobScheduler
-            # raise Exception("Es gibt keine zu aktualisierenden Artikel")
             return [], False
 
         # zu übertragende Werte aus TagIdeasy zu Weclapp Artikeln zuordnen und diese aktualisiert als Dataframe ausgeben

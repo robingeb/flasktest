@@ -4,8 +4,6 @@ import requests
 import json
 from requests.auth import HTTPDigestAuth
 
-#TODO: ERROR für fehlerhafte Internetverbindung, fehlerhafter Zugriff auf API
-
 def test():    
     url = " https://wwmeqaovgkvqrzk.weclapp.com/webapp/api/v1/article"
     auth = {

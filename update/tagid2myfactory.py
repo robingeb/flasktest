@@ -40,7 +40,7 @@ class UpdateMyFactory():
         self.ids = []
         self.update_time = 0
 
-#TODO: aktuelle Update zeit einbauen
+
     def update(self, last_update_time = 0, actual_update_time = 0):
         """
         :return: alle Prüfberichte für Instanzen in MyFactory als pdf
@@ -70,7 +70,6 @@ class UpdateMyFactory():
             tagid_ids, myFactoryAPI)
         
         if len(self.ids) == 0:
-            # TODO. quti testen mit JobScheduler
             # raise Exception("Es gibt keine zu aktualisierenden Artikel")
             return [], [], False
 
