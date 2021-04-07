@@ -35,14 +35,6 @@ mongo = PyMongo(app)
 client = pymongo.MongoClient(
     "mongodb+srv://user2:PJS2021@cluster0.hin53.mongodb.net/test")
 
-# @app.route('/end', methods=['GET', 'POST'])
-# def end():
-#     name = None
-#     form = choiceendForm()
-
-#     if form.validate_on_submit():
-#         return redirect(url_for('home'))
-#     return render_template('choice_end.html', form=form, name=name)
 
 @app.route('/background_process_test', methods=['GET', 'POST'])
 def background_process_test():
@@ -76,6 +68,7 @@ def homi():
     if form.validate_on_submit():
         return redirect(url_for('home'))
     return render_template('choice_start.html', form=form, name=name, info = info, activ = activ)
+
 
 @app.route('/system', methods=['GET', 'POST'])
 def home():
